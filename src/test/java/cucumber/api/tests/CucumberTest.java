@@ -18,7 +18,7 @@ import org.springframework.web.client.RestTemplate;
 @RunWith(Cucumber.class)
 @CucumberContextConfiguration
 @SpringBootTest
-@CucumberOptions(plugin = {"pretty"}, tags = "", features = "src/test/resources/features")
+@CucumberOptions(plugin = {"pretty"}, tags = "not @ignore", features = "src/test/resources/features")
 public class CucumberTest {
 
 
