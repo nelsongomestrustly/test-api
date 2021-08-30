@@ -2,25 +2,25 @@ package cucumber.api.tests.test.admconsole.actions;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import cucumber.api.tests.test.admconsole.connectors.AdmConsoleConnector;
-import cucumber.api.tests.test.admconsole.data.dto.AdminConsoleSearchTransactionsDTO;
+import cucumber.api.tests.test.admconsole.connectors.AdmConConnector;
+import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 
 import java.io.IOException;
 
 
 @Slf4j
-public class AdmConsoleHttpActions {
+public class AdmConHttpActions {
 
     /**
      * CREATE DATA
      */
 
     public static String getAdminConsoleTransactionsByName(
-            AdminConsoleSearchTransactionsDTO adminConsoleSearchTransactionsDTO,
+            AdmConSearchTransactionsDTO admConSearchTransactionsDTO,
             Integer expectHttpStatus) throws IOException {
 
-        ResponseEntity<String> responseEntity = AdmConsoleConnector.searchTransactionsInAdminConsole(adminConsoleSearchTransactionsDTO);
+        ResponseEntity<String> responseEntity = AdmConConnector.searchTransactionsInAdminConsole(admConSearchTransactionsDTO);
 
         RestTemplateValidations.validateStatus(expectHttpStatus, responseEntity);
 

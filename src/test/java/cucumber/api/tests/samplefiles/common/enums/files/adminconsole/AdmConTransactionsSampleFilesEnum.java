@@ -2,15 +2,15 @@ package cucumber.api.tests.samplefiles.common.enums.files.adminconsole;
 
 import lombok.Getter;
 
-import static cucumber.api.tests.samplefiles.constants.adminconsole.AdminConsoleSearchTransactions.SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_EMPTY;
-import static cucumber.api.tests.samplefiles.constants.adminconsole.AdminConsoleSearchTransactions.SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_INVALID;
-import static cucumber.api.tests.samplefiles.constants.adminconsole.AdminConsoleSearchTransactions.SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_VALID_1;
-import static cucumber.api.tests.samplefiles.constants.adminconsole.AdminConsoleSearchTransactions.SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_VALID_2;
-import static cucumber.api.tests.samplefiles.constants.adminconsole.AdminConsoleSearchTransactions.SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_VALID_3;
-import static cucumber.api.tests.samplefiles.common.enums.directories.adminconsole.AdminConsoleTransactionsSampleFilesDirectoriesEnum.ADMIN_CONSOLE_TRANSACTIONS_SEARCH_BY_NAME_SAMPLE_FILES_DIRECTORY;
+import static cucumber.api.tests.samplefiles.constants.adminconsole.AdmConSearchTransactions.SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_EMPTY;
+import static cucumber.api.tests.samplefiles.constants.adminconsole.AdmConSearchTransactions.SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_INVALID;
+import static cucumber.api.tests.samplefiles.constants.adminconsole.AdmConSearchTransactions.SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_VALID_1;
+import static cucumber.api.tests.samplefiles.constants.adminconsole.AdmConSearchTransactions.SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_VALID_2;
+import static cucumber.api.tests.samplefiles.constants.adminconsole.AdmConSearchTransactions.SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_VALID_3;
+import static cucumber.api.tests.samplefiles.common.enums.directories.adminconsole.AdmConTransactionsSampleFilesDirectoriesEnum.ADMIN_CONSOLE_TRANSACTIONS_SEARCH_BY_NAME_SAMPLE_FILES_DIRECTORY;
 
 @Getter
-public enum AdminConsoleTransactionsSampleFilesEnum {
+public enum AdmConTransactionsSampleFilesEnum {
 
     /**
      * ADMIN CONSOLE TRANSACTIONS
@@ -24,15 +24,15 @@ public enum AdminConsoleTransactionsSampleFilesEnum {
     private String directory;
     private String fileName;
 
-    AdminConsoleTransactionsSampleFilesEnum(
+    AdmConTransactionsSampleFilesEnum(
             String directory,
             String fileName) {
         this.directory = directory;
         this.fileName = fileName;
     }
 
-    public static AdminConsoleTransactionsSampleFilesEnum fromFileName(String fileName) {
-        for (AdminConsoleTransactionsSampleFilesEnum b : AdminConsoleTransactionsSampleFilesEnum.values()) {
+    public static AdmConTransactionsSampleFilesEnum fromFileName(String fileName) {
+        for (AdmConTransactionsSampleFilesEnum b : AdmConTransactionsSampleFilesEnum.values()) {
             if (b.fileName.equalsIgnoreCase(fileName)) {
                 return b;
             }

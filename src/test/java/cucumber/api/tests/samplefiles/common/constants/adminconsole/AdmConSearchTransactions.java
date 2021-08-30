@@ -1,6 +1,6 @@
 package cucumber.api.tests.samplefiles.constants.adminconsole;
 
-public class AdminConsoleSearchTransactions {
+public class AdmConSearchTransactions {
 
     public static final String SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_EMPTY = "Search_Admin_Console_Transactions_By_CustomerName_Empty.json";
     public static final String SEARCH_ADMIN_CONSOLE_TRANSACTIONS_FILE_NAME_BY_CUSTOMER_NAME_INVALID = "Search_Admin_Console_Transactions_By_CustomerName_Invalid.json";

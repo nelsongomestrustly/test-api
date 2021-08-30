@@ -2,10 +2,10 @@ package cucumber.api.tests.samplefiles.common.enums.directories.adminconsole;
 
 import lombok.Getter;
 
-import static cucumber.api.tests.samplefiles.common.enums.directories.adminconsole.AdminConsoleSampleFilesDirectoriesEnum.ADMIN_CONSOLE_SAMPLE_FILES_DIRECTORY;
+import static cucumber.api.tests.samplefiles.common.enums.directories.adminconsole.AdmConSampleFilesDirectoriesEnum.ADMIN_CONSOLE_SAMPLE_FILES_DIRECTORY;
 
 @Getter
-public enum AdminConsoleTransactionsSampleFilesDirectoriesEnum {
+public enum AdmConTransactionsSampleFilesDirectoriesEnum {
 
     /**
      * ADMIN CONSOLE TRANSACTIONS
@@ -26,7 +26,7 @@ public enum AdminConsoleTransactionsSampleFilesDirectoriesEnum {
 
     private String directory;
 
-    AdminConsoleTransactionsSampleFilesDirectoriesEnum(String directory) {
+    AdmConTransactionsSampleFilesDirectoriesEnum(String directory) {
         this.directory = directory;
     }
 

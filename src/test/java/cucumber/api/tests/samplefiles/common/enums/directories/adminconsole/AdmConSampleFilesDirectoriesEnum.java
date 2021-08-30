@@ -5,7 +5,7 @@ import lombok.Getter;
 import static cucumber.api.tests.samplefiles.constants.SampleDirectories.SAMPLES_FILES_DIRECTORY;
 
 @Getter
-public enum AdminConsoleSampleFilesDirectoriesEnum {
+public enum AdmConSampleFilesDirectoriesEnum {
 
     /**
      * ADMIN CONSOLE DIRECTORY
@@ -14,7 +14,7 @@ public enum AdminConsoleSampleFilesDirectoriesEnum {
 
     private String directory;
 
-    AdminConsoleSampleFilesDirectoriesEnum(String directory) {
+    AdmConSampleFilesDirectoriesEnum(String directory) {
         this.directory = directory;
     }
 

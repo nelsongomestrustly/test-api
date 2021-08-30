@@ -4,7 +4,7 @@ package cucumber.api.tests.test.login.actions;
 
 
 
-import cucumber.api.tests.test.admconsole.connectors.AdminConsoleEndpoint;
+import cucumber.api.tests.test.admconsole.connectors.AdmConEndpoint;
 import org.springframework.http.ResponseEntity;
 import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
 import cucumber.api.tests.test.login.connectors.LoginConnector;
@@ -37,7 +37,7 @@ public class LoginHttpActions {
     public static boolean isTheUserLogged(
             Integer expectedStatus,
             String notLoggedInAdminConsoleHtmlBody,
-            AdminConsoleEndpoint adminConsoleEndpoint) {
+            AdmConEndpoint adminConsoleEndpoint) {
 
         ResponseEntity<String> responseEntity = LoginConnector.canAccess(adminConsoleEndpoint);
 

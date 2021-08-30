@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum AdminConsoleSearchTransactionsDTOFieldsEnum {
+public enum AdmConSearchTransactionsDTOFieldsEnum {
 
     ACCOUNT_NUMBER("accountNumber"),
     AUTHORIZATION_STATUS("authorizationStatus"),

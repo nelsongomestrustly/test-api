@@ -3,7 +3,7 @@ package cucumber.api.tests.support.cucumber.managers;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import cucumber.api.tests.test.admconsole.data.dto.AdminConsoleSearchTransactionsDTO;
+import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,39 +14,39 @@ import java.util.List;
 public class AdminConsoleTransactionsManager {
 
     //Object To Search
-    private AdminConsoleSearchTransactionsDTO adminConsoleSearchTransactionsDTO;
+    private AdmConSearchTransactionsDTO admConSearchTransactionsDTO;
 
     //Admin Console Html Search Result Body
     private String adminConsoleHtmlSearchResultsBodyTransactions;
 
     //Object to Store the Results of the Search
-    private List<AdminConsoleSearchTransactionsDTO> adminConsoleSearchResultsTransactionsDTOList;
+    private List<AdmConSearchTransactionsDTO> adminConsoleSearchResultsTransactionsDTOList;
 
     public AdminConsoleTransactionsManager() {
         adminConsoleSearchResultsTransactionsDTOList = new ArrayList<>();
-        adminConsoleSearchTransactionsDTO = new AdminConsoleSearchTransactionsDTO();
+        admConSearchTransactionsDTO = new AdmConSearchTransactionsDTO();
     }
 
-    public void add(AdminConsoleSearchTransactionsDTO adminConsoleSearchTransactionsDTO) {
-        adminConsoleSearchResultsTransactionsDTOList.add(adminConsoleSearchTransactionsDTO);
+    public void add(AdmConSearchTransactionsDTO admConSearchTransactionsDTO) {
+        adminConsoleSearchResultsTransactionsDTOList.add(admConSearchTransactionsDTO);
     }
 
-    public AdminConsoleSearchTransactionsDTO getFirst() {
+    public AdmConSearchTransactionsDTO getFirst() {
         return adminConsoleSearchResultsTransactionsDTOList.get(0);
     }
 
-    public AdminConsoleSearchTransactionsDTO getLast() {
+    public AdmConSearchTransactionsDTO getLast() {
         return adminConsoleSearchResultsTransactionsDTOList.get(adminConsoleSearchResultsTransactionsDTOList.size() -1);
     }
 
-    public AdminConsoleSearchTransactionsDTO getByIndex(int index) {
+    public AdmConSearchTransactionsDTO getByIndex(int index) {
         //Get the by index (zero-based index)
         return adminConsoleSearchResultsTransactionsDTOList.get(index-1);
     }
 
-    public int getIndex(AdminConsoleSearchTransactionsDTO adminConsoleSearchTransactionsDTO) {
+    public int getIndex(AdmConSearchTransactionsDTO admConSearchTransactionsDTO) {
         //Get the index of the object (zero-based index)
-        return adminConsoleSearchResultsTransactionsDTOList.indexOf(adminConsoleSearchTransactionsDTO) + 1;
+        return adminConsoleSearchResultsTransactionsDTOList.indexOf(admConSearchTransactionsDTO) + 1;
     }
 
 

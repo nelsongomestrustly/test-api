@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
  * &mctCustomerName=cunelson&customerExternalId=&
  * &mctCustomerName=&customerExternalId=&
  */
-public class AdminConsoleSearchTransactionsDTO {
+public class AdmConSearchTransactionsDTO {
 
     //Don´t change the order of this fields
 

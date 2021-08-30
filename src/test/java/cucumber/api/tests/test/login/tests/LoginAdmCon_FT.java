@@ -14,12 +14,12 @@ import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
 import cucumber.api.tests.support.common.users.services.TestParticipantServices;
 import java.io.IOException;
 
-import static cucumber.api.tests.test.admconsole.connectors.AdminConsoleEndpoint.ADMIN_CONSOLE_TRANSACTIONS_ENDPOINT;
+import static cucumber.api.tests.test.admconsole.connectors.AdmConEndpoint.ADM_CON_TRANSACTIONS_ENDPOINT;
 import static cucumber.api.tests.test.login.connectors.LoginEndpoint.ADMIN_CONSOLE_LOGIN_ENDPOINT;
 import static cucumber.api.tests.test.login.connectors.LoginEndpoint.ADMIN_CONSOLE_LOGOUT_ENDPOINT;
 
 @Slf4j
-public class LoginAdminConsole_FT extends CucumberTest {
+public class LoginAdmCon_FT extends CucumberTest {
 
 
     /**
@@ -48,10 +48,10 @@ public class LoginAdminConsole_FT extends CucumberTest {
 
 
     @When("The user is not logged in Admin Console should receive in HtmlBody {string} and Http Status {string}")
-    public void theUserIsNotLoggedInAdminConsoleShouldReceiveInHtmlBodyAndHttpStatus(String notLoggedInAdminConsoleHtmlBody, String httpStatusNotLogged) throws IOException {
+    public void theUserIsNotLoggedInAdmConShouldReceiveInHtmlBodyAndHttpStatus(String notLoggedInAdminConsoleHtmlBody, String httpStatusNotLogged) throws IOException {
 
         //Get Values From DataTable
-        boolean theUserLoggedInAdminConsole = LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusNotLogged), notLoggedInAdminConsoleHtmlBody, ADMIN_CONSOLE_TRANSACTIONS_ENDPOINT);
+        boolean theUserLoggedInAdminConsole = LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusNotLogged), notLoggedInAdminConsoleHtmlBody, ADM_CON_TRANSACTIONS_ENDPOINT);
 
         //For the used considered logged, he needs to have a cookie, and the session should not be Expired
         MyTestContext.getMyTestContext().loginDTOManager.setLoggedAdminConsole(theUserLoggedInAdminConsole);
@@ -60,7 +60,7 @@ public class LoginAdminConsole_FT extends CucumberTest {
 
 
     @Then("The user should be able to Login in Admin Console and receive Http Status (\\d+)$")
-    public void theUserShouldBeAbleToLoginInAdminConsoleAndReceiveHttpStatus(int httpStatusLogin) throws IOException {
+    public void theUserShouldBeAbleToLoginInAdmConAndReceiveHttpStatus(int httpStatusLogin) throws IOException {
 
         //Need to Log if the User is Not Logged or Don´t have a Cookie
         if (!MyTestContext.getMyTestContext().loginDTOManager.isLoggedAdminConsole()) {
@@ -73,9 +73,9 @@ public class LoginAdminConsole_FT extends CucumberTest {
     }
 
     @And("The user should be able to access Admin Console Home Page and not receive in HtmlBody {string} and Http Status {string}")
-    public void theUserShouldBeAbleToAccessAdminConsoleHomePageAndNotReceiveInHtmlBodyAndHttpStatus(String notLoggedInAdminConsoleHtmlBody, String httpStatusLogged) throws IOException {
+    public void theUserShouldBeAbleToAccessAdmConHomePageAndNotReceiveInHtmlBodyAndHttpStatus(String notLoggedInAdminConsoleHtmlBody, String httpStatusLogged) throws IOException {
 
-        Assertions.assertTrue(LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusLogged), notLoggedInAdminConsoleHtmlBody, ADMIN_CONSOLE_TRANSACTIONS_ENDPOINT));
+        Assertions.assertTrue(LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusLogged), notLoggedInAdminConsoleHtmlBody, ADM_CON_TRANSACTIONS_ENDPOINT));
 
     }
 
@@ -102,11 +102,11 @@ public class LoginAdminConsole_FT extends CucumberTest {
         //Then
         theParticipantShouldBeValid();
         //When
-        theUserIsNotLoggedInAdminConsoleShouldReceiveInHtmlBodyAndHttpStatus(notLoggedInAdminConsoleHtmlBody, httpStatusNotLogged);
+        theUserIsNotLoggedInAdmConShouldReceiveInHtmlBodyAndHttpStatus(notLoggedInAdminConsoleHtmlBody, httpStatusNotLogged);
         //Then
-        theUserShouldBeAbleToLoginInAdminConsoleAndReceiveHttpStatus(Integer.parseInt(httpStatusLogin));
+        theUserShouldBeAbleToLoginInAdmConAndReceiveHttpStatus(Integer.parseInt(httpStatusLogin));
         //And
-        theUserShouldBeAbleToAccessAdminConsoleHomePageAndNotReceiveInHtmlBodyAndHttpStatus(notLoggedInAdminConsoleHtmlBody, httpStatusLogged);
+        theUserShouldBeAbleToAccessAdmConHomePageAndNotReceiveInHtmlBodyAndHttpStatus(notLoggedInAdminConsoleHtmlBody, httpStatusLogged);
 
     }
 
@@ -115,7 +115,7 @@ public class LoginAdminConsole_FT extends CucumberTest {
      */
 
     @Then("the user logout from Admin Console and receive a Http Status (\\d+)$")
-    public void theUserLogoutFromAdminConsoleAndReceiveAHttpStatus(int httpStatusLogout) {
+    public void theUserLogoutFromAdmConAndReceiveAHttpStatus(int httpStatusLogout) {
 
         LoginHttpActions.logout(httpStatusLogout, ADMIN_CONSOLE_LOGOUT_ENDPOINT);
 
