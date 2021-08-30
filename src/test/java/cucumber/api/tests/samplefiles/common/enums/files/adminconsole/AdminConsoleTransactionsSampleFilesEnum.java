@@ -10,7 +10,7 @@ import static cucumber.api.tests.samplefiles.constants.adminconsole.AdminConsole
 import static cucumber.api.tests.samplefiles.common.enums.directories.adminconsole.AdminConsoleTransactionsSampleFilesDirectoriesEnum.ADMIN_CONSOLE_TRANSACTIONS_SEARCH_BY_NAME_SAMPLE_FILES_DIRECTORY;
 
 @Getter
-public enum AdminConsoleTransactionsSampleFilesNamesEnum {
+public enum AdminConsoleTransactionsSampleFilesEnum {
 
     /**
      * ADMIN CONSOLE TRANSACTIONS
@@ -24,15 +24,15 @@ public enum AdminConsoleTransactionsSampleFilesNamesEnum {
     private String directory;
     private String fileName;
 
-    AdminConsoleTransactionsSampleFilesNamesEnum(
+    AdminConsoleTransactionsSampleFilesEnum(
             String directory,
             String fileName) {
         this.directory = directory;
         this.fileName = fileName;
     }
 
-    public static AdminConsoleTransactionsSampleFilesNamesEnum fromFileName(String fileName) {
-        for (AdminConsoleTransactionsSampleFilesNamesEnum b : AdminConsoleTransactionsSampleFilesNamesEnum.values()) {
+    public static AdminConsoleTransactionsSampleFilesEnum fromFileName(String fileName) {
+        for (AdminConsoleTransactionsSampleFilesEnum b : AdminConsoleTransactionsSampleFilesEnum.values()) {
             if (b.fileName.equalsIgnoreCase(fileName)) {
                 return b;
             }

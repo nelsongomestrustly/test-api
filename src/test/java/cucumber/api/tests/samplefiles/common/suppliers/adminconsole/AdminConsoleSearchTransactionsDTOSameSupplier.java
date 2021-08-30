@@ -1,24 +1,19 @@
 package cucumber.api.tests.samplefiles.common.suppliers.adminconsole;
 
-import cucumber.api.tests.samplefiles.common.enums.files.adminconsole.AdminConsoleTransactionsSampleFilesNamesEnum;
+import cucumber.api.tests.common.mappers.DirectoryMappers;
+import cucumber.api.tests.samplefiles.common.enums.files.adminconsole.AdminConsoleTransactionsSampleFilesEnum;
 import cucumber.api.tests.test.admconsole.data.dto.AdminConsoleSearchTransactionsDTO;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
-import static cucumber.api.tests.common.mappers.ObjectMappers.MAPPER_SIMPLE;
 
 public class AdminConsoleSearchTransactionsDTOSameSupplier {
 
     public static AdminConsoleSearchTransactionsDTO getSampleAdminConsoleSearchTransactionsDTO(String fileName) throws IOException {
 
-        AdminConsoleTransactionsSampleFilesNamesEnum adminConsoleTransactionsSampleFilesNamesEnum = AdminConsoleTransactionsSampleFilesNamesEnum.fromFileName(fileName);
+        AdminConsoleTransactionsSampleFilesEnum adminConsoleTransactionsSampleFilesNamesEnum = AdminConsoleTransactionsSampleFilesEnum.fromFileName(fileName);
 
-        return MAPPER_SIMPLE.readValue(Files.readString(Path.of(
-                adminConsoleTransactionsSampleFilesNamesEnum.getDirectory() + adminConsoleTransactionsSampleFilesNamesEnum.getFileName()),
-                StandardCharsets.UTF_8), AdminConsoleSearchTransactionsDTO.class);
+        return DirectoryMappers.MAPPER_DIRECTORY(
+                adminConsoleTransactionsSampleFilesNamesEnum.getDirectory(), adminConsoleTransactionsSampleFilesNamesEnum.getFileName(), AdminConsoleSearchTransactionsDTO.class);
 
     }
 

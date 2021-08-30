@@ -28,7 +28,7 @@ public class AdmConsoleConnector {
         log.info("Search searchForTransactionsUrl : " + searchForTransactionsUrl);
 
         //Add default URL With Search Parameters
-        String url = GenericSuppliers.getUrlFormatted(ADMIN_CONSOLE_TRANSACTIONS_SEARCH_HP.getEndpoint(), searchForTransactionsUrl);
+        String url = GenericSuppliers.getStringFormatted(ADMIN_CONSOLE_TRANSACTIONS_SEARCH_HP.getEndpoint(), searchForTransactionsUrl);
 
         log.info("Search URL : " + url);
         log.info("Search URL : " + url);

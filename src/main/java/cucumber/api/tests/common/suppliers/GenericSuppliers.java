@@ -10,8 +10,8 @@ public class GenericSuppliers {
         throw new IllegalStateException("Utility class");
     } //SonarLint Alert
 
-    public static String getUrlFormatted(String url, String... params) {
-        return MessageFormat.format(url, params);
+    public static String getStringFormatted(String string, String... params) {
+        return MessageFormat.format(string, params);
     }
 
     public static String getBetweenStrings(String string, String start, String end) {
