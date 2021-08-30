@@ -11,12 +11,14 @@ import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
 
 import java.io.IOException;
 
+import static cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums.ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY;
 import static cucumber.api.tests.test.admconsole.connectors.AdmConEndpoint.ADM_CON_TRANSACTIONS_SEARCH_ENDPOINT;
 
 @Slf4j
 public class AdmConConnector {
 
-    public static ResponseEntity<String> searchTransactionsInAdminConsole(AdmConSearchTransactionsDTO admConSearchTransactionsDTO) throws IOException {
+    public static ResponseEntity<String> searchTransactionsInAdminConsole(
+            AdmConSearchTransactionsDTO admConSearchTransactionsDTO) throws IOException {
 
         //Get Search URL
         String searchForTransactionsUrl = AdmConSearchForTransactionsSupplier.getSearchForTransactionsUrl(admConSearchTransactionsDTO);
@@ -24,7 +26,7 @@ public class AdmConConnector {
         //Add default URL With Search Parameters
         String url = GenericSuppliers.getStringFormatted(ADM_CON_TRANSACTIONS_SEARCH_ENDPOINT.getEndpoint(), searchForTransactionsUrl);
 
-        return RestTemplateHttpConnector.httpGet_Return_String(url);
+        return RestTemplateHttpConnector.httpGet_Return_String(url, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
 
     }
 

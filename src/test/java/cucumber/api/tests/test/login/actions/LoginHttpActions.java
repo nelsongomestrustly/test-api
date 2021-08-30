@@ -4,6 +4,7 @@ package cucumber.api.tests.test.login.actions;
 
 
 
+import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.test.admconsole.connectors.AdmConEndpoint;
 import org.springframework.http.ResponseEntity;
 import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
@@ -21,9 +22,10 @@ public class LoginHttpActions {
     public static boolean isTheUserSessionExpired(
             Integer expectedStatus,
             String sessionExpired,
-            LoginEndpoint loginEndpoint)  {
+            LoginEndpoint loginEndpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums)  {
 
-        ResponseEntity<String> responseEntity = LoginConnector.isTheUserSessionExpired(loginEndpoint);
+        ResponseEntity<String> responseEntity = LoginConnector.isTheUserSessionExpired(loginEndpoint, statefulRestTemplateInterceptorKeyEnums);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 
@@ -37,9 +39,10 @@ public class LoginHttpActions {
     public static boolean isTheUserLogged(
             Integer expectedStatus,
             String notLoggedInAdminConsoleHtmlBody,
-            AdmConEndpoint adminConsoleEndpoint) {
+            AdmConEndpoint adminConsoleEndpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
-        ResponseEntity<String> responseEntity = LoginConnector.canAccess(adminConsoleEndpoint);
+        ResponseEntity<String> responseEntity = LoginConnector.canAccess(adminConsoleEndpoint, statefulRestTemplateInterceptorKeyEnums);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 
@@ -52,9 +55,10 @@ public class LoginHttpActions {
     public static void logIn(
             TestParticipantDTO testParticipantDTO,
             Integer expectedStatus,
-            LoginEndpoint loginEndpoint) throws IOException {
+            LoginEndpoint loginEndpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException {
 
-        ResponseEntity<String> responseEntity = LoginConnector.login(loginEndpoint, testParticipantDTO);
+        ResponseEntity<String> responseEntity = LoginConnector.login(loginEndpoint, testParticipantDTO, statefulRestTemplateInterceptorKeyEnums);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 
@@ -63,9 +67,10 @@ public class LoginHttpActions {
 
     public static void logout(
             Integer expectedStatus,
-            LoginEndpoint loginEndpoint) {
+            LoginEndpoint loginEndpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
-        ResponseEntity<String> responseEntity = LoginConnector.logout(loginEndpoint);
+        ResponseEntity<String> responseEntity = LoginConnector.logout(loginEndpoint, statefulRestTemplateInterceptorKeyEnums);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 

@@ -7,6 +7,8 @@ import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
 
+import java.util.HashMap;
+
 public class MyContext_FT extends CucumberTest {
 
     @Then("Reset Test Context")
@@ -32,7 +34,7 @@ public class MyContext_FT extends CucumberTest {
     public void resetTestCookies() {
 
         StatefulRestTemplateInterceptor statefulRestTemplateInterceptor = new StatefulRestTemplateInterceptor();
-        statefulRestTemplateInterceptor.setCookie(null);
+        statefulRestTemplateInterceptor.setCookieMap(new HashMap<>());
 
     }
 

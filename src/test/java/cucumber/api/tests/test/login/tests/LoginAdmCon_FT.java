@@ -14,6 +14,7 @@ import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
 import cucumber.api.tests.support.common.users.services.TestParticipantServices;
 import java.io.IOException;
 
+import static cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums.ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY;
 import static cucumber.api.tests.test.admconsole.connectors.AdmConEndpoint.ADM_CON_TRANSACTIONS_ENDPOINT;
 import static cucumber.api.tests.test.login.connectors.LoginEndpoint.ADMIN_CONSOLE_LOGIN_ENDPOINT;
 import static cucumber.api.tests.test.login.connectors.LoginEndpoint.ADMIN_CONSOLE_LOGOUT_ENDPOINT;
@@ -51,7 +52,7 @@ public class LoginAdmCon_FT extends CucumberTest {
     public void theUserIsNotLoggedInAdmConShouldReceiveInHtmlBodyAndHttpStatus(String notLoggedInAdminConsoleHtmlBody, String httpStatusNotLogged) throws IOException {
 
         //Get Values From DataTable
-        boolean theUserLoggedInAdminConsole = LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusNotLogged), notLoggedInAdminConsoleHtmlBody, ADM_CON_TRANSACTIONS_ENDPOINT);
+        boolean theUserLoggedInAdminConsole = LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusNotLogged), notLoggedInAdminConsoleHtmlBody, ADM_CON_TRANSACTIONS_ENDPOINT, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
 
         //For the used considered logged, he needs to have a cookie, and the session should not be Expired
         MyTestContext.getMyTestContext().loginDTOManager.setLoggedAdminConsole(theUserLoggedInAdminConsole);
@@ -66,7 +67,7 @@ public class LoginAdmCon_FT extends CucumberTest {
         if (!MyTestContext.getMyTestContext().loginDTOManager.isLoggedAdminConsole()) {
 
             //Login In
-            LoginHttpActions.logIn(MyTestContext.getMyTestContext().testParticipantDTOManagers.getFirst(), httpStatusLogin, ADMIN_CONSOLE_LOGIN_ENDPOINT);
+            LoginHttpActions.logIn(MyTestContext.getMyTestContext().testParticipantDTOManagers.getFirst(), httpStatusLogin, ADMIN_CONSOLE_LOGIN_ENDPOINT, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
 
         }
 
@@ -75,7 +76,7 @@ public class LoginAdmCon_FT extends CucumberTest {
     @And("The user should be able to access Admin Console Home Page and not receive in HtmlBody {string} and Http Status {string}")
     public void theUserShouldBeAbleToAccessAdmConHomePageAndNotReceiveInHtmlBodyAndHttpStatus(String notLoggedInAdminConsoleHtmlBody, String httpStatusLogged) throws IOException {
 
-        Assertions.assertTrue(LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusLogged), notLoggedInAdminConsoleHtmlBody, ADM_CON_TRANSACTIONS_ENDPOINT));
+        Assertions.assertTrue(LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusLogged), notLoggedInAdminConsoleHtmlBody, ADM_CON_TRANSACTIONS_ENDPOINT, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY));
 
     }
 
@@ -117,7 +118,7 @@ public class LoginAdmCon_FT extends CucumberTest {
     @Then("the user logout from Admin Console and receive a Http Status (\\d+)$")
     public void theUserLogoutFromAdmConAndReceiveAHttpStatus(int httpStatusLogout) {
 
-        LoginHttpActions.logout(httpStatusLogout, ADMIN_CONSOLE_LOGOUT_ENDPOINT);
+        LoginHttpActions.logout(httpStatusLogout, ADMIN_CONSOLE_LOGOUT_ENDPOINT, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
 
     }
 
