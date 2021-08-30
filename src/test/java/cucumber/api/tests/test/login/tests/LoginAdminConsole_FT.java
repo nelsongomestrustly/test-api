@@ -14,8 +14,9 @@ import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
 import cucumber.api.tests.support.common.users.services.TestParticipantServices;
 import java.io.IOException;
 
+import static cucumber.api.tests.test.admconsole.connectors.AdminConsoleEndpoint.ADMIN_CONSOLE_TRANSACTIONS_ENDPOINT;
 import static cucumber.api.tests.test.login.connectors.LoginEndpoint.ADMIN_CONSOLE_LOGIN_ENDPOINT;
-import static cucumber.api.tests.test.login.connectors.LoginEndpoint.ADMIN_CONSOLE_TRANSACTIONS_ENDPOINT;
+import static cucumber.api.tests.test.login.connectors.LoginEndpoint.ADMIN_CONSOLE_LOGOUT_ENDPOINT;
 
 @Slf4j
 public class LoginAdminConsole_FT extends CucumberTest {
@@ -23,7 +24,7 @@ public class LoginAdminConsole_FT extends CucumberTest {
 
     /**
      * 
-     * 
+     * LOG IN PROCESS
      *
      */
 
@@ -109,5 +110,15 @@ public class LoginAdminConsole_FT extends CucumberTest {
 
     }
 
+    /**
+     * LOG OUT PROCESS
+     */
+
+    @Then("the user logout from Admin Console and receive a Http Status (\\d+)$")
+    public void theUserLogoutFromAdminConsoleAndReceiveAHttpStatus(int httpStatusLogout) {
+
+        LoginHttpActions.logout(httpStatusLogout, ADMIN_CONSOLE_LOGOUT_ENDPOINT);
+
+    }
 
 }

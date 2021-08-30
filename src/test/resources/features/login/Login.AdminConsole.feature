@@ -21,7 +21,19 @@ Feature: the user logins in the application
   @Login
     @AdminConsole
   Scenario Outline: : Client need to Login in Admin Console as a BackGround Task
+
     Then the user logs in Admin Console with "<testParticipant>" , Login Html Body "<notLoggedInAdminConsoleHtmlBody>" , and Http Status "<httpStatusNotLogged>" , "<httpStatusLogin>" , "<httpStatusLogged>"
+
     Examples:
       | testParticipant      | notLoggedInAdminConsoleHtmlBody | httpStatusNotLogged | httpStatusLogin | httpStatusLogged |
       | admin_console_admin_user | Login - Admin Console | 200 | 302 | 200 |
+
+  @Logout
+    @AdminConsole
+  Scenario Outline: : Client need to Logout from Admin Console
+
+    Then the user logout from Admin Console and receive a Http Status <httpStatusLogout>
+
+    Examples:
+      | httpStatusLogout |
+      | 200 |

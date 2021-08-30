@@ -22,7 +22,7 @@ public class RestTemplateHttpConnector {
      * HTTP GET
      */
 
-    public static ResponseEntity<String> httpGet_Return_String(String endpoint) throws IOException {
+    public static ResponseEntity<String> httpGet_Return_String(String endpoint) {
 
         log.info("performing http get request to {}", endpoint);
 
@@ -57,9 +57,6 @@ public class RestTemplateHttpConnector {
         return httpPost(endpoint, testParticipantDTO);
     }
 
-    public static ResponseEntity<Object> httpPost(String endpoint) throws IOException {
-        return httpPost(endpoint, MAPPER_SIMPLE);
-    }
 
     public static <E> ResponseEntity<Object> httpPost(String endpoint, E e) throws IOException {
         return httpPost(endpoint, MAPPER_SIMPLE, e);
@@ -68,6 +65,20 @@ public class RestTemplateHttpConnector {
     public static ResponseEntity<Object> httpPost(String endpoint, ObjectMapper objectMapper) throws IOException {
         return httpPost(endpoint, objectMapper, null);
     }
+
+
+    public static <E> ResponseEntity<Object> httpPost(String endpoint) {
+
+        log.info("performing http post (endpoint) request to {}", endpoint);
+
+        ResponseEntity<Object> objectResponseEntity = getConnection().postForEntity(endpoint, null, null);
+
+        log.info("http post request status code {}", objectResponseEntity.getStatusCode());
+
+        return objectResponseEntity;
+
+    }
+
 
     public static <E> ResponseEntity<Object> httpPost(String endpoint, ObjectMapper objectMapper, E e) throws IOException {
 
@@ -84,7 +95,7 @@ public class RestTemplateHttpConnector {
 
     public static <E> ResponseEntity<String> httpPost(String endpoint, TestParticipantDTO testParticipantDTO) throws IOException {
 
-        log.info("performing http post request to {}", endpoint);
+        log.info("performing http post (endpoint, testParticipantDTO) request to {}", endpoint);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);

@@ -12,9 +12,9 @@ import java.nio.file.Path;
 
 import static cucumber.api.tests.common.mappers.ObjectMappers.MAPPER_SIMPLE;
 
-public class DirectoryMappers {
+public class FileMappers {
 
-    public static <T> T  MAPPER_DIRECTORY (String directory, String fileName, Class<T> clazz) throws IOException {
+    public static <T> T getFileMappers(String directory, String fileName, Class<T> clazz) throws IOException {
 
         return MAPPER_SIMPLE.readValue(Files.readString(Path.of(directory + fileName), StandardCharsets.UTF_8), clazz);
 

@@ -4,6 +4,7 @@ package cucumber.api.tests.test.login.actions;
 
 
 
+import cucumber.api.tests.test.admconsole.connectors.AdminConsoleEndpoint;
 import org.springframework.http.ResponseEntity;
 import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
 import cucumber.api.tests.test.login.connectors.LoginConnector;
@@ -20,7 +21,7 @@ public class LoginHttpActions {
     public static boolean isTheUserSessionExpired(
             Integer expectedStatus,
             String sessionExpired,
-            LoginEndpoint loginEndpoint) throws IOException {
+            LoginEndpoint loginEndpoint)  {
 
         ResponseEntity<String> responseEntity = LoginConnector.isTheUserSessionExpired(loginEndpoint);
 
@@ -36,9 +37,9 @@ public class LoginHttpActions {
     public static boolean isTheUserLogged(
             Integer expectedStatus,
             String notLoggedInAdminConsoleHtmlBody,
-            LoginEndpoint loginEndpoint) throws IOException {
+            AdminConsoleEndpoint adminConsoleEndpoint) {
 
-        ResponseEntity<String> responseEntity = LoginConnector.canAccess(loginEndpoint);
+        ResponseEntity<String> responseEntity = LoginConnector.canAccess(adminConsoleEndpoint);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 
@@ -53,14 +54,22 @@ public class LoginHttpActions {
             Integer expectedStatus,
             LoginEndpoint loginEndpoint) throws IOException {
 
-        ResponseEntity<String> responseEntity = LoginConnector.loginAdminConsole(loginEndpoint, testParticipantDTO);
+        ResponseEntity<String> responseEntity = LoginConnector.login(loginEndpoint, testParticipantDTO);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 
     }
 
 
+    public static void logout(
+            Integer expectedStatus,
+            LoginEndpoint loginEndpoint) {
 
+        ResponseEntity<String> responseEntity = LoginConnector.logout(loginEndpoint);
+
+        RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
+
+    }
 
 
 }

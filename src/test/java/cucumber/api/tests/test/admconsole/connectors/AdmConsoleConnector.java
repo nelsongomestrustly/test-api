@@ -11,7 +11,7 @@ import cucumber.api.tests.test.admconsole.data.dto.AdminConsoleSearchTransaction
 
 import java.io.IOException;
 
-import static cucumber.api.tests.test.admconsole.connectors.AdmConsoleEndpoint.ADMIN_CONSOLE_TRANSACTIONS_SEARCH_HP;
+import static cucumber.api.tests.test.admconsole.connectors.AdminConsoleEndpoint.ADMIN_CONSOLE_TRANSACTIONS_SEARCH_ENDPOINT;
 
 @Slf4j
 public class AdmConsoleConnector {
@@ -21,20 +21,8 @@ public class AdmConsoleConnector {
         //Get Search URL
         String searchForTransactionsUrl = AdminConsoleSearchForTransactionsSupplier.getSearchForTransactionsUrl(adminConsoleSearchTransactionsDTO);
 
-        log.info("Search searchForTransactionsUrl : " + searchForTransactionsUrl);
-        log.info("Search searchForTransactionsUrl : " + searchForTransactionsUrl);
-        log.info("Search searchForTransactionsUrl : " + searchForTransactionsUrl);
-        log.info("Search searchForTransactionsUrl : " + searchForTransactionsUrl);
-        log.info("Search searchForTransactionsUrl : " + searchForTransactionsUrl);
-
         //Add default URL With Search Parameters
-        String url = GenericSuppliers.getStringFormatted(ADMIN_CONSOLE_TRANSACTIONS_SEARCH_HP.getEndpoint(), searchForTransactionsUrl);
-
-        log.info("Search URL : " + url);
-        log.info("Search URL : " + url);
-        log.info("Search URL : " + url);
-        log.info("Search URL : " + url);
-        log.info("Search URL : " + url);
+        String url = GenericSuppliers.getStringFormatted(ADMIN_CONSOLE_TRANSACTIONS_SEARCH_ENDPOINT.getEndpoint(), searchForTransactionsUrl);
 
         return RestTemplateHttpConnector.httpGet_Return_String(url);
 

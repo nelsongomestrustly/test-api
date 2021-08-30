@@ -1,6 +1,6 @@
 package cucumber.api.tests.samplefiles.common.suppliers.adminconsole;
 
-import cucumber.api.tests.common.mappers.DirectoryMappers;
+import cucumber.api.tests.common.mappers.FileMappers;
 import cucumber.api.tests.samplefiles.common.enums.files.adminconsole.AdminConsoleTransactionsSampleFilesEnum;
 import cucumber.api.tests.test.admconsole.data.dto.AdminConsoleSearchTransactionsDTO;
 
@@ -12,7 +12,7 @@ public class AdminConsoleSearchTransactionsDTOSameSupplier {
 
         AdminConsoleTransactionsSampleFilesEnum adminConsoleTransactionsSampleFilesNamesEnum = AdminConsoleTransactionsSampleFilesEnum.fromFileName(fileName);
 
-        return DirectoryMappers.MAPPER_DIRECTORY(
+        return FileMappers.getFileMappers(
                 adminConsoleTransactionsSampleFilesNamesEnum.getDirectory(), adminConsoleTransactionsSampleFilesNamesEnum.getFileName(), AdminConsoleSearchTransactionsDTO.class);
 
     }

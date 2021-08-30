@@ -12,8 +12,9 @@ public enum DataTableEnum {
     HTTP_EXPECT_STATUS("expectHttpStatus"),
 
     HTTP_STATUS_NOT_LOGGED("httpStatusNotLogged"),
-    HTTP_STATUS_LOGIN("httpStatusLogin"),
+    HTTP_STATUS_LOG_IN("httpStatusLogin"),
     HTTP_STATUS_LOGGED("httpStatusLogged"),
+    HTTP_STATUS_LOG_OUT("httpStatusLogOut"),
 
 
     NOT_LOGGED_IN_ADMIN_CONSOLE_HTML_BODY("notLoggedInAdminConsoleHtmlBody"),
