@@ -35,12 +35,12 @@ public class AdmConSearchTransactions_FT extends CucumberTest {
 
     }
 
-    @Then("Admin Console Transactions Search should return {string} results")
+    @Then("Admin Console Transactions Search should be more than {string} results")
     public void searchShouldReturnResults(String numberOfExpectSearchResults) {
 
         String resultHTMLBody = MyTestContext.getMyTestContext().adminConsoleTransactionsManager.getAdminConsoleHtmlSearchResultsBodyTransactions();
 
-        AdmConSearchTransactionsValidations.validateNumberOfSearchResults(resultHTMLBody, numberOfExpectSearchResults);
+        AdmConSearchTransactionsValidations.validateMoreThanNumberOfSearchResults(resultHTMLBody, numberOfExpectSearchResults);
 
     }
 

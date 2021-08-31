@@ -1,19 +1,30 @@
 package cucumber.api.tests.support.common.connectors.resttemplate;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
+import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowsDTO;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
-import java.io.IOException;
+import org.springframework.web.util.UriComponentsBuilder;
 
-import static cucumber.api.tests.common.mappers.ObjectMappers.MAPPER_SIMPLE;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import static cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateConnectionManager.getConnection;
+import static cucumber.api.tests.support.common.connectors.utils.HttpConnectorsUtils.getHttpEntityRequest;
 
 @Slf4j
 public class RestTemplateHttpConnector {
@@ -27,25 +38,62 @@ public class RestTemplateHttpConnector {
             String endpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
-        log.info("performing http get request to {}", endpoint);
+        log.info("performing http get (String) request to {}", endpoint);
 
         ResponseEntity<String> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).getForEntity(endpoint, String.class);
 
-        log.info("http get request status code {}", forEntity.getStatusCode());
+        log.info("http get (String) request status code {}", forEntity.getStatusCode());
 
         return forEntity;
 
     }
 
-    public static ResponseEntity<Object> httpGet(
+    public static ResponseEntity<Object> httpGet_Return_Object(
             String endpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
-        log.info("performing http get request to {}", endpoint);
+        log.info("performing http get (Object) request to {}", endpoint);
 
         ResponseEntity<Object> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).getForEntity(endpoint, Object.class);
 
-        log.info("http get request status code {}", forEntity.getStatusCode());
+        log.info("http get (Object) request status code {}", forEntity.getStatusCode());
+
+        return forEntity;
+
+    }
+
+    public static ResponseEntity<Object[]> httpGet_Return_ObjectList(
+            String endpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        log.info("performing http get (Object) request to {}", endpoint);
+
+        ResponseEntity<Object[]> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).getForEntity(endpoint, Object[].class);
+
+
+        log.info("http get (Object) request status code {}", forEntity.getStatusCode());
+
+        return forEntity;
+
+    }
+
+
+    //https://www.baeldung.com/spring-resttemplate-json-list
+    public static ResponseEntity<List<?>> httpGet_Return_ObjectList2(
+            String endpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        log.info("performing http get (Object) request to {}", endpoint);
+
+        ResponseEntity<List<?>> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).exchange(
+                endpoint,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<>() {
+                }
+        );
+
+        log.info("http get (Object) request status code {}", forEntity.getStatusCode());
 
         return forEntity;
 
@@ -64,26 +112,28 @@ public class RestTemplateHttpConnector {
             String endpoint,
             TestParticipantDTO testParticipantDTO,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-        return httpPost(endpoint, testParticipantDTO, statefulRestTemplateInterceptorKeyEnums);
+        return httpPostWithLogin(endpoint, testParticipantDTO, statefulRestTemplateInterceptorKeyEnums);
     }
 
 
-    public static <E> ResponseEntity<Object> httpPost(
+
+    public static <E> ResponseEntity<E> httPostBackUp(
             String endpoint,
             E e,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException {
-        return httpPost(endpoint, MAPPER_SIMPLE, e, statefulRestTemplateInterceptorKeyEnums);
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+            return null;
+        //return httPostBackUp(endpoint, MAPPER_SIMPLE, e, statefulRestTemplateInterceptorKeyEnums);
     }
 
-    public static ResponseEntity<Object> httpPost(
+    public static ResponseEntity<Object> httpPostWithLogin(
             String endpoint,
             ObjectMapper objectMapper,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException {
-        return httpPost(endpoint, objectMapper, statefulRestTemplateInterceptorKeyEnums);
+        return httpPostWithLogin(endpoint, objectMapper, statefulRestTemplateInterceptorKeyEnums);
     }
 
 
-    public static <E> ResponseEntity<Object> httpPost(
+    public static <E> ResponseEntity<Object> httpPostWithLogin(
             String endpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
@@ -98,24 +148,9 @@ public class RestTemplateHttpConnector {
     }
 
 
-    public static <E> ResponseEntity<Object> httpPost(
-            String endpoint,
-            ObjectMapper objectMapper,
-            E e,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException {
 
-        log.info("performing http post request to {}", endpoint);
-
-        ResponseEntity<Object> objectResponseEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).postForEntity(endpoint, null, null);
-
-        log.info("http post request status code {}", objectResponseEntity.getStatusCode());
-
-        return objectResponseEntity;
-
-    }
-
-
-    public static <E> ResponseEntity<String> httpPost(
+    //With Test Participant, used most of times to login
+    public static <E> ResponseEntity<String> httpPostWithLogin(
             String endpoint,
             TestParticipantDTO testParticipantDTO,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
@@ -144,4 +179,41 @@ public class RestTemplateHttpConnector {
     }
 
 
+
+
+
+    public static <E> ResponseEntity<String> httpPostForObject(
+            String endpoint,
+            Map<String, String> queryParam,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+        String endpointWithQueryParam = getEndpointWithQueryParam(endpoint, queryParam);
+        return httPost(endpointWithQueryParam, statefulRestTemplateInterceptorKeyEnums);
+
+    }
+
+    public static <E> ResponseEntity<String> httpPostForObject(
+            String endpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+        return httPost(endpoint, statefulRestTemplateInterceptorKeyEnums);
+    }
+
+
+    private static <E> ResponseEntity<String> httPost(
+            String endpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        log.info("performing http post for entity request to {}", endpoint);
+
+        ResponseEntity<String> responseEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).postForEntity(
+                endpoint, getHttpEntityRequest(), String.class);
+
+        log.info("http post for entity status code {}", responseEntity.getStatusCode());
+
+        return responseEntity;
+
+    }
+
+
+
 }
+

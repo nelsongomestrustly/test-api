@@ -8,6 +8,7 @@ public class Hosts {
 
     public static String ADMIN_CONSOLE_HOST;
     public static String MERCHANT_GATEWAY_SERVER_HOST;
+    public static String MERCHANT_DEMO_HOST;
 
     @Value("${admin.console.host}")
     public void setAdminConsoleHost(String adminConsoleHost) {
@@ -18,5 +19,13 @@ public class Hosts {
     public void setMerchantGatewayServerHost(String merchantGatewayServerHost) {
         MERCHANT_GATEWAY_SERVER_HOST = merchantGatewayServerHost;
     }
+
+    @Value("${merchant.demo.host}")
+    public void setMerchantDemoHost(String merchantDemoHost) {
+        MERCHANT_DEMO_HOST = merchantDemoHost;
+    }
+
+
+
 
 }

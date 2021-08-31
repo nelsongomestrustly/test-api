@@ -20,7 +20,7 @@ public class AdmConSearchTransactionsValidations {
 
         String numSearchResults = GenericSuppliers.getBetweenStrings(resultHTMLBody, ADM_CON_SEARCH_TRANSACTIONS_START_HTML_SEARCH_RESULT, ADM_CON_SEARCH_TRANSACTIONS_END_HTML_SEARCH_RESULT);
 
-        Assertions.assertTrue(Integer.parseInt(numSearchResults) > Integer.parseInt(numberOfExpectSearchResults));
+        Assertions.assertTrue(Integer.parseInt(numSearchResults) >= Integer.parseInt(numberOfExpectSearchResults));
 
     }
 }

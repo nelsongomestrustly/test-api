@@ -4,6 +4,7 @@ import ch.qos.logback.classic.Level;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.read.ListAppender;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
@@ -37,7 +38,7 @@ public class LogValidations {
 
     public static BiConsumer<List<ILoggingEvent>, String> loggingEventsContainsString =
             (list, string) -> {
-                //Assertions.assertTrue(list.stream().anyMatch(x -> x.getMessage().contains(string)));
+                Assertions.assertTrue(list.stream().anyMatch(x -> x.getMessage().contains(string)));
             };
 
 }

@@ -7,5 +7,6 @@ public class MainEndpoints {
 
     public static final String ADM_CON_ENDPOINT = Hosts.ADMIN_CONSOLE_HOST + Ports.ADMIN_CONSOLE_PORT;
     public static final String MERCHANT_GATEWAY_URL = Hosts.MERCHANT_GATEWAY_SERVER_HOST + Ports.MERCHANT_GATEWAY_SERVER_PORT;
+    public static final String MERCHANT_DEMO_URL = Hosts.MERCHANT_DEMO_HOST + Ports.MERCHANT_DEMO_PORT;
 
 }

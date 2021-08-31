@@ -1,6 +1,7 @@
 package cucumber.api.tests.common.predicates;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
@@ -39,6 +40,8 @@ public class GenericPredicates {
         return conditionB;
 
     };
+
+    public static Predicate<List<?>> allFieldAreNotNullNotEmpty = (objectList) -> objectList.stream().allMatch(field -> checkIfNullOrEmpty.negate().test(field));
 
 
 }
