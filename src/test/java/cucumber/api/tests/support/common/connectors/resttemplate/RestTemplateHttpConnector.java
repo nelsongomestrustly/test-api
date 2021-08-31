@@ -24,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 import static cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateConnectionManager.getConnection;
+import static cucumber.api.tests.support.common.connectors.utils.HttpConnectorsUtils.getEndpointWithQueryParam;
 import static cucumber.api.tests.support.common.connectors.utils.HttpConnectorsUtils.getHttpEntityRequest;
 
 @Slf4j
