@@ -1,17 +1,22 @@
 package cucumber.api.tests.common.mappers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.springframework.http.ResponseEntity;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+
 
 import static cucumber.api.tests.common.mappers.ObjectMappers.MAPPER_SIMPLE;
 
+@Slf4j
 public class HttpMappers {
 
     public static <T> T readResponse(HttpResponse httpResponse, Class<T> clazz) throws IOException {
@@ -23,8 +28,18 @@ public class HttpMappers {
         return EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
     }
 
-    public static <T> List<T> readResponse(ResponseEntity<?> objectResponseEntity) throws IOException {
-        return new ObjectMapper().readValue(objectResponseEntity.getBody().toString(), new TypeReference<>() {});
+    //public static List readListResponse(ResponseEntity<?> objectResponseEntity) throws IOException {
+
+    //    return new ObjectMapper().readValue(objectResponseEntity.getBody().toString(), new TypeReference<>() {});
+
+    //}
+
+    public static <T> T readListResponse(ResponseEntity<?> objectResponseEntity, TypeReference<T> typeRef) throws JsonProcessingException {
+
+        return new ObjectMapper().readValue(objectResponseEntity.getBody().toString(), typeRef);
+
     }
+
+
 
 }

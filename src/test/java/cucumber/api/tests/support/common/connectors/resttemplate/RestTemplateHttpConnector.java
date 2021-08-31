@@ -2,6 +2,7 @@ package cucumber.api.tests.support.common.connectors.resttemplate;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowsDTO;
@@ -109,46 +110,15 @@ public class RestTemplateHttpConnector {
      *
      */
 
+
+
+
     public static ResponseEntity<String> httpPostLogin(
             String endpoint,
             TestParticipantDTO testParticipantDTO,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
         return httpPostWithLogin(endpoint, testParticipantDTO, statefulRestTemplateInterceptorKeyEnums);
     }
-
-
-
-    public static <E> ResponseEntity<E> httPostBackUp(
-            String endpoint,
-            E e,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-            return null;
-        //return httPostBackUp(endpoint, MAPPER_SIMPLE, e, statefulRestTemplateInterceptorKeyEnums);
-    }
-
-    public static ResponseEntity<Object> httpPostWithLogin(
-            String endpoint,
-            ObjectMapper objectMapper,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException {
-        return httpPostWithLogin(endpoint, objectMapper, statefulRestTemplateInterceptorKeyEnums);
-    }
-
-
-    public static <E> ResponseEntity<Object> httpPostWithLogin(
-            String endpoint,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-
-        log.info("performing http post (endpoint) request to {}", endpoint);
-
-        ResponseEntity<Object> objectResponseEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).postForEntity(endpoint, null, null);
-
-        log.info("http post request status code {}", objectResponseEntity.getStatusCode());
-
-        return objectResponseEntity;
-
-    }
-
-
 
     //With Test Participant, used most of times to login
     public static <E> ResponseEntity<String> httpPostWithLogin(
@@ -185,7 +155,7 @@ public class RestTemplateHttpConnector {
 
     public static <E> ResponseEntity<String> httpPostForObject(
             String endpoint,
-            Map<String, String> queryParam,
+            Map<QueryParametersEnum, String> queryParam,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
         String endpointWithQueryParam = getEndpointWithQueryParam(endpoint, queryParam);
         return httPost(endpointWithQueryParam, statefulRestTemplateInterceptorKeyEnums);
@@ -214,6 +184,40 @@ public class RestTemplateHttpConnector {
 
     }
 
+
+    /**
+     * BACKUP
+     */
+
+    public static <E> ResponseEntity<E> httPostBackUp(
+            String endpoint,
+            E e,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+        return null;
+        //return httPostBackUp(endpoint, MAPPER_SIMPLE, e, statefulRestTemplateInterceptorKeyEnums);
+    }
+
+    public static ResponseEntity<Object> httpPostWithLogin(
+            String endpoint,
+            ObjectMapper objectMapper,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException {
+        return httpPostWithLogin(endpoint, objectMapper, statefulRestTemplateInterceptorKeyEnums);
+    }
+
+
+    public static <E> ResponseEntity<Object> httpPostWithLogin(
+            String endpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        log.info("performing http post (endpoint) request to {}", endpoint);
+
+        ResponseEntity<Object> objectResponseEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).postForEntity(endpoint, null, null);
+
+        log.info("http post request status code {}", objectResponseEntity.getStatusCode());
+
+        return objectResponseEntity;
+
+    }
 
 
 }

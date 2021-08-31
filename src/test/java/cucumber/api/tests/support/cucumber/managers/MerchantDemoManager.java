@@ -4,6 +4,7 @@ import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantInfoDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowsDTO;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -12,8 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
-@Getter
-@Setter
+@Data
 public class MerchantDemoManager {
 
     private List<MerchantInfoDTO> merchantInfoDTOList;

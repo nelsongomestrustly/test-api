@@ -1,6 +1,7 @@
 package cucumber.api.tests.support.cucumber.context;
 
 import cucumber.api.tests.support.cucumber.managers.MerchantDemoManager;
+import cucumber.api.tests.support.cucumber.managers.PaymentPanelManager;
 import lombok.extern.slf4j.Slf4j;
 import cucumber.api.tests.support.cucumber.managers.AdminConsoleTransactionsManager;
 import cucumber.api.tests.support.cucumber.managers.LoginManager;
@@ -13,9 +14,9 @@ import java.util.Map;
 public abstract class BaseCucumberContext {
 
     public AdminConsoleTransactionsManager adminConsoleTransactionsManager;
-    public Map<String, Object> variablesMap;
     public LoginManager loginDTOManager;
     public MerchantDemoManager merchantDemoManager;
+    public PaymentPanelManager paymentPanelManager;
     public TestParticipantManager testParticipantDTOManagers;
 
     public BaseCucumberContext(){
@@ -23,8 +24,8 @@ public abstract class BaseCucumberContext {
         adminConsoleTransactionsManager = new AdminConsoleTransactionsManager();
         loginDTOManager = new LoginManager();
         merchantDemoManager = new MerchantDemoManager();
+        paymentPanelManager = new PaymentPanelManager();
         testParticipantDTOManagers = new TestParticipantManager();
-        variablesMap = new HashMap<>();
 
     }
 

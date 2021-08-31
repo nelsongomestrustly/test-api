@@ -10,5 +10,3 @@ Feature: the user logins in the application
     Examples:
     | expectMerchantDemoHttpStatus |
     | 200 |
-
-

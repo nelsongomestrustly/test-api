@@ -22,7 +22,7 @@ import static cucumber.api.tests.configurations.resttemplate.common.enums.Statef
 
 public class MerchantInfo_FT extends CucumberTest {
 
-
+    //GlobexDemoController
     @When("The user access Merchant Demo should get Merchant {string} Info information and Expect Http Status {string}")
     public void theUserAccessMerchantDemoShouldGetMerchantInfoInformationAndExpectHttpStatusExpectMerchantInfoHttpStatus(
             String merchantName,

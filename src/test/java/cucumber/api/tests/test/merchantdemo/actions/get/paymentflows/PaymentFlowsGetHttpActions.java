@@ -1,7 +1,7 @@
 package cucumber.api.tests.test.merchantdemo.actions.get.paymentflows;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
 import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.test.merchantdemo.connectors.paymentflows.MerchantPaymentFlowsConnector;
@@ -10,10 +10,7 @@ import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import org.springframework.http.ResponseEntity;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 public class PaymentFlowsGetHttpActions {
@@ -28,7 +25,7 @@ public class PaymentFlowsGetHttpActions {
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 
-        return HttpMappers.readResponse(responseEntity);
+        return HttpMappers.readListResponse(responseEntity, new TypeReference<>() {});
 
     }
 

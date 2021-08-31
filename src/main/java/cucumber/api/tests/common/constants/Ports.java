@@ -9,6 +9,7 @@ public class Ports {
     public static String ADMIN_CONSOLE_PORT;
     public static String MERCHANT_GATEWAY_SERVER_PORT;
     public static String MERCHANT_DEMO_PORT;
+    public static String PAYMENT_PANEL_PORT;
 
     @Value("${admin.console.port}")
     public void setAdminConsolePort(String adminConsolePort) {
@@ -23,6 +24,11 @@ public class Ports {
     @Value("${merchant.demo.port}")
     public void setMerchantDemoPort(String merchantDemoPort) {
         MERCHANT_DEMO_PORT = merchantDemoPort;
+    }
+
+    @Value("${payment.panel.port}")
+    public void setPaymentPanelPort(String paymentPanelPort) {
+        PAYMENT_PANEL_PORT = paymentPanelPort;
     }
 
 }

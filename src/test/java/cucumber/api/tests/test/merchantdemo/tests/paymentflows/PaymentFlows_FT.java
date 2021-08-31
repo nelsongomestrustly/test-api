@@ -8,6 +8,7 @@ import cucumber.api.tests.test.merchantdemo.data.dto.MerchantInfoDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowsDTO;
 import cucumber.api.tests.validations.object.GenericObjectValidations;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
@@ -38,5 +39,6 @@ public class PaymentFlows_FT extends CucumberTest {
         GenericObjectValidations.validateIfAllFieldAreNotNullNotEmpty(paymentFlowsDTOS);
 
     }
+
 
 }

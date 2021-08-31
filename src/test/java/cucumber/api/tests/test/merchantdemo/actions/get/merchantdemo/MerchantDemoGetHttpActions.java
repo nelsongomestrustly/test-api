@@ -21,6 +21,19 @@ public class MerchantDemoGetHttpActions {
     }
 
 
+    public static String getMerchantDemoSignature(
+            Integer expectedStatus,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        ResponseEntity<String> responseEntity = MerchantDemoConnector.getMerchantDemoSignature(statefulRestTemplateInterceptorKeyEnums);
+
+        RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
+
+        return responseEntity.getBody();
+
+    }
+
+
 
 
 }

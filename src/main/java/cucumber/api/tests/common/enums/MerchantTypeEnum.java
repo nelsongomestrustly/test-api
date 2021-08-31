@@ -1,5 +1,6 @@
 package cucumber.api.tests.common.enums;
 
+import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -7,14 +8,14 @@ import lombok.Getter;
 @Getter
 public enum MerchantTypeEnum {
 
-    GLOBEX_DEMO("type", "12");
+    GLOBEX_DEMO(QueryParametersEnum.TYPE, "12");
 
-    private final String typeKey;
+    private final QueryParametersEnum key;
     private final String type;
 
-    public static MerchantTypeEnum fromTypeId(String fileName) {
+    public static MerchantTypeEnum fromTypeId(String typeId) {
         for (MerchantTypeEnum b : MerchantTypeEnum.values()) {
-            if (b.type.equalsIgnoreCase(fileName)) {
+            if (b.type.equalsIgnoreCase(typeId)) {
                 return b;
             }
         }

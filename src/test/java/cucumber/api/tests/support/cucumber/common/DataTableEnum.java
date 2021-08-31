@@ -13,7 +13,9 @@ public enum DataTableEnum {
     SEARCH_NUMBER_RESULT("searchNumberResult"),
     SESSION_EXPIRED("sessionExpired"),
 
-    TEST_PARTICIPANT("testParticipant");
+    TEST_PARTICIPANT("testParticipant"),
+
+    WIDGET_ID("widgetId");
 
     private final String mapKey;
 
