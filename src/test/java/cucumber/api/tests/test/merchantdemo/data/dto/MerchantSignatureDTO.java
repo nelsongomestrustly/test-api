@@ -1,5 +1,6 @@
 package cucumber.api.tests.test.merchantdemo.data.dto;
 
+import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,5 +21,6 @@ import lombok.NoArgsConstructor;
 public class MerchantSignatureDTO {
 
     private String signature;
+    private QueryParametersEnum requestSignatureKey = QueryParametersEnum.REQUEST_SIGNATURE;
 
 }

@@ -7,7 +7,7 @@
   "merchantReference": "37A73EEBC13C13C0",
   "amount": 50.00,
 
-  "paymentType": "Instant",
+  "paymentType": "Retrieval",
   "currency": "USD",
   "globex[lang]": "en_US",
   "metadata[lang]": "en_US",

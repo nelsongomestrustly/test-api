@@ -19,6 +19,8 @@ public enum DataTableHttpStatusEnum {
 
     HTTP_EXPECT_MERCHANT_INFO_STATUS("expectMerchantInfoHttpStatus"),
 
+    HTTP_EXPECT_MERCHANT_WIDGET_STATUS("merWidHttpSta"),
+
     HTTP_EXPECT_PAYMENT_FLOWS_STATUS("expectPaymentFlowsHttpStatus"),
     HTTP_EXPECT_PAYMENT_PANEL_STATUS("expectPaymentPanelHttpStatus");
 

@@ -2,6 +2,7 @@ package cucumber.api.tests.test.merchantdemo.data.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -39,28 +40,40 @@ import lombok.NoArgsConstructor;
 public class PaymentFlowsDTO {
 
     private boolean active;
+    private QueryParametersEnum activeKey = QueryParametersEnum.ACTIVE;
 
     private long createdAt;
+    private QueryParametersEnum createdAtKey = QueryParametersEnum.CREATE_AT;
 
     private String description;
+    private QueryParametersEnum descriptionKey = QueryParametersEnum.DESCRIPTION;
 
     @JsonProperty("isDeleted")
     private boolean isDeleted;
+    private QueryParametersEnum isDeletedKey = QueryParametersEnum.IS_DELETED;
 
     private int lightboxCompletes;
+    private QueryParametersEnum lightboxCompletesKey = QueryParametersEnum.LIGHT_BOX_COMPLETES;
 
     private int lightboxInitiates;
+    private QueryParametersEnum lightboxInitiatesKey = QueryParametersEnum.LIGHT_BOX_INITIATES;
 
     private int merchantId;
+    private QueryParametersEnum merchantIdKey = QueryParametersEnum.MERCHANT_ID;
 
     private PaymentFlowDTO paymentFlow;
+    private QueryParametersEnum paymentFlowKey = QueryParametersEnum.PAYMENT_FLOW;
 
     private String paymentFlowMerchantId;
+    private QueryParametersEnum paymentFlowMerchantIdKey = QueryParametersEnum.PAYMENT_FLOW_MERCHANT_ID;
 
     private int percentage;
+    private QueryParametersEnum percentageKey = QueryParametersEnum.PERCENTAGE;
 
     private String uiParams;
+    private QueryParametersEnum uiParamsKey = QueryParametersEnum.UI_PARAMS;
 
     private int widgetImpressions;
+    private QueryParametersEnum widgetImpressionsKey = QueryParametersEnum.WIDGET_IMPRESSIONS;
 
 }

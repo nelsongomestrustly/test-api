@@ -6,6 +6,7 @@ import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.test.merchantdemo.connectors.merchantdemo.MerchantDemoConnector;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
+import cucumber.api.tests.test.merchantdemo.data.dto.MerchantGlobexStartDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantSignatureDTO;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +16,13 @@ public class MerchantDemoGetHttpActions {
 
 
     public static void getMerchantDemo(
+            MerchantGlobexStartDTO merchantGlobexStartDTO,
             Integer expectedStatus,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums)  {
 
-        ResponseEntity<String> responseEntity = MerchantDemoConnector.getMerchantDemo(statefulRestTemplateInterceptorKeyEnums);
+        ResponseEntity<String> responseEntity = MerchantDemoConnector.getMerchantDemo(
+                merchantGlobexStartDTO,
+                statefulRestTemplateInterceptorKeyEnums);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 
@@ -39,6 +43,8 @@ public class MerchantDemoGetHttpActions {
         return HttpMappers.readResponse(responseEntity, MerchantSignatureDTO.class);
 
     }
+
+
 
 
 

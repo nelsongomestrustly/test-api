@@ -50,6 +50,25 @@ public class RestTemplateHttpConnector {
 
     }
 
+    public static ResponseEntity<String> httpGet_Return_String(
+            String endpoint,
+            Map<QueryParametersEnum, String> queryParam,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        log.info("performing http get (String) request to {}", endpoint);
+
+        String endpointWithQueryParam = getEndpointWithQueryParam(endpoint, queryParam);
+
+        ResponseEntity<String> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).getForEntity(endpointWithQueryParam, String.class);
+
+        log.info("http get (String) request status code {}", forEntity.getStatusCode());
+
+        return forEntity;
+
+    }
+
+
+
     public static ResponseEntity<Object> httpGet_Return_Object(
             String endpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {

@@ -1,5 +1,6 @@
 package cucumber.api.tests.test.merchantdemo.data.dto;
 
+import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,14 +24,19 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PaymentFlowDTO {
 
-    private boolean Deprecated;
+    private boolean deprecated;
+    private QueryParametersEnum deprecatedKey = QueryParametersEnum.DEPRECATED;
 
     private String description;
+    private QueryParametersEnum descriptionKey = QueryParametersEnum.DESCRIPTION;
 
     private Integer number;
+    private QueryParametersEnum numberKey = QueryParametersEnum.NUMBER;
 
     private String uiParams;
+    private QueryParametersEnum uiParamsKey = QueryParametersEnum.UI_PARAMS;
 
     private String uiTheme;
+    private QueryParametersEnum uiThemeKey = QueryParametersEnum.UI_THEME;
 
 }

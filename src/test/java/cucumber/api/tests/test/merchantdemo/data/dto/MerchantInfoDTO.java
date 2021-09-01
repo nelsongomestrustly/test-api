@@ -1,5 +1,6 @@
 package cucumber.api.tests.test.merchantdemo.data.dto;
 
+import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,11 +21,15 @@ import lombok.NoArgsConstructor;
 public class MerchantInfoDTO {
 
     private String accessId;
+    private QueryParametersEnum accessIdKey = QueryParametersEnum.ACCESS_ID;
 
     private String name;
+    private QueryParametersEnum nameKey = QueryParametersEnum.NAME;
 
     private Integer id;
+    private QueryParametersEnum idKey = QueryParametersEnum.ID;
 
     private String logoUrl;
+    private QueryParametersEnum logoUrlKey = QueryParametersEnum.LOGO_URL;
 
 }

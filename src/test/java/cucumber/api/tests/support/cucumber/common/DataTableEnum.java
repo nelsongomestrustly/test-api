@@ -18,7 +18,8 @@ public enum DataTableEnum {
 
     TEST_PARTICIPANT("testParticipant"),
 
-    WIDGET_ID("widgetId");
+    WIDGET_ID("widgetId"),
+    WIDGET_NAME("widgetName");
 
     private final String mapKey;
 

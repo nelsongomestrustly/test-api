@@ -3,21 +3,29 @@ package cucumber.api.tests.test.merchantdemo.connectors.merchantdemo;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;
+import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateDemoGlobexStartSupplier;
 import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateSignatureSupplier;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
+import cucumber.api.tests.test.merchantdemo.data.dto.MerchantGlobexStartDTO;
 import org.springframework.http.ResponseEntity;
 
 import java.util.HashMap;
 
-import static cucumber.api.tests.test.merchantdemo.connectors.MerchantDemoEndpoint.MERCHANT_DEMO_ENDPOINT;
 import static cucumber.api.tests.test.merchantdemo.connectors.MerchantDemoEndpoint.MERCHANT_DEMO_GET_SIGNATURE_ENDPOINT;
+import static cucumber.api.tests.test.merchantdemo.connectors.MerchantDemoEndpoint.MERCHANT_DEMO_GLOBEX_ENDPOINT;
 
 public class MerchantDemoConnector {
 
     public static ResponseEntity<String> getMerchantDemo(
+            MerchantGlobexStartDTO merchantGlobexStartDTO,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
-        return RestTemplateHttpConnector.httpGet_Return_String(MERCHANT_DEMO_ENDPOINT.getEndpoint(), statefulRestTemplateInterceptorKeyEnums);
+        HashMap<QueryParametersEnum, String> queryParametersEnumStringHashMap = CreateDemoGlobexStartSupplier.getLoginMultiValueMapForHttpRequest(merchantGlobexStartDTO);
+
+        return RestTemplateHttpConnector.httpGet_Return_String(
+                MERCHANT_DEMO_GLOBEX_ENDPOINT.getEndpoint(),
+                queryParametersEnumStringHashMap,
+                statefulRestTemplateInterceptorKeyEnums);
 
     }
 
