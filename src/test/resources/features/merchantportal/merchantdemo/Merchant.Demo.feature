@@ -6,7 +6,7 @@ Feature: the user logins in the application
   @MerchantDemo
   Scenario Outline: Validate that Merchant Demo is available
 
-    Given Merchant Demo up and running and Expect Http Status <expectMerchantDemoHttpStatus>
+    Given Merchant Demo up and running and Expect Http Status <merDemHttpSta>
     Examples:
-    | expectMerchantDemoHttpStatus |
-    | 200 |
+    | merDemHttpSta |
+    | 200           |

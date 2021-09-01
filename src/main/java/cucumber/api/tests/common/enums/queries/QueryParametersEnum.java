@@ -52,7 +52,7 @@ public enum QueryParametersEnum {
     MAX_PAID("maxPaid"),
     MAX_REFUNDED("maxRefunded"),
     MAX_RISK_INDEX("maxRiskIndex"),
-    MCT_CUSTOMER("mctCustomerName"),
+    MCT_CUSTOMER_NAME("mctCustomerName"),
     MERCHANT_ID("merchantId"),
     MERCHANT_REFERENCE("merchantReference"),
     METADATA_LANG_PARAM("metadata[lang]"),

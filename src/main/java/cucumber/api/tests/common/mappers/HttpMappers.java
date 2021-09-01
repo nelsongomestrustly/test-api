@@ -19,12 +19,12 @@ import static cucumber.api.tests.common.mappers.ObjectMappers.MAPPER_SIMPLE;
 @Slf4j
 public class HttpMappers {
 
-    public static <T> T readResponse(HttpResponse httpResponse, Class<T> clazz) throws IOException {
+    public static <T> T readRHttpResponse(HttpResponse httpResponse, Class<T> clazz) throws IOException {
         MAPPER_SIMPLE.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         return MAPPER_SIMPLE.readValue(EntityUtils.toString(httpResponse.getEntity()), clazz);
     }
 
-    public static String readResponse(HttpResponse httpResponse) throws IOException {
+    public static String readRHttpResponse(HttpResponse httpResponse) throws IOException {
         return EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
     }
 
@@ -37,6 +37,12 @@ public class HttpMappers {
     public static <T> T readListResponse(ResponseEntity<?> objectResponseEntity, TypeReference<T> typeRef) throws JsonProcessingException {
 
         return new ObjectMapper().readValue(objectResponseEntity.getBody().toString(), typeRef);
+
+    }
+
+    public static <T> T readResponse(ResponseEntity<?> objectResponseEntity, Class<T> clazz) throws JsonProcessingException {
+
+        return new ObjectMapper().readValue(objectResponseEntity.getBody().toString(), clazz);
 
     }
 

@@ -1,12 +1,10 @@
 package cucumber.api.tests.support.cucumber.managers;
 
-import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantInfoDTO;
+import cucumber.api.tests.test.merchantdemo.data.dto.MerchantSignatureDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowsDTO;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -16,16 +14,19 @@ import java.util.List;
 @Data
 public class MerchantDemoManager {
 
+    private List<MerchantSignatureDTO> merchantSignatureDTOList;
+
     private List<MerchantInfoDTO> merchantInfoDTOList;
 
     private List<PaymentFlowsDTO> paymentFlowsDTOList;
 
-    private List<PaymentFlowDTO> paymentFlowDTOS;
+    private List<PaymentFlowDTO> paymentFlowDTOList;
 
     public MerchantDemoManager() {
         this.merchantInfoDTOList = new ArrayList<>();
         this.paymentFlowsDTOList = new ArrayList<>();
-        this.paymentFlowDTOS = new ArrayList<>();
+        this.paymentFlowDTOList = new ArrayList<>();
+        this.merchantSignatureDTOList = new ArrayList<>();
     }
 
 
@@ -47,6 +48,26 @@ public class MerchantDemoManager {
 
     public MerchantInfoDTO getLastMerchantInfoDTO() {
         return merchantInfoDTOList.get(merchantInfoDTOList.size() -1);
+    }
+
+    /**
+     * MerchantSignatureDTO
+     */
+
+    public void addMerchantSignatureDTO(MerchantSignatureDTO merchantSignatureDTO) {
+        merchantSignatureDTOList.add(merchantSignatureDTO);
+    }
+
+    public void addAllMerchantSignatureDTO(List<MerchantSignatureDTO> merchantSignatureDTOList) {
+        merchantSignatureDTOList.addAll(merchantSignatureDTOList);
+    }
+
+    public MerchantSignatureDTO getFirstMerchantSignatureDTO() {
+        return merchantSignatureDTOList.get(0);
+    }
+
+    public MerchantSignatureDTO getLastMerchantSignatureDTO() {
+        return merchantSignatureDTOList.get(merchantSignatureDTOList.size() -1);
     }
 
     /**
@@ -75,7 +96,7 @@ public class MerchantDemoManager {
      */
 
     public void addPaymentFlowDTO(PaymentFlowDTO paymentFlowDTO) {
-        paymentFlowDTOS.add(paymentFlowDTO);
+        paymentFlowDTOList.add(paymentFlowDTO);
     }
 
     public void addAllPaymentFlowDTO(List<PaymentFlowDTO> paymentFlowDTOS) {
@@ -83,11 +104,11 @@ public class MerchantDemoManager {
     }
 
     public PaymentFlowDTO getFirstPaymentFlowDTO() {
-        return paymentFlowDTOS.get(0);
+        return paymentFlowDTOList.get(0);
     }
 
     public PaymentFlowDTO getLastPaymentFlowDTO() {
-        return paymentFlowDTOS.get(paymentFlowDTOS.size() -1);
+        return paymentFlowDTOList.get(paymentFlowDTOList.size() -1);
     }
 
 

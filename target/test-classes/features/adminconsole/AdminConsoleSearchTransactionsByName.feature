@@ -12,15 +12,15 @@ Feature: the user logins in the application
     @AdminConsoleSearchTransactions
   Scenario Outline: : Search Transactions in Admin Console and Receive X results
 
-    When Search for Customer Name Transactions in Admin Console using Sample File "<adminConsoleFilename>" and Expect Http Status "<expectHttpStatus>"
+    When Search for Customer Name Transactions in Admin Console using Sample File "<adminConsoleFilename>" and Expect Http Status "<httpStaAdmConSeaTra>"
 
-    Then Admin Console Transactions Search should be more than "<numberOfExpectSearchResults>" results
+    Then Admin Console Transactions Search should be more than "<numberOfResults>" results
 
     Examples:
-      | adminConsoleFilename      | expectHttpStatus | numberOfExpectSearchResults |
-      | Search_Admin_Console_Transactions_By_CustomerName_Valid_1.json | 200 | 1 |
-      | Search_Admin_Console_Transactions_By_CustomerName_Valid_2.json | 200 | 1 |
-      | Search_Admin_Console_Transactions_By_CustomerName_Valid_3.json | 200 | 1 |
+      | adminConsoleFilename                                           | httpStaAdmConSeaTra | numberOfResults |
+      | Search_Admin_Console_Transactions_By_CustomerName_Valid_1.json | 200                 | 1               |
+      | Search_Admin_Console_Transactions_By_CustomerName_Valid_2.json | 200                 | 1               |
+      | Search_Admin_Console_Transactions_By_CustomerName_Valid_3.json | 200                 | 1               |
 
 
 
@@ -28,13 +28,13 @@ Feature: the user logins in the application
     @AdminConsoleSearchTransactions
   Scenario Outline: : Search Transactions in Admin Console and Receive NO results
 
-    When Search for Customer Name Transactions in Admin Console using Sample File "<adminConsoleFilename>" and Expect Http Status "<expectHttpStatus>"
+    When Search for Customer Name Transactions in Admin Console using Sample File "<adminConsoleFilename>" and Expect Http Status "<httpStaAdmConSeaTra>"
 
     Then Admin Console Transactions Search should return no results
 
     Examples:
-      | adminConsoleFilename      | expectHttpStatus |
-      | Search_Admin_Console_Transactions_By_CustomerName_Invalid.json | 200 |
+      | adminConsoleFilename                                           | httpStaAdmConSeaTra |
+      | Search_Admin_Console_Transactions_By_CustomerName_Invalid.json | 200                 |
 
 
 
@@ -42,13 +42,13 @@ Feature: the user logins in the application
     @AdminConsoleSearchTransactions
   Scenario Outline: : Search for All Transactions in Admin Console and Receive more than X results
 
-    When Search for Customer Name Transactions in Admin Console using Sample File "<adminConsoleFilename>" and Expect Http Status "<expectHttpStatus>"
+    When Search for Customer Name Transactions in Admin Console using Sample File "<adminConsoleFilename>" and Expect Http Status "<httpStaAdmConSeaTra>"
 
-    Then Admin Console Transactions Search should return more than "<numberOfSearchResults>" results
+    Then Admin Console Transactions Search should return more than "<numberOfResults>" results
 
     Examples:
-      | adminConsoleFilename      | expectHttpStatus | numberOfSearchResults |
-      | Search_Admin_Console_Transactions_By_CustomerName_Empty.json | 200 | 5 |
+      | adminConsoleFilename                                         | httpStaAdmConSeaTra | numberOfResults |
+      | Search_Admin_Console_Transactions_By_CustomerName_Empty.json | 200                 | 5               |
 
 
 

@@ -5,7 +5,7 @@ import cucumber.api.tests.support.cucumber.common.DataTableEnum;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
 import cucumber.api.tests.support.cucumber.parses.AliasDataParser;
 
-import static cucumber.api.tests.support.cucumber.common.DataTableHttpStatusEnum.HTTP_EXPECT_STATUS;
+import static cucumber.api.tests.support.cucumber.common.DataTableHttpStatusEnum.HTTP_EXPECT_ADM_CONSOLE_SEARCH_TRANSACTIONS_STATUS;
 
 public class DataTableUtils {
 
@@ -33,7 +33,7 @@ public class DataTableUtils {
     public static Integer getExpectStatusFromDataTable(
             DataTable dataTable) {
 
-        return Integer.valueOf((String) AliasDataParser.parse(dataTable, null).get(HTTP_EXPECT_STATUS.getHttpStatus()));
+        return Integer.valueOf((String) AliasDataParser.parse(dataTable, null).get(HTTP_EXPECT_ADM_CONSOLE_SEARCH_TRANSACTIONS_STATUS.getHttpStatus()));
 
     }
 

@@ -7,14 +7,14 @@ import lombok.Getter;
 @Getter
 public enum DataTableHttpStatusEnum {
 
-    HTTP_EXPECT_STATUS("expectHttpStatus"),
+    HTTP_EXPECT_ADM_CONSOLE_SEARCH_TRANSACTIONS_STATUS("httpStaAdmConSeaTra"),
 
-    HTTP_EXPECT_NOT_LOGGED_STATUS("httpStatusNotLogged"),
-    HTTP_EXPECT_LOG_IN_STATUS("httpStatusLogin"),
-    HTTP_EXPECT_LOGGED_STATUS("httpStatusLogged"),
-    HTTP_EXPECT_LOG_OUT_STATUS("httpStatusLogOut"),
+    HTTP_EXPECT_NOT_LOGGED_STATUS("httpStaNotLogged"),
+    HTTP_EXPECT_LOG_IN_STATUS("httpStaLogin"),
+    HTTP_EXPECT_LOGGED_STATUS("httpStaLogout"),
+    HTTP_EXPECT_LOG_OUT_STATUS("httpStaLogOut"),
 
-    HTTP_EXPECT_MERCHANT_DEMO_STATUS("expectMerchantDemoHttpStatus"),
+    HTTP_EXPECT_MERCHANT_DEMO_STATUS("merDemHttpSta"),
     HTTP_EXPECT_MERCHANT_DEMO_CREATE_SIGNATURE_STATUS("expectMerchantDemoCreateSignatureHttpStatus"),
 
     HTTP_EXPECT_MERCHANT_INFO_STATUS("expectMerchantInfoHttpStatus"),

@@ -6,7 +6,7 @@ import cucumber.api.tests.common.suppliers.GenericSuppliers;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;
-import cucumber.api.tests.test.admconsole.common.suppliers.AdmConSearchForTransactionsSupplier;
+import cucumber.api.tests.test.admconsole.common.suppliers.html.AdmConSearchForTransactionsSupplier;
 import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
 
 import java.io.IOException;
