@@ -1,17 +1,18 @@
 package cucumber.api.tests.scenarios.login;
 
 import cucumber.api.tests.CucumberTest;
+import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
+import cucumber.api.tests.support.common.users.services.TestParticipantServices;
+import cucumber.api.tests.support.cucumber.context.MyTestContext;
+import cucumber.api.tests.test.login.actions.LoginHttpActions;
+import cucumber.api.tests.test.login.validations.LoginValidations;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
-import cucumber.api.tests.test.login.actions.LoginHttpActions;
-import cucumber.api.tests.test.login.validations.LoginValidations;
 import org.junit.jupiter.api.Assertions;
-import cucumber.api.tests.support.cucumber.context.MyTestContext;
-import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
-import cucumber.api.tests.support.common.users.services.TestParticipantServices;
+
 import java.io.IOException;
 
 import static cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums.ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY;

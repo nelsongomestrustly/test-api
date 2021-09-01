@@ -8,6 +8,7 @@ import cucumber.api.tests.common.enums.WidgetIdEnum;
 import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
+import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantInfoDTO;
 import cucumber.api.tests.test.paymentpanel.connectors.PaymentPanelConnector;
 import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelCreateWidgetDTO;
@@ -55,20 +56,12 @@ public class PaymentPanelActions {
 
 
     public static void getPaymentPanel(
-            String requestSignature,
-            PaymentProviderEnum paymentProviderEnum,
-            DeviceInfoEnum deviceInfoEnum,
-            List<MerchantInfoDTO> merchantInfoDTOList,
-            WidgetIdEnum widgetIdEnum,
+            MerchantCreateSignatureDTO merchantCreateSignatureDTO,
             int expectedStatus,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
         ResponseEntity<String> responseEntity = PaymentPanelConnector.getPaymentPanel(
-                requestSignature,
-                paymentProviderEnum,
-                deviceInfoEnum,
-                merchantInfoDTOList,
-                widgetIdEnum,
+                merchantCreateSignatureDTO,
                 statefulRestTemplateInterceptorKeyEnums);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
