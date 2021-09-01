@@ -8,14 +8,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static cucumber.api.tests.test.login.common.LoginConstants.COOKIE_END;
-import static cucumber.api.tests.test.login.common.LoginConstants.COOKIE_START;
-import static cucumber.api.tests.test.login.common.LoginConstants.FIRST_COOKIE_END;
-import static cucumber.api.tests.test.login.common.LoginConstants.FIRST_COOKIE_START;
-import static cucumber.api.tests.test.login.common.LoginConstants.SECOND_COOKIE_END;
-import static cucumber.api.tests.test.login.common.LoginConstants.SECOND_COOKIE_START;
-import static cucumber.api.tests.test.login.common.LoginConstants.THIRD_COOKIE_END;
-import static cucumber.api.tests.test.login.common.LoginConstants.THIRD_COOKIE_START;
+import static cucumber.api.tests.test.login.common.constants.LoginConstants.COOKIE_END;
+import static cucumber.api.tests.test.login.common.constants.LoginConstants.COOKIE_START;
+import static cucumber.api.tests.test.login.common.constants.LoginConstants.FIRST_COOKIE_END;
+import static cucumber.api.tests.test.login.common.constants.LoginConstants.FIRST_COOKIE_START;
+import static cucumber.api.tests.test.login.common.constants.LoginConstants.SECOND_COOKIE_END;
+import static cucumber.api.tests.test.login.common.constants.LoginConstants.SECOND_COOKIE_START;
+import static cucumber.api.tests.test.login.common.constants.LoginConstants.THIRD_COOKIE_END;
+import static cucumber.api.tests.test.login.common.constants.LoginConstants.THIRD_COOKIE_START;
 
 //TODO DELETE
 public class LoginUtils {

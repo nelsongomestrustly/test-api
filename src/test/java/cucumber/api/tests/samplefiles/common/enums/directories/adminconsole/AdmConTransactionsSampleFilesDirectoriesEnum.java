@@ -2,7 +2,7 @@ package cucumber.api.tests.samplefiles.common.enums.directories.adminconsole;
 
 import lombok.Getter;
 
-import static cucumber.api.tests.samplefiles.common.enums.directories.adminconsole.AdmConSampleFilesDirectoriesEnum.ADMIN_CONSOLE_SAMPLE_FILES_DIRECTORY;
+import static cucumber.api.tests.samplefiles.common.enums.directories.SampleFilesDirectoriesEnum.ADMIN_CONSOLE_SAMPLE_FILES_DIRECTORY;
 
 @Getter
 public enum AdmConTransactionsSampleFilesDirectoriesEnum {

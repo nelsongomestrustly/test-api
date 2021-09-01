@@ -1,24 +1,32 @@
-#Tue Aug 31 14:10:57 WEST 2021
+#Wed Sep 01 01:56:03 WEST 2021
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/configurations/resttemplate/CustomRestTemplate.java=1630284054273
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/QueryParamSymbols.java=1630452261965
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/functionalinterfaces/TriFunction.java=1630284054271
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/utils/Utilities.java=1630284054272
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/DeviceInfoEnum.java=1630425989141
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/suppliers/GenericSuppliers.java=1630287583006
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/configurations/resttemplate/config/RestTemplateConfig.java=1630284054273
 /Users/nelson.gomes/paywithmybank/test-api/src/test/resources/application.properties=1630411786120
-/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/MerchantTypeEnum.java=1630411383202
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/MerchantTypeEnum.java=1630450063942
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/mappers/HttpMappers.java=1630421826444
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/controllers/MainController.java=1630284054274
-/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/mappers/HttpMappers.java=1630413629785
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/Users.java=1630284054271
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/predicates/GenericPredicates.java=1630367889648
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/signature/CountryEnum.java=1630456420683
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/Application.java=1630284054270
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/signature/CustomerNameEnum.java=1630435713786
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/signature/PaymentTypeEnum.java=1630454388114
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/functionalinterfaces/FourthPredicate.java=1630284054271
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/suppliers/QueryParamSuppliers.java=1630451449606
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/PaymentProviderEnum.java=1630450101414
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/functionalinterfaces/FourthFunction.java=1630284054271
-/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/PaymentProviderEnum.java=1630412726437
-configuration*?=7EA5F8B6635A4CABFF3E1470A835391A873DB800
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/configurations/resttemplate/interceptors/StatefulRestTemplateInterceptor.java=1630333551531
+configuration*?=7EA5F8B6635A4CABFF3E1470A835391A873DB800
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/functionalinterfaces/TriPredicate.java=1630284054271
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/Passwords.java=1630284054270
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/configurations/endpoints/MainEndpoints.java=1630412598308
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/WidgetIdEnum.java=1630450050193
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/queries/QueryParametersEnum.java=1630455259862
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/functionalinterfaces/TriConsumer.java=1630284054271
 /Users/nelson.gomes/paywithmybank/test-api/src/main/resources/application.properties=1630412118260
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/mappers/ObjectMappers.java=1630284054272

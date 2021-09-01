@@ -3,7 +3,7 @@ Feature: the user logins in the application
   Background: Then Reset Test Context
     Then Reset Test Context
 
-  @MerchantPortal
+  @MerchantDemo
     @MerchantInfo
   Scenario Outline: Client Gets Information About Merchant Info when access Merchant Demo
 

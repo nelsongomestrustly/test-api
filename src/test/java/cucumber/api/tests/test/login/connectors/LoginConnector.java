@@ -2,6 +2,7 @@ package cucumber.api.tests.test.login.connectors;
 
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.test.admconsole.connectors.AdmConEndpoint;
+import cucumber.api.tests.test.login.common.suppliers.LoginSuppliers;
 import org.springframework.http.ResponseEntity;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;
 import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
@@ -16,7 +17,7 @@ public class LoginConnector {
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException {
 
         String url = loginEndpoint.getEndpoint();
-        return RestTemplateHttpConnector.httpPostLogin(url, testParticipantDTO, statefulRestTemplateInterceptorKeyEnums);
+        return RestTemplateHttpConnector.httpPostWithFormData(url, LoginSuppliers.getLoginMultiValueMapForHttpRequest(testParticipantDTO), statefulRestTemplateInterceptorKeyEnums);
 
     }
 

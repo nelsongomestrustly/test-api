@@ -4,7 +4,7 @@ Feature: the user logins in the application
     Then Reset Test Context
 
 
-  @MerchantPortal
+  @MerchantDemo
     @CreateSignature
   Scenario Outline: Access Merchant Demo Signature Endpoint and Get a Signature
 

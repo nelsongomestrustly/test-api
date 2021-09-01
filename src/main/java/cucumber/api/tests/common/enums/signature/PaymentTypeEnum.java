@@ -4,17 +4,17 @@ import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import static cucumber.api.tests.common.enums.queries.QueryParametersEnum.PAYMENT_TYPE_PARAM;
+import static cucumber.api.tests.common.enums.queries.QueryParametersEnum.PAYMENT_TYPE;
 
 @AllArgsConstructor
 @Getter
 public enum PaymentTypeEnum {
 
-    INSTANT(PAYMENT_TYPE_PARAM, "Instant"),
-    DEFERRED(PAYMENT_TYPE_PARAM, "Deferred"),
-    RETRIEVAL(PAYMENT_TYPE_PARAM, "Retrieval"),
-    DISBURSEMENT(PAYMENT_TYPE_PARAM, "Disbursement"),
-    RECURRING(PAYMENT_TYPE_PARAM, "Recurring");
+    INSTANT(PAYMENT_TYPE, "Instant"),
+    DEFERRED(PAYMENT_TYPE, "Deferred"),
+    RETRIEVAL(PAYMENT_TYPE, "Retrieval"),
+    DISBURSEMENT(PAYMENT_TYPE, "Disbursement"),
+    RECURRING(PAYMENT_TYPE, "Recurring");
 
     private final QueryParametersEnum key;
     private final String value;

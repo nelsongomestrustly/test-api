@@ -113,31 +113,23 @@ public class RestTemplateHttpConnector {
 
 
 
-    public static ResponseEntity<String> httpPostLogin(
+    public static ResponseEntity<String> httpPostWithFormData(
             String endpoint,
-            TestParticipantDTO testParticipantDTO,
+            MultiValueMap<String, String> map,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-        return httpPostWithLogin(endpoint, testParticipantDTO, statefulRestTemplateInterceptorKeyEnums);
+        return httpPost(endpoint, map, statefulRestTemplateInterceptorKeyEnums);
     }
 
     //With Test Participant, used most of times to login
-    public static <E> ResponseEntity<String> httpPostWithLogin(
+    public static <E> ResponseEntity<String> httpPost(
             String endpoint,
-            TestParticipantDTO testParticipantDTO,
+            MultiValueMap<String, String> map,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
         log.info("performing http post (endpoint, testParticipantDTO) request to {}", endpoint);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
-
-        MultiValueMap<String, String> map= new LinkedMultiValueMap<String, String>();
-        map.add("remember", "true");
-        map.add("username", testParticipantDTO.getUserName().getUser());
-        map.add("password", testParticipantDTO.getUserPassword().getPasswword());
-        map.add("timezone", "Europe%2FLondon");
-        map.add("originalUrl", "");
-        map.add("X-CSRFKey", "");
 
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
 
