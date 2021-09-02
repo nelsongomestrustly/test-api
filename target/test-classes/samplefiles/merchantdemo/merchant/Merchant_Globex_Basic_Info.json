@@ -1,0 +1,20 @@
+{
+  "accessId": "A48B73F694C4C8EE6306",
+
+  "name": "Globex (demo)",
+
+  "description": "Globex (demo)",
+
+  "deviceType": "desktop:macintel:web",
+
+  "id": "110005514",
+  "merchantId": "110005514",
+
+  "logoUrl": "{0}/images/tp/m/globex.png",
+
+  "grp": "1",
+  "widgetId": "1",
+  "v": "1.122-SNAPSHOT"
+
+}
+

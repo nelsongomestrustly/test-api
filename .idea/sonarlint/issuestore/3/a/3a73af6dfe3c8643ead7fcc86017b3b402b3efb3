@@ -1,32 +1,0 @@
-
-D
-java:S3740b"/Provide the parametrized type for this generic.(ÙáŒq
-D
-java:S3740b"/Provide the parametrized type for this generic.(ÙáŒq
-n	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¸ýÖ5
-o	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(öà³Î
-o	java:S1153"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(°ÞÅ‹
-t	java:S1154"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(˜‘ÈÕüÿÿÿÿ
-o	java:S1155"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÂÄ·ò
-o	java:S1156"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÇðÎÂ
-t	java:S1157"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ºžš‰ùÿÿÿÿ
-n	java:S1158"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ú¥µ
-z
-java:S30089"_Rename this field "ALPHA_NUMERIC_STRING" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùãÜÙÿÿÿÿÿ
-u
-java:S1149l"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(®ß£•
-U
-java:S1118":Add a private constructor to hide the implicit public one.(Ü°þÿÿÿÿ
-y
-java:S2142>"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(è®ã¶øÿÿÿÿ
-4
-java:S2119H"Save and re-use this "Random".(¡Å”¦
-4
-java:S2119U"Save and re-use this "Random".(¡Å”¦
-?
-java:S2140\")Use "java.util.Random.nextInt()" instead.(ÖáÜ¤
-@
-java:S1905Á")Remove this unnecessary cast to "double".(³†ßÄ
-W	java:S125ß"<This block of commented-out lines of code should be removed.(Ç‰Ÿþÿÿÿÿ
-v
-java:S1488š"_Immediately return this expression instead of assigning it to the temporary variable "seconds".(”¿ÁÙ

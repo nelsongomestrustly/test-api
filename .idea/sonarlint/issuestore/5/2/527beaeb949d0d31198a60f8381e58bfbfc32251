@@ -1,0 +1,17 @@
+
+‚
+java:S3008"gRename this field "ADMIN_CONSOLE_ADMIN_PASSWORD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯áÐ©ýÿÿÿÿ
+Š
+java:S3008"oRename this field "ADMIN_CONSOLE_ADMIN_INVALID_PASSWORD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×Úé®ûÿÿÿÿ
+L
+java:S2696"6Make the enclosing method "static" or remove this set.(£í…¼
+Q
+java:S2696"6Make the enclosing method "static" or remove this set.(­°‹˜ÿÿÿÿÿ
+ƒ
+java:S1104"hMake ADMIN_CONSOLE_ADMIN_PASSWORD a static final constant or non-public and provide accessors if needed.(¯áÐ©ýÿÿÿÿ
+‹
+java:S1104"pMake ADMIN_CONSOLE_ADMIN_INVALID_PASSWORD a static final constant or non-public and provide accessors if needed.(×Úé®ûÿÿÿÿ
+]
+java:S1444"BMake this "public static ADMIN_CONSOLE_ADMIN_PASSWORD" field final(¯áÐ©ýÿÿÿÿ
+e
+java:S1444"JMake this "public static ADMIN_CONSOLE_ADMIN_INVALID_PASSWORD" field final(×Úé®ûÿÿÿÿ

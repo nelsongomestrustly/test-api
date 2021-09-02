@@ -2,6 +2,7 @@ Feature: the user logins in the application
 
   Background: Then Reset Test Context
     Then Reset Test Context
+    Then Add "Merchant_Globex_Basic_Info.json" Information to the Context
 
   @PaymentPanel
     @PaymentPanelSelectBank
@@ -21,14 +22,16 @@ Feature: the user logins in the application
     When The user access Payment Panel Widget Endpoint should get Widget "<widgetName>" Info information and Expect Http Status "<payWidHttpSta>"
     Then The user should have a Valid Widget Object
 
+    #Generate Token
+
     #We information above you can access Payment Panel and Get Bank Redirect Url
-    Given Payment Panel up and running and We are using Widget "<widgetId>" Expect Http Status "<payPanHttpSta>"
+    Given Payment Panel up and running and We are using Merchant Signature "<merchantDemoCreateSignatureFilename>" Expect Http Status "<payPanHttpSta>"
     #When The user access Payment Panel and Select Bank "<bankName>" - should get Bank Redirect Url and Expect Http Status "<payPanHttpSta>"
     #Then The user should have a Valid Bank Redirect Url
 
 
     Examples:
-      | payPanHttpSta | merDemCreSignHttpSta | merDemHttpSta | merInfHttpSta | payWidHttpSta | bankName   | merName     | widgetId | merchantDemoCreateSignatureFilename | widgetName |
-      | 302           | 200                  | 200           | 200           | 200           | DEMO_BANK  | GLOBEX_DEMO | WIDGET_1 | Create_Signature_Instant.json       | Create_Widget_Instant.json    |
-      | 302           | 200                  | 200           | 200           | 200           | CHASE_BANK | GLOBEX_DEMO | WIDGET_1 | Create_Signature_Recurring.json     | Create_Widget_Recurring.json |
+      | payPanHttpSta | merDemCreSignHttpSta | merDemHttpSta | merInfHttpSta | payWidHttpSta | merName     | merchantDemoCreateSignatureFilename | widgetName                    |
+      | 302           | 200                  | 200           | 200           | 200           | GLOBEX_DEMO | Create_Signature_Instant.json       | Create_Widget_Instant.json    |
+      | 302           | 200                  | 200           | 200           | 200           | GLOBEX_DEMO | Create_Signature_Recurring.json     | Create_Widget_Recurring.json  |
 

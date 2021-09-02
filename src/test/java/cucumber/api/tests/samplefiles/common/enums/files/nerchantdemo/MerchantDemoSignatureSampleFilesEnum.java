@@ -2,8 +2,8 @@ package cucumber.api.tests.samplefiles.common.enums.files.nerchantdemo;
 
 import lombok.Getter;
 
-import static cucumber.api.tests.samplefiles.common.constants.merchantdemo.MerchantDemoSignature.MERCHANT_DEMO_CREATE_SIGNATURE_INSTANT;
-import static cucumber.api.tests.samplefiles.common.constants.merchantdemo.MerchantDemoSignature.MERCHANT_DEMO_CREATE_SIGNATURE_RECURRING;
+import static cucumber.api.tests.samplefiles.common.constants.merchantdemo.MerchantDemoSignatureFileNames.MERCHANT_DEMO_CREATE_SIGNATURE_INSTANT;
+import static cucumber.api.tests.samplefiles.common.constants.merchantdemo.MerchantDemoSignatureFileNames.MERCHANT_DEMO_CREATE_SIGNATURE_RECURRING;
 import static cucumber.api.tests.samplefiles.common.enums.directories.merchantdemo.MerchantDemoSampleFilesDirectoriesEnum.MERCHANT_DEMO_SIGNATURE_CREATE_SAMPLE_FILES_DIRECTORY;
 
 @Getter

@@ -1,7 +1,7 @@
 package cucumber.api.tests.support.cucumber.managers;
 
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantInfoDTO;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantSignatureDTO;
+import cucumber.api.tests.test.merchantdemo.data.dto.MerchantBasicInfoDTO;
+import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowsDTO;
 import lombok.Data;
@@ -14,19 +14,19 @@ import java.util.List;
 @Data
 public class MerchantDemoManager {
 
-    private List<MerchantSignatureDTO> merchantSignatureDTOList;
+    private List<MerchantCreateSignatureDTO> merchantCreateSignatureDTOList;
 
-    private List<MerchantInfoDTO> merchantInfoDTOList;
+    private List<MerchantBasicInfoDTO> merchantBasicInfoDTOList;
 
     private List<PaymentFlowsDTO> paymentFlowsDTOList;
 
     private List<PaymentFlowDTO> paymentFlowDTOList;
 
     public MerchantDemoManager() {
-        this.merchantInfoDTOList = new ArrayList<>();
+        this.merchantBasicInfoDTOList = new ArrayList<>();
         this.paymentFlowsDTOList = new ArrayList<>();
         this.paymentFlowDTOList = new ArrayList<>();
-        this.merchantSignatureDTOList = new ArrayList<>();
+        this.merchantCreateSignatureDTOList = new ArrayList<>();
     }
 
 
@@ -34,41 +34,44 @@ public class MerchantDemoManager {
      * MerchantInfoDTO
      */
 
-    public void addMerchantInfoDTO(MerchantInfoDTO merchantInfoDTO) {
-        merchantInfoDTOList.add(merchantInfoDTO);
+    public void addMerchantInfoDTO(MerchantBasicInfoDTO merchantBasicInfoDTO) {
+        merchantBasicInfoDTOList.add(merchantBasicInfoDTO);
     }
 
-    public void addAllMerchantInfoDTO(List<MerchantInfoDTO> merchantInfoDTOS) {
-        merchantInfoDTOList.addAll(merchantInfoDTOS);
+    public void addAllMerchantInfoDTO(List<MerchantBasicInfoDTO> merchantBasicInfoDTOS) {
+        merchantBasicInfoDTOList.addAll(merchantBasicInfoDTOS);
     }
 
-    public MerchantInfoDTO getFirstMerchantInfoDTO() {
-        return merchantInfoDTOList.get(0);
+    public MerchantBasicInfoDTO getFirstMerchantInfoDTO() {
+        return merchantBasicInfoDTOList.get(0);
     }
 
-    public MerchantInfoDTO getLastMerchantInfoDTO() {
-        return merchantInfoDTOList.get(merchantInfoDTOList.size() -1);
+    public MerchantBasicInfoDTO getLastMerchantInfoDTO() {
+        return merchantBasicInfoDTOList.get(merchantBasicInfoDTOList.size() -1);
     }
+
 
     /**
-     * MerchantSignatureDTO
+     * MerchantCreateSignatureDTO
      */
 
-    public void addMerchantSignatureDTO(MerchantSignatureDTO merchantSignatureDTO) {
-        merchantSignatureDTOList.add(merchantSignatureDTO);
+    public void addMerchantCreateSignatureDTO(MerchantCreateSignatureDTO merchantCreateSignatureDTO) {
+        merchantCreateSignatureDTOList.add(merchantCreateSignatureDTO);
     }
 
-    public void addAllMerchantSignatureDTO(List<MerchantSignatureDTO> merchantSignatureDTOList) {
-        merchantSignatureDTOList.addAll(merchantSignatureDTOList);
+    public void addAllMerchantCreateSignatureDTO(List<MerchantCreateSignatureDTO> merchantCreateSignatureDTOS) {
+        merchantCreateSignatureDTOList.addAll(merchantCreateSignatureDTOS);
     }
 
-    public MerchantSignatureDTO getFirstMerchantSignatureDTO() {
-        return merchantSignatureDTOList.get(0);
+    public MerchantCreateSignatureDTO getFirstMerchantCreateSignatureDTO() {
+        return merchantCreateSignatureDTOList.get(0);
     }
 
-    public MerchantSignatureDTO getLastMerchantSignatureDTO() {
-        return merchantSignatureDTOList.get(merchantSignatureDTOList.size() -1);
+    public MerchantCreateSignatureDTO getLastMerchantCreateSignatureDTO() {
+        return merchantCreateSignatureDTOList.get(merchantCreateSignatureDTOList.size() -1);
     }
+
+
 
     /**
      * PaymentFlowsDTO

@@ -1,7 +1,7 @@
 package cucumber.api.tests.scenarios.paymentpanel;
 
 import cucumber.api.tests.CucumberTest;
-import cucumber.api.tests.test.merchantdemo.common.suppliers.dto.MerchantDemoCreateSignatureDTOSameSupplier;
+import cucumber.api.tests.test.merchantdemo.common.suppliers.dto.signature.MerchantDemoCreateSignatureDTOSameSupplier;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
 import cucumber.api.tests.test.paymentpanel.actions.PaymentPanelActions;
 import io.cucumber.java.en.Given;
@@ -17,11 +17,11 @@ public class PaymentPanel_FT extends CucumberTest {
     //HomeController
     //SelectBankController
     @SneakyThrows
-    @Given("Payment Panel up and running and We are using Widget {string} Expect Http Status {string}")
-    public void paymentPanelUpAndRunningAndWeAreUsingWidgetExpectHttpStatus(String widgetId, String expectPaymentPanelHttpStatus) {
+    @Given("Payment Panel up and running and We are using Merchant Signature {string} Expect Http Status {string}")
+    public void paymentPanelUpAndRunningAndWeAreUsingWidgetExpectHttpStatus(String fileName, String expectPaymentPanelHttpStatus) {
 
         MerchantCreateSignatureDTO merchantCreateSignatureDTO
-                = MerchantDemoCreateSignatureDTOSameSupplier.getSampleAdminConsoleSearchTransactionsDTO("Create_Signature_Instant.json");
+                = MerchantDemoCreateSignatureDTOSameSupplier.getSampleMerchantCreateSignatureDTO(fileName);
 
         PaymentPanelActions.getPaymentPanel(
                 merchantCreateSignatureDTO,

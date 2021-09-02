@@ -2,22 +2,17 @@ package cucumber.api.tests.test.paymentpanel.actions;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import cucumber.api.tests.common.enums.DeviceInfoEnum;
 import cucumber.api.tests.common.enums.PaymentProviderEnum;
-import cucumber.api.tests.common.enums.WidgetIdEnum;
 import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantInfoDTO;
 import cucumber.api.tests.test.paymentpanel.connectors.PaymentPanelConnector;
 import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelCreateWidgetDTO;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import org.springframework.http.ResponseEntity;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class PaymentPanelActions {

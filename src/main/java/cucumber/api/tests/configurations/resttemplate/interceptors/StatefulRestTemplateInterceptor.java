@@ -27,8 +27,15 @@ public class StatefulRestTemplateInterceptor implements ClientHttpRequestInterce
     public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
 
         if (GenericPredicates.checkIfNullOrEmpty.negate().test(cookieMap)) {
-            request.getHeaders().add(HttpHeaders.COOKIE, getCookieFromMap());
+
+            String cookieFromMap = getCookieFromMap();
+
+            if (GenericPredicates.checkIfNullOrEmpty.negate().test(cookieFromMap)) {
+                request.getHeaders().add(HttpHeaders.COOKIE, getCookieFromMap());
+            }
+
         }
+
         ClientHttpResponse response = execution.execute(request, body);
 
         addCookieToMap(response);

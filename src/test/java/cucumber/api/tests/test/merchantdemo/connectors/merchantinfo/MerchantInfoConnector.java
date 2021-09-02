@@ -15,7 +15,7 @@ public class MerchantInfoConnector {
             MerchantTypeEnum merchantTypeEnum,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
-        return RestTemplateHttpConnector.httpPostForObject(
+        return RestTemplateHttpConnector.httpPost(
                 MERCHANT_DEMO_GET_MERCHANT_LIST_ENDPOINT.getEndpoint(),
                 Map.of(merchantTypeEnum.getKey(), merchantTypeEnum.getType()),
                 statefulRestTemplateInterceptorKeyEnums);

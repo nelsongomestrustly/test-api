@@ -1,5 +1,6 @@
 package cucumber.api.tests.test.merchantdemo.data.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import lombok.AllArgsConstructor;
@@ -145,23 +146,10 @@ public class MerchantCreateSignatureDTO {
       private String returnUrl;
       private QueryParametersEnum returnUrlKey = QueryParametersEnum.RETURN_URL;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      //"Received after create process
+      @JsonIgnore
+      private String signature;
+      private QueryParametersEnum requestSignatureKey = QueryParametersEnum.REQUEST_SIGNATURE;
 
 
 }

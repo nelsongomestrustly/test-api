@@ -1,7 +1,5 @@
 package cucumber.api.tests.support.cucumber.managers;
 
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantInfoDTO;
-import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowDTO;
 import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelCreateWidgetDTO;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

@@ -20,13 +20,13 @@
 </file>
 <file name="/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/suppliers/QueryParamSuppliers.java">
 </file>
-<file name="/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/Hosts.java">
+<file name="/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/env/Hosts.java">
 </file>
-<file name="/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/Passwords.java">
+<file name="/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/env/Passwords.java">
 </file>
-<file name="/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/Users.java">
+<file name="/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/env/Users.java">
 </file>
-<file name="/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/Ports.java">
+<file name="/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/env/Ports.java">
 </file>
 <file name="/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/QueryParamSymbols.java">
 </file>

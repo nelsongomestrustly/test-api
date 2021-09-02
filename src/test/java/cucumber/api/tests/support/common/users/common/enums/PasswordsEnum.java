@@ -1,9 +1,8 @@
 package cucumber.api.tests.support.common.users.common.enums;
 
-import cucumber.api.tests.common.constants.Passwords;
+import cucumber.api.tests.common.constants.env.Passwords;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @Getter

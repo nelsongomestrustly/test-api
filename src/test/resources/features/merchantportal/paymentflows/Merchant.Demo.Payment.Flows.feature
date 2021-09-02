@@ -2,6 +2,7 @@ Feature: the user logins in the application
 
   Background: Then Reset Test Context
     Then Reset Test Context
+    Then Add "Merchant_Globex_Basic_Info.json" Information to the Context
 
   @MerchantDemo
     @PaymentFlows

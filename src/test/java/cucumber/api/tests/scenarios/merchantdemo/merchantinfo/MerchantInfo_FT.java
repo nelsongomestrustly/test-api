@@ -4,7 +4,7 @@ import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.enums.MerchantTypeEnum;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
 import cucumber.api.tests.test.merchantdemo.actions.get.merchantinfo.MerchantInfoGetHttpActions;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantInfoDTO;
+import cucumber.api.tests.test.merchantdemo.data.dto.MerchantBasicInfoDTO;
 import cucumber.api.tests.validations.object.GenericObjectValidations;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,18 +24,18 @@ public class MerchantInfo_FT extends CucumberTest {
 
         MerchantTypeEnum merchantTypeEnum = MerchantTypeEnum.valueOf(merchantName);
 
-        List<MerchantInfoDTO> merchantInfoDTOList = MerchantInfoGetHttpActions.getMerchantsInfo(merchantTypeEnum, Integer.parseInt(expectMerchantInfoHttpStatus), MERCHANT_DEMO_INTERCEPTOR_MAP_KEY);
+        List<MerchantBasicInfoDTO> merchantBasicInfoDTOList = MerchantInfoGetHttpActions.getMerchantsInfo(merchantTypeEnum, Integer.parseInt(expectMerchantInfoHttpStatus), MERCHANT_DEMO_INTERCEPTOR_MAP_KEY);
 
-        MyTestContext.getMyTestContext().merchantDemoManager.addAllMerchantInfoDTO(merchantInfoDTOList);
+        //MyTestContext.getMyTestContext().merchantDemoManager.addAllMerchantInfoDTO(merchantBasicInfoDTOList);
 
     }
 
     @Then("The user should have a Not Empty and Not Null Merchant Info List Object")
     public void theUserShouldHaveANotEmptyAndNotNullMerchantInfoListObject() {
 
-        List<MerchantInfoDTO> merchantInfoDTOList = MyTestContext.getMyTestContext().merchantDemoManager.getMerchantInfoDTOList();
+        List<MerchantBasicInfoDTO> merchantBasicInfoDTOList = MyTestContext.getMyTestContext().merchantDemoManager.getMerchantBasicInfoDTOList();
 
-        GenericObjectValidations.validateIfAllFieldAreNotNullNotEmpty(merchantInfoDTOList);
+        GenericObjectValidations.validateIfAllFieldAreNotNullNotEmpty(merchantBasicInfoDTOList);
 
     }
 

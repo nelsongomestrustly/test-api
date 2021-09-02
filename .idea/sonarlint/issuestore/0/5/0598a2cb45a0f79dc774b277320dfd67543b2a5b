@@ -1,36 +1,0 @@
-
-x
-java:S3008	"]Rename this field "ADMIN_CONSOLE_PORT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©«Áüøÿÿÿÿ
-‚
-java:S3008
-"gRename this field "MERCHANT_GATEWAY_SERVER_PORT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ì™‡ûÿÿÿÿ
-
-java:S3008"]Rename this field "MERCHANT_DEMO_PORT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªÏ¿Äþÿÿÿÿ8Áý­Å¹/
-z
-java:S3008"]Rename this field "PAYMENT_PANEL_PORT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙŸš°8‰¢’á¹/
-Q
-java:S2696"6Make the enclosing method "static" or remove this set.(óáÉ·øÿÿÿÿ
-L
-java:S2696"6Make the enclosing method "static" or remove this set.(–©ÏÇ
-X
-java:S2696"6Make the enclosing method "static" or remove this set.(‚¥îŸÿÿÿÿÿ8Ü£®Å¹/
-X
-java:S2696"6Make the enclosing method "static" or remove this set.(×Ï£ùúÿÿÿÿ8â¶’á¹/
-y
-java:S1104	"^Make ADMIN_CONSOLE_PORT a static final constant or non-public and provide accessors if needed.(©«Áüøÿÿÿÿ
-ƒ
-java:S1104
-"hMake MERCHANT_GATEWAY_SERVER_PORT a static final constant or non-public and provide accessors if needed.(†ì™‡ûÿÿÿÿ
-€
-java:S1104"^Make MERCHANT_DEMO_PORT a static final constant or non-public and provide accessors if needed.(ªÏ¿Äþÿÿÿÿ8Æý­Å¹/
-{
-java:S1104"^Make PAYMENT_PANEL_PORT a static final constant or non-public and provide accessors if needed.(ÙŸš°8Ž¢’á¹/
-S
-java:S1444	"8Make this "public static ADMIN_CONSOLE_PORT" field final(©«Áüøÿÿÿÿ
-]
-java:S1444
-"BMake this "public static MERCHANT_GATEWAY_SERVER_PORT" field final(†ì™‡ûÿÿÿÿ
-Z
-java:S1444"8Make this "public static MERCHANT_DEMO_PORT" field final(ªÏ¿Äþÿÿÿÿ8Æý­Å¹/
-U
-java:S1444"8Make this "public static PAYMENT_PANEL_PORT" field final(ÙŸš°8Ž¢’á¹/

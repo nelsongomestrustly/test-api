@@ -2,9 +2,8 @@ package cucumber.api.tests.samplefiles.common.enums.files.paymentpanel;
 
 import lombok.Getter;
 
-import static cucumber.api.tests.samplefiles.common.constants.paymentpanel.PaymentPanelWidget.PAYMENT_PANEL_CREATE_WIDGET_INSTANT;
-import static cucumber.api.tests.samplefiles.common.constants.paymentpanel.PaymentPanelWidget.PAYMENT_PANEL_CREATE_WIDGET_RECURRING;
-import static cucumber.api.tests.samplefiles.common.enums.directories.merchantdemo.MerchantDemoSampleFilesDirectoriesEnum.MERCHANT_DEMO_WIDGET_CREATE_SAMPLE_FILES_DIRECTORY;
+import static cucumber.api.tests.samplefiles.common.constants.paymentpanel.PaymentPanelWidgetFileNames.PAYMENT_PANEL_CREATE_WIDGET_INSTANT;
+import static cucumber.api.tests.samplefiles.common.constants.paymentpanel.PaymentPanelWidgetFileNames.PAYMENT_PANEL_CREATE_WIDGET_RECURRING;
 import static cucumber.api.tests.samplefiles.common.enums.directories.paymentpanel.PaymentPanelSampleFilesDirectoriesEnum.PAYMENT_PANEL_WIDGET_CREATE_SAMPLE_FILES_DIRECTORY;
 
 @Getter
