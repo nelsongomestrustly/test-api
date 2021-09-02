@@ -2,6 +2,7 @@ package cucumber.api.tests.support.cucumber.context;
 
 import cucumber.api.tests.support.cucumber.managers.MerchantDemoManager;
 import cucumber.api.tests.support.cucumber.managers.PaymentPanelManager;
+import cucumber.api.tests.support.cucumber.managers.TokenManager;
 import lombok.extern.slf4j.Slf4j;
 import cucumber.api.tests.support.cucumber.managers.AdminConsoleTransactionsManager;
 import cucumber.api.tests.support.cucumber.managers.LoginManager;
@@ -18,6 +19,7 @@ public abstract class BaseCucumberContext {
     public MerchantDemoManager merchantDemoManager;
     public PaymentPanelManager paymentPanelManager;
     public TestParticipantManager testParticipantDTOManagers;
+    public TokenManager tokenManager;
 
     public BaseCucumberContext(){
 
@@ -26,6 +28,7 @@ public abstract class BaseCucumberContext {
         merchantDemoManager = new MerchantDemoManager();
         paymentPanelManager = new PaymentPanelManager();
         testParticipantDTOManagers = new TestParticipantManager();
+        tokenManager = new TokenManager();
 
     }
 

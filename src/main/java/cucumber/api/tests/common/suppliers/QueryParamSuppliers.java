@@ -4,8 +4,6 @@ import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.functions.GenericFunctions;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 
-import java.text.MessageFormat;
-
 import static cucumber.api.tests.common.constants.QueryParamSymbols.EQUAL_SYMBOL;
 import static cucumber.api.tests.common.constants.QueryParamSymbols.URL_SPLIT_SYMBOL;
 

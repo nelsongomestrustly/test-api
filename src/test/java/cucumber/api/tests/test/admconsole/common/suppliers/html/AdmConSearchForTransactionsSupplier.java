@@ -1,6 +1,5 @@
 package cucumber.api.tests.test.admconsole.common.suppliers.html;
 
-import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
 
 import static cucumber.api.tests.common.suppliers.QueryParamSuppliers.getSearchFormatByField;

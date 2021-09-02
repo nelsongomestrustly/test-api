@@ -5,8 +5,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import cucumber.api.tests.common.enums.PaymentProviderEnum;
 import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.common.predicates.GenericPredicates;
+import cucumber.api.tests.common.security.TokenDTO;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
+import cucumber.api.tests.support.cucumber.managers.TokenManager;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
+import cucumber.api.tests.test.paymentpanel.common.supplier.MerchantDemoFrontEndTokenManagerSupplier;
 import cucumber.api.tests.test.paymentpanel.connectors.PaymentPanelConnector;
 import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelCreateWidgetDTO;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
@@ -49,8 +52,7 @@ public class PaymentPanelActions {
     }
 
 
-
-    public static void getPaymentPanel(
+    public static TokenDTO getMerchantTransactionToken(
             MerchantCreateSignatureDTO merchantCreateSignatureDTO,
             int expectedStatus,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
@@ -60,6 +62,8 @@ public class PaymentPanelActions {
                 statefulRestTemplateInterceptorKeyEnums);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
+
+        return MerchantDemoFrontEndTokenManagerSupplier.getMerchantDemoFrontEndTokenManager(responseEntity.toString());
 
     }
 }

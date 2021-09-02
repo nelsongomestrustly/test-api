@@ -6,9 +6,6 @@ import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
 
 import java.util.HashMap;
 
-import static cucumber.api.tests.common.suppliers.QueryParamSuppliers.getSearchFormatByField;
-import static cucumber.api.tests.common.suppliers.QueryParamSuppliers.removeLastCharIfNecessary;
-
 public class AdmConSearchForTransactionsSupplier2 {
 
     private static boolean removeLastChar;

@@ -1,29 +1,20 @@
 package cucumber.api.tests.support.common.connectors.resttemplate;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
-import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
-import cucumber.api.tests.test.merchantdemo.data.dto.PaymentFlowsDTO;
 import cucumber.api.tests.test.merchantgatewayserver.data.dto.EstabilishDataDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

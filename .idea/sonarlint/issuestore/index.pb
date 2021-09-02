@@ -195,14 +195,10 @@ Isrc/test/java/cucumber/api/tests/test/login/actions/LoginHttpActions.java,2/f/
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 |
 Lsrc/test/java/cucumber/api/tests/support/cucumber/managers/LoginManager.java,1/b/1ba6b4261f5ce267d0746786b699e4250a5dcae6
-è
-_src/test/java/cucumber/api/tests/support/cucumber/managers/AdminConsoleTransactionsManager.java,4/a/4a6b513ba592c01512eec0e2593140aa643a16ff
 u
 Esrc/test/java/cucumber/api/tests/validations/logs/LogValidations.java,d/5/d5b78ad4caff99a3b8ae8465870af89159ab2cc9
 ä
 Zsrc/test/java/cucumber/api/tests/support/common/connectors/apache/ApacheHttpConnector.java,1/a/1a2569f8205ff62b995ba280b7795e1d246c118c
-r
-Bsrc/main/java/cucumber/api/tests/common/mappers/ObjectMappers.java,3/f/3f721ddb329f3a6c63766a6d5d9865bc8bacc116
 }
 Msrc/test/java/cucumber/api/tests/support/cucumber/parses/AliasDataParser.java,5/7/57d42baeb5ab85a02203c9ac47c6d0b1653442bf
 õ
@@ -239,8 +235,6 @@ Qsrc/test/java/cucumber/api/tests/support/common/users/common/enums/UsersEnum.ja
 Osrc/test/java/cucumber/api/tests/support/cucumber/datatable/DataTableUtils.java,8/4/84d73e06df560f7e6e80472c626d3248c322d637
 p
 @src/main/java/cucumber/api/tests/common/mappers/FileMappers.java,6/e/6ea3248d094a131374212126cdd80d7f1d2067fd
-z
-Jsrc/main/java/cucumber/api/tests/common/suppliers/QueryParamSuppliers.java,f/e/fed25e0ef17c72d92e8fbb3fe641c46b62c0b97e
 {
 Ksrc/test/java/cucumber/api/tests/support/cucumber/common/DataTableEnum.java,1/4/144b453e5c6874f9f05a33d2b1864475982bf013
 |
@@ -257,8 +251,6 @@ bsrc/test/java/cucumber/api/tests/samplefiles/common/constants/paymentpanel/Paym
 ksrc/test/java/cucumber/api/tests/test/paymentpanel/common/enums/dto/CreatePaymentWidgetDTOSameSupplier.java,b/1/b1c8eddc806c24140a981fee83986186bd216021
 Ü
 Vsrc/test/java/cucumber/api/tests/support/cucumber/managers/TestParticipantManager.java,7/6/7638fb458e87dd3e2e76594f4e05f5684d73da0c
-É
-Ssrc/test/java/cucumber/api/tests/support/cucumber/managers/PaymentPanelManager.java,2/6/267e85d4c62e89ebb762b34db5fc6a272562f35b
 ¶
 vsrc/test/java/cucumber/api/tests/samplefiles/common/enums/files/nerchantdemo/MerchantDemoSignatureSampleFilesEnum.java,d/1/d181af25e9b4c6e92375f6f247b2be4642a32058
 ï
@@ -271,8 +263,6 @@ Zsrc/test/java/cucumber/api/tests/test/admconsole/data/dto/AdmConSearchTransacti
 osrc/test/java/cucumber/api/tests/test/admconsole/common/suppliers/html/AdmConSearchForTransactionsSupplier.java,4/5/45a8b42b25f9af0b467414ac720df038c932cc73
 †
 psrc/test/java/cucumber/api/tests/test/admconsole/common/suppliers/html/AdmConSearchForTransactionsSupplier2.java,1/4/14cdd1f2dc36b9db13ecfe36c9ff84dea1876e75
-Ü
-Vsrc/test/java/cucumber/api/tests/scenarios/paymentpanel/PaymentPanelSelectBank_FT.java,1/0/10ae15ad175fe29f2ecc2ef33f611f3e52beada6
 Ü
 Vsrc/test/java/cucumber/api/tests/scenarios/admconsole/AdmConSearchTransactions_FT.java,6/2/628634ccf20a3d3a8284887093fd4a484964bbf3
 Ä
