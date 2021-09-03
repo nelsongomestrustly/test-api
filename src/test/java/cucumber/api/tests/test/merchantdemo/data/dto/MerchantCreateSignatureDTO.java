@@ -2,11 +2,15 @@ package cucumber.api.tests.test.merchantdemo.data.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import cucumber.api.tests.common.constants.env.Ports;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
+import cucumber.api.tests.common.suppliers.UrlSuppliers;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import static cucumber.api.tests.common.constants.env.Ports.MERCHANT_DEMO_PORT;
 
 
 /**
@@ -151,5 +155,11 @@ public class MerchantCreateSignatureDTO {
       private String signature;
       private QueryParametersEnum requestSignatureKey = QueryParametersEnum.REQUEST_SIGNATURE;
 
+      public void setCancelUrl(String cancelUrl) {
+            this.cancelUrl = UrlSuppliers.getEnvUrl(cancelUrl, MERCHANT_DEMO_PORT);
+      }
 
+      public void setReturnUrl(String returnUrl) {
+            this.returnUrl = UrlSuppliers.getEnvUrl(returnUrl, MERCHANT_DEMO_PORT);
+      }
 }

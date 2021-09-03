@@ -1,12 +1,15 @@
 package cucumber.api.tests.test.merchantgatewayserver.data.dto;
 
 import cucumber.api.tests.common.enums.PaymentTypeEnum;
+import cucumber.api.tests.common.suppliers.UrlSuppliers;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+
+import static cucumber.api.tests.common.constants.env.Ports.MERCHANT_DEMO_PORT;
 
 @Data
 @NoArgsConstructor
@@ -54,5 +57,13 @@ public class EstabilishDataDTO {
     private String integrationPlatformVersion;
     private List<String> dynamicStringsId;
     private String integrationScriptLocation;
+
+    public void setCancelUrl(String cancelUrl) {
+        this.cancelUrl = UrlSuppliers.getEnvUrl(cancelUrl, MERCHANT_DEMO_PORT);
+    }
+
+    public void setReturnUrl(String returnUrl) {
+        this.returnUrl = UrlSuppliers.getEnvUrl(returnUrl, MERCHANT_DEMO_PORT);
+    }
 
 }

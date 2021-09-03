@@ -1,13 +1,13 @@
 {
   "amount": 50.00,
-  "cancelUrl": "http://192.168.1.49:7000/merchant-demo/globex/?cancel=true",
+  "cancelUrl": "merchant-demo/globex/?cancel=true",
   "currency": "USD",
   "description": "Globex Demo",
   "ip": "",
   "merchantId": 110005514,
   "merchantReference": "37A73EEBC13C13C0",
   "paymentType": "Instant",
-  "returnUrl": "http://192.168.1.49:7000/merchant-demo/globex/?success=true",
+  "returnUrl": "merchant-demo/globex/?success=true",
   "deviceCategory": "desktop",
   "deviceOs": "windows",
   "deviceType": "desktop:macintel:web"

@@ -1,7 +1,7 @@
 {
   "accessId": "A48B73F694C4C8EE6306",
-  "returnUrl": "http://192.168.1.49:7000/merchant-demo/globex/?success=true",
-  "cancelUrl": "http://192.168.1.49:7000/merchant-demo/globex/?cancel=true",
+  "returnUrl": "merchant-demo/globex/?success=true",
+  "cancelUrl": "merchant-demo/globex/?cancel=true",
   "merchantId": 110005514,
   "description": "GlobexDemo",
   "merchantReference": "37A73EEBC13C13C0",

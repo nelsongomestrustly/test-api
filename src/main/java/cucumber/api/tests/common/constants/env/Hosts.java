@@ -6,11 +6,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class Hosts {
 
+    public static String MAIN_HOST;
     public static String ADMIN_CONSOLE_HOST;
     public static String MERCHANT_GATEWAY_SERVER_HOST;
     public static String MERCHANT_DEMO_HOST;
     public static String PAYMENT_PANEL_HOST;
     public static String FRONT_END_HOST;
+
+    @Value("${main.host}")
+    public void setMainHost(String mainHost) {
+        MAIN_HOST = mainHost;
+    }
+
 
     @Value("${admin.console.host}")
     public void setAdminConsoleHost(String adminConsoleHost) {
