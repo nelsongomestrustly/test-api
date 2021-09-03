@@ -5,10 +5,9 @@ import cucumber.api.tests.support.cucumber.context.MyTestContext;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantBasicInfoDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
 import cucumber.api.tests.test.merchantgatewayserver.actions.transactions.MerchantGatwayServerActions;
-import cucumber.api.tests.test.merchantgatewayserver.common.suppliers.MerchantGatewaySeverEstabilishTransactionsDTOSampleSupplier;
+import cucumber.api.tests.samplefiles.common.suppliers.merchantgatewayserver.MerchantGatewaySeverEstabilishTransactionsDTOFileSampleSupplier;
 import cucumber.api.tests.test.merchantgatewayserver.data.dto.EstabilishDataDTO;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 
 import java.io.IOException;
 
@@ -55,7 +54,7 @@ public class EstabilishTransaction_FT extends CucumberTest {
         MerchantCreateSignatureDTO merchantCreateSignatureDTO = MyTestContext.getMyTestContext().merchantDemoManager.getMerchantCreateSignatureDTOList().get(0);
 
         //Getting Estabilish Transaction
-        EstabilishDataDTO estabilishDataDTO = MerchantGatewaySeverEstabilishTransactionsDTOSampleSupplier.getEstabilishDataDTO(estabilishDataFileName, merchantCreateSignatureDTO, merchantBasicInfoDTO);
+        EstabilishDataDTO estabilishDataDTO = MerchantGatewaySeverEstabilishTransactionsDTOFileSampleSupplier.getEstabilishDataDTO(estabilishDataFileName, merchantCreateSignatureDTO, merchantBasicInfoDTO);
 
         //Process Information
         String s = MerchantGatwayServerActions.estabilishTransactions(estabilishDataDTO, Integer.parseInt(expectMerchantInfoHttpStatus), MERCHANT_GATEWAY_SERVER_INTERCEPTOR_MAP_KEY);

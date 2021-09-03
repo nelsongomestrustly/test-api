@@ -25,7 +25,7 @@ Feature: the user logins in the application
     #Generate Token
 
     #We information above you can access Payment Panel and Get Bank Redirect Url
-    Given Payment Panel up and running and We are using Merchant Signature "<merchantDemoCreateSignatureFilename>" Expect Http Status "<redirectStatus>"
+    Then The user opens "<bankName>" and Expect Http Status "<redirectStatus>"
     Then The user should have a Valid Token
     Then The user access Merchant Demo Front End and Build Bank Panel and Expect Http Status <okStatus>
     #When The user access Payment Panel and Select Bank "<bankName>" - should get Bank Redirect Url and Expect Http Status "<payPanHttpSta>"
@@ -33,7 +33,7 @@ Feature: the user logins in the application
 
 
     Examples:
-      | redirectStatus | okStatus | merName     | merchantDemoCreateSignatureFilename | widgetName                    |
-      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Recurring.json     | Create_Widget_Recurring.json  |
-      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Instant.json       | Create_Widget_Instant.json    |
+      | redirectStatus | okStatus | merName     | merchantDemoCreateSignatureFilename | widgetName                    | bankName  |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Recurring.json     | Create_Widget_Recurring.json  | DEMO_BANK |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Instant.json       | Create_Widget_Instant.json    | DEMO_BANK |
 

@@ -17,6 +17,7 @@ Transaction
 ID no PTWB -> Transaction ID
 ID do merchante , que  -> Merchant Reference
 ID no FIGTW -> ppTTransactionId.
+paymentProviderId ---> Id do Bank ???????????
 
 Eligible for transaction (True ou False, devido ao ligh pannel, ao widget)
 
@@ -29,9 +30,20 @@ Classe para Gerar o Token no sistema
 
 
 Duvidas adicionais ???
+posso ter 2 merchant reference id duplicados, se sim como faço o match ?
 FDP - Widget
-isStandaloneFiLogin ???
+isStandaloneFiLogin ??? 
+Verify Transaction ??? Cria Transaction ??? Pois vc tem essa opcao no backend e nao no front end 
+verifyIOSgrp ???
 GRP ???
 No flow da criação da transaction quem cria o transaction id, e o ppt id, e quando ?
 
+Quando  clica no bank select panel index que vem do iframe
+eu entendo que ele ja cria a transaction
+mas de onde o front end tira o ppt transaction e o transaction id ???? e o me
 
+
+DemoBank
+Entra ele ja gera o widget.
+
+http://192.168.1.49:10000/frontend/setup ?? existe no backend ? onde ? 

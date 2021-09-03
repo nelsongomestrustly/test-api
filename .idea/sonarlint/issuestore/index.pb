@@ -191,8 +191,6 @@ hsrc/test/java/cucumber/api/tests/test/admconsole/common/constants/AdmConSearchT
 Vsrc/main/java/cucumber/api/tests/configurations/resttemplate/RestTemplateSupplier.java,b/b/bb9f78e79692df75e1ebbc2bbce729f332d7870c
 y
 Isrc/test/java/cucumber/api/tests/test/login/actions/LoginHttpActions.java,2/f/2ff7699acb1d8cbf9a43a03a0b08885ba1029c70
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 |
 Lsrc/test/java/cucumber/api/tests/support/cucumber/managers/LoginManager.java,1/b/1ba6b4261f5ce267d0746786b699e4250a5dcae6
 u
@@ -209,8 +207,6 @@ ksrc/test/java/cucumber/api/tests/test/merchantdemo/actions/get/paymentflows/Pay
 esrc/test/java/cucumber/api/tests/test/merchantdemo/connectors/merchantinfo/MerchantInfoConnector.java,f/9/f962fef3a9e1d83149bb2758992df667d7641c65
 }
 Msrc/main/java/cucumber/api/tests/common/enums/signature/CustomerNameEnum.java,b/b/bba82a9d19c31d202c0236109874271e1a40170a
-v
-Fsrc/main/java/cucumber/api/tests/common/enums/PaymentProviderEnum.java,3/6/369585e1e5fdd7898e5a9cda55246f619572f875
 x
 Hsrc/main/java/cucumber/api/tests/common/constants/QueryParamSymbols.java,4/a/4a10f5556380d4af23552be7a6505a8789bdec60
 €
@@ -247,8 +243,6 @@ Psrc/test/java/cucumber/api/tests/test/merchantdemo/data/dto/PaymentFlowsDTO.jav
 bsrc/test/java/cucumber/api/tests/samplefiles/common/constants/paymentpanel/PaymentPanelWidget.java,e/b/eb8eac38b3ce3d4a4bce62a993a40166f8883545
 ®
 ~src/test/java/cucumber/api/tests/samplefiles/common/enums/directories/paymentpanel/PaymentPanelSampleFilesDirectoriesEnum.java,a/2/a28c32fce6c16ef2273ad12c70f354d3defe3e3e
-›
-ksrc/test/java/cucumber/api/tests/test/paymentpanel/common/enums/dto/CreatePaymentWidgetDTOSameSupplier.java,b/1/b1c8eddc806c24140a981fee83986186bd216021
 †
 Vsrc/test/java/cucumber/api/tests/support/cucumber/managers/TestParticipantManager.java,7/6/7638fb458e87dd3e2e76594f4e05f5684d73da0c
 ¦
@@ -257,12 +251,8 @@ vsrc/test/java/cucumber/api/tests/samplefiles/common/enums/files/nerchantdemo/Me
 esrc/test/java/cucumber/api/tests/samplefiles/common/constants/merchantdemo/MerchantDemoSignature.java,8/9/897f6af20d4b2d44527d524c7d8bf9e77161b366
 £
 ssrc/test/java/cucumber/api/tests/samplefiles/common/enums/files/paymentpanel/PaymentPanelWidgetSampleFilesEnum.java,5/e/5ec3e89ade14c5461a33294d09bf0e09a079756f
-Š
-Zsrc/test/java/cucumber/api/tests/test/admconsole/data/dto/AdmConSearchTransactionsDTO.java,e/7/e71754865dca75d933186eaa0f560ea7758a222e
 Ÿ
 osrc/test/java/cucumber/api/tests/test/admconsole/common/suppliers/html/AdmConSearchForTransactionsSupplier.java,4/5/45a8b42b25f9af0b467414ac720df038c932cc73
- 
-psrc/test/java/cucumber/api/tests/test/admconsole/common/suppliers/html/AdmConSearchForTransactionsSupplier2.java,1/4/14cdd1f2dc36b9db13ecfe36c9ff84dea1876e75
 †
 Vsrc/test/java/cucumber/api/tests/scenarios/admconsole/AdmConSearchTransactions_FT.java,6/2/628634ccf20a3d3a8284887093fd4a484964bbf3
 €
@@ -285,16 +275,10 @@ Isrc/main/java/cucumber/api/tests/common/predicates/GenericPredicates.java,b/0/
 ssrc/test/java/cucumber/api/tests/test/merchantdemo/common/suppliers/dto/MerchantDemoBasicInfoDTOSampleSupplier.java,c/6/c6c3e878a2d43d26aac384bd453ec580d4a38c78
 s
 Csrc/test/java/cucumber/api/tests/scenarios/myenv/MyMerchant_FT.java,5/b/5ba2ecf4ce1084c10c60f334a3943dba3b84e2a9
-ˆ
-Xsrc/test/java/cucumber/api/tests/scenarios/paymentpanel/PaymentPanelCreateWidget_FT.java,6/e/6ec75985a93906138418e89a740abbfe3414bc5e
 ‡
 Wsrc/test/java/cucumber/api/tests/test/merchantdemo/connectors/MerchantDemoEndpoint.java,8/a/8a460e568c95950946d0fa04a10c7ee8d3d93ac4
 §
 wsrc/test/java/cucumber/api/tests/test/merchantdemo/common/suppliers/dto/MerchantDemoCreateSignatureDTOSameSupplier.java,c/f/cf679773fed640049849edc1d67a49bf5c48d2f7
-Œ
-\src/test/java/cucumber/api/tests/test/paymentpanel/data/dto/PaymentPanelCreateWidgetDTO.java,2/c/2c1d5c090d494c82e68d081748d078056276d896
-š
-jsrc/test/java/cucumber/api/tests/test/paymentpanel/common/enums/html/CreatePaymentPanelWidgetSupplier.java,e/6/e618dc6b2ac14a464b82c19afea28e1e96753587
 ’
 bsrc/test/java/cucumber/api/tests/scenarios/merchantdemo/merchantdemo/MerchantDemoSignature_FT.java,b/1/b1d9ac680ea5ab82dedc39409c560769cf4a265b
 p

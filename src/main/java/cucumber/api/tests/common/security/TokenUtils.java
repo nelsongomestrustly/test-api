@@ -8,7 +8,7 @@ import java.util.HashMap;
 @Slf4j
 public class TokenUtils {
 
-    private String getLoginMerchantDemoToken (
+    private String getLoginMerchantDemoToken(
             String merchantId,
             String transactionId) {
 

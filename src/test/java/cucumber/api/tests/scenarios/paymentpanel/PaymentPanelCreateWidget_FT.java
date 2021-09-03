@@ -4,7 +4,7 @@ import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
 import cucumber.api.tests.test.paymentpanel.actions.PaymentPanelActions;
-import cucumber.api.tests.test.paymentpanel.common.enums.dto.CreatePaymentWidgetDTOSameSupplier;
+import cucumber.api.tests.samplefiles.common.suppliers.paymentpanel.CreatePaymentWidgetDTOFileSampleSupplier;
 import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelCreateWidgetDTO;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -26,7 +26,7 @@ public class PaymentPanelCreateWidget_FT extends CucumberTest {
 
         //Get AdminConsoleSearchTransactionsDTO from Sample Files
         PaymentPanelCreateWidgetDTO paymentPanelCreateWidgetDTO
-                = CreatePaymentWidgetDTOSameSupplier.getSampleAdminConsoleSearchTransactionsDTO(fileName);
+                = CreatePaymentWidgetDTOFileSampleSupplier.getSampleAdminConsoleSearchTransactionsDTO(fileName);
 
         PaymentPanelCreateWidgetDTO paymentPanelWidget = PaymentPanelActions.getPaymentPanelWidget(
                 paymentPanelCreateWidgetDTO,

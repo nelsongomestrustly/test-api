@@ -9,7 +9,8 @@ Feature: the user access front end
   Scenario Outline: Client wants to setup Merchant Demo Front End
 
     Given Merchant Demo up and running and Expect Http Status <merDemHttpSta>
-    When The user access Merchant Demo Front End and Setup Information and Expect Http Status <merDemFroEndHttpSta>
+    #Testing in another test need a token
+    # When The user access Merchant Demo Front End and Setup Information and Expect Http Status <merDemFroEndHttpSta>
     Examples:
       | merDemHttpSta | merDemFroEndHttpSta |
       | 200           | 302                 |

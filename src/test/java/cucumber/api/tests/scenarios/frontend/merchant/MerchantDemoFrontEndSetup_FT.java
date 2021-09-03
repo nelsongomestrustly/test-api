@@ -1,9 +1,11 @@
 package cucumber.api.tests.scenarios.frontend.merchant;
 
 import cucumber.api.tests.CucumberTest;
+import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.test.frontend.actions.FrontEndHttpActions;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
 
 import static cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums.FRONT_END_INTERCEPTOR_MAP_KEY;
 
@@ -15,7 +17,9 @@ public class MerchantDemoFrontEndSetup_FT extends CucumberTest {
     @When("The user access Merchant Demo Front End and Build Bank Panel and Expect Http Status (\\d+)$")
     public void theUserAccessMerchantDemoFrontEndAndSetupInformation(int expectMerchantDemoFrontEndHttpStatus) {
 
-        FrontEndHttpActions.buildBankPanelInMerchantDemo(expectMerchantDemoFrontEndHttpStatus, FRONT_END_INTERCEPTOR_MAP_KEY);
+        String htmlBody = FrontEndHttpActions.buildBankPanelInMerchantDemo(expectMerchantDemoFrontEndHttpStatus, FRONT_END_INTERCEPTOR_MAP_KEY);
+
+        Assertions.assertFalse(GenericPredicates.checkIfNullOrEmpty.test(htmlBody));
 
     }
 

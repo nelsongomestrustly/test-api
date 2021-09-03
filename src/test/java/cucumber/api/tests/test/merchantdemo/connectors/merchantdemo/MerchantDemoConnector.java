@@ -3,7 +3,7 @@ package cucumber.api.tests.test.merchantdemo.connectors.merchantdemo;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;
-import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateSignatureQueryParamSupplier;
+import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateSignatureSupplier;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
 import org.springframework.http.ResponseEntity;
 
@@ -28,7 +28,7 @@ public class MerchantDemoConnector {
             MerchantCreateSignatureDTO merchantCreateSignatureDTO,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
-        HashMap<QueryParametersEnum, String> loginMultiValueMapForHttpRequest = CreateSignatureQueryParamSupplier.getLoginMultiValueMapForHttpRequest(merchantCreateSignatureDTO);
+        HashMap<QueryParametersEnum, String> loginMultiValueMapForHttpRequest = CreateSignatureSupplier.getLoginMultiValueMapForHttpRequest(merchantCreateSignatureDTO);
 
         return RestTemplateHttpConnector.httpPost(
                 MERCHANT_DEMO_GET_SIGNATURE_ENDPOINT.getEndpoint(),

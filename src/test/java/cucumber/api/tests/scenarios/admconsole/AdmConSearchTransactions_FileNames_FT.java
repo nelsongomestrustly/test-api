@@ -3,7 +3,7 @@ package cucumber.api.tests.scenarios.admconsole;
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
 import cucumber.api.tests.test.admconsole.actions.AdmConHttpActions;
-import cucumber.api.tests.test.admconsole.common.suppliers.dto.AdmConSearchTransactionsDTOSameSupplier;
+import cucumber.api.tests.samplefiles.common.suppliers.adminconsole.AdmConSearchTransactionsDTOFileSampleSupplier;
 import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
 import cucumber.api.tests.test.admconsole.validations.AdmConSearchTransactionsValidations;
 import io.cucumber.java.en.Then;
@@ -23,7 +23,7 @@ public class AdmConSearchTransactions_FileNames_FT extends CucumberTest {
 
        //Get AdminConsoleSearchTransactionsDTO from Sample Files
         AdmConSearchTransactionsDTO sampleAdmConSearchTransactionsDTO4
-                = AdmConSearchTransactionsDTOSameSupplier.getSampleAdminConsoleSearchTransactionsDTO(fileName);
+                = AdmConSearchTransactionsDTOFileSampleSupplier.getSampleAdminConsoleSearchTransactionsDTO(fileName);
 
        //Admin Console Html Search Result Body
        String resultHTMLBody = AdmConHttpActions.getAdminConsoleTransactionsByName(

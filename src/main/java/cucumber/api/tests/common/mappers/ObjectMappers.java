@@ -10,6 +10,7 @@ import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
+
 @Slf4j
 public class ObjectMappers {
 
@@ -20,16 +21,15 @@ public class ObjectMappers {
             JsonInclude.Include.NON_DEFAULT).registerModule(new JavaTimeModule()).disable(
                     SerializationFeature.WRITE_DATES_AS_TIMESTAMPS).findAndRegisterModules();
 
+
     public static <T> String objectToJSON(T object) {
 
         String json = null;
-
         try {
             json = new ObjectMapper().writeValueAsString(object);
         } catch (JsonProcessingException e) {
             log.error("Error During objectToJSON : " + object);
         }
-
         return json;
 
     }
@@ -37,15 +37,13 @@ public class ObjectMappers {
     public static <T> T jsonToObject(String json, Class<T> tipoClass) {
 
         T objectReturn = null;
-
         try {
             objectReturn = new ObjectMapper().readValue(json, tipoClass);
         } catch (JsonProcessingException e) {
             log.error("Error During jsonToObject : " + json + " / " + tipoClass);
         }
-
-
         return objectReturn;
 
     }
+
 }

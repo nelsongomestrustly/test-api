@@ -6,6 +6,7 @@ import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
 
 import java.util.HashMap;
 
+//TODO PROBLEM
 public class AdmConSearchForTransactionsSupplier2 {
 
     private static boolean removeLastChar;

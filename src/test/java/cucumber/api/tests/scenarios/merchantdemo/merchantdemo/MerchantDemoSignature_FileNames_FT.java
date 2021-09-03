@@ -4,8 +4,7 @@ import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
 import cucumber.api.tests.test.merchantdemo.actions.get.merchantdemo.MerchantDemoGetHttpActions;
-import cucumber.api.tests.test.merchantdemo.common.suppliers.dto.signature.MerchantDemoCreateSignatureDTOSameSupplier;
-import cucumber.api.tests.test.merchantdemo.common.suppliers.dto.signature.UpdateMerchantCreateSignatureDTOListWithSignature;
+import cucumber.api.tests.samplefiles.common.suppliers.merchantdemo.MerchantDemoCreateSignatureDTOFileSampleSupplier;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
 import cucumber.api.tests.test.merchantdemo.data.dto.MerchantSignatureDTO;
 import io.cucumber.java.en.Then;
@@ -14,7 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;
 
 import java.io.IOException;
-import java.util.List;
 
 import static cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums.MERCHANT_DEMO_INTERCEPTOR_MAP_KEY;
 
@@ -31,7 +29,7 @@ public class MerchantDemoSignature_FileNames_FT extends CucumberTest {
 
         //Get AdminConsoleSearchTransactionsDTO from Sample Files
         MerchantCreateSignatureDTO merchantCreateSignatureDTO
-                = MerchantDemoCreateSignatureDTOSameSupplier.getSampleMerchantCreateSignatureDTO(fileName);
+                = MerchantDemoCreateSignatureDTOFileSampleSupplier.getSampleMerchantCreateSignatureDTO(fileName);
 
         //Get Merchant Signature from Server
         MerchantSignatureDTO merchantDemoSignature = MerchantDemoGetHttpActions.getMerchantDemoSignature(
