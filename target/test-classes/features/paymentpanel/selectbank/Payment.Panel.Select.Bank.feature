@@ -27,9 +27,12 @@ Feature: the user logins in the application
     #We information above you can access Payment Panel and Get Bank Redirect Url
     Then The user opens "<bankName>" and Expect Http Status "<redirectStatus>"
     Then The user should have a Valid Token
+
+    #Build Bank Panel
     Then The user access Merchant Demo Front End and Build Bank Panel and Expect Http Status <okStatus>
-    #When The user access Payment Panel and Select Bank "<bankName>" - should get Bank Redirect Url and Expect Http Status "<payPanHttpSta>"
-    #Then The user should have a Valid Bank Redirect Url
+
+    #Setup Bank Panel
+    #Then The user access Merchant Demo Front End and Setup Bank Panel and Expect Http Status <okStatus>
 
 
     Examples:

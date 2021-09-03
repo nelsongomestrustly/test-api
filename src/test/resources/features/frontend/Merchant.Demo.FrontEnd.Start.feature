@@ -4,6 +4,7 @@ Feature: the user access front end
     Then Reset Test Context
     Then Add "Merchant_Globex_Basic_Info.json" Information to the Context
 
+
   @FrontEnd
     @MerchantDemo
   Scenario Outline: Client wants to setup Merchant Demo Front End

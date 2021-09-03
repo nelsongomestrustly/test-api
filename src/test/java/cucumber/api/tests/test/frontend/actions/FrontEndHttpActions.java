@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 
 import static cucumber.api.tests.test.frontend.connectors.FrontEndEndpoint.FRONT_END_ENDPOINT_BUILD_BANK_PANEL;
+import static cucumber.api.tests.test.frontend.connectors.FrontEndEndpoint.FRONT_END_ENDPOINT_SETUP;
 
 
 @Slf4j
@@ -27,5 +28,19 @@ public class FrontEndHttpActions {
         return responseEntity.getBody();
 
     }
+
+
+    public static String setupPanelInMerchantDemo(
+            Integer expectHttpStatus,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        ResponseEntity<String> responseEntity = FrontEndConnector.setupBankPanelInMerchantDemo(FRONT_END_ENDPOINT_SETUP, statefulRestTemplateInterceptorKeyEnums);
+
+        RestTemplateValidations.validateStatus(expectHttpStatus, responseEntity);
+
+        return responseEntity.getBody();
+
+    }
+
 
 }

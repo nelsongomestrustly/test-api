@@ -11,6 +11,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
 
@@ -213,10 +214,20 @@ public class RestTemplateHttpConnector {
             String endpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
+        //ResponseEntity<String> exchange = getConnection(statefulRestTemplateInterceptorKeyEnums).exchange(endpoint, HttpMethod.POST, null, String.class);
+
+        HttpHeaders requestHeaders = new HttpHeaders();
+        //requestHeaders.setContentType(MediaType.XX);
+        //requestHeaders.set("User-Agent", "PostmanRuntime/7.28.4");
+        requestHeaders.set("content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+        requestHeaders.set("accept", "application/json; app=react");
+
+        new HttpEntity<>(requestHeaders);
+
         log.info("performing http post for entity request to {}", endpoint);
 
         ResponseEntity<String> responseEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).postForEntity(
-                endpoint, getHttpEntityRequest(), String.class);
+                endpoint, requestHeaders, String.class);
 
         log.info("http post for entity status code {}", responseEntity.getStatusCode());
 

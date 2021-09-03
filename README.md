@@ -3,8 +3,11 @@
 Acesso
 Access ID eh a chave de acesso do Merchant na nossa API
 
+Logs
+O lt = loadingTime que é usado para logs.
 
-
+Organization
+TrustlyAB = Trustly Europe
 
 Merchant Into
 Merchant ID é o ID do merchant no nosso sistema
@@ -17,6 +20,9 @@ Transaction
 ID no PTWB -> Transaction ID
 ID do merchante , que  -> Merchant Reference
 ID no FIGTW -> ppTTransactionId.
+orderId é usado para transações que fazem integração com a TrustlyAB e usam conectores PSD2.
+Contextualizando: o eBay precisa validar contas bancárias de França, Itália e França (isso que chamamos de integração com TrustlyAB).
+
 paymentProviderId ---> Id do Bank ???????????
 
 Eligible for transaction (True ou False, devido ao ligh pannel, ao widget)
@@ -47,3 +53,4 @@ DemoBank
 Entra ele ja gera o widget.
 
 http://192.168.1.49:10000/frontend/setup ?? existe no backend ? onde ? 
+

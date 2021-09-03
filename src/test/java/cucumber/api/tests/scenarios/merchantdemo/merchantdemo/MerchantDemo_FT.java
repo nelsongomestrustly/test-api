@@ -12,6 +12,8 @@ import static cucumber.api.tests.configurations.resttemplate.common.enums.Statef
 @Slf4j
 public class MerchantDemo_FT extends CucumberTest {
 
+    //frontend-panel
+    //SetupController
     @Given("Merchant Demo up and running and Expect Http Status (\\d+)$")
     public void merchantDemoUpAndRunningAndExpectHttpStatus(int expectMerchantDemoHttpStatus) throws IOException {
 
