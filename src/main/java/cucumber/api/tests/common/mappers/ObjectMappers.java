@@ -46,4 +46,18 @@ public class ObjectMappers {
 
     }
 
+    public static <T> String objectToNonEscapedJSON(T object) {
+
+        String json = null;
+
+        try {
+            json = new ObjectMapper().writeValueAsString(object);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return json;
+
+    }
+
 }

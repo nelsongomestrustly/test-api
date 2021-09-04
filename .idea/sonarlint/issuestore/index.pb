@@ -307,8 +307,6 @@ ksrc/test/java/cucumber/api/tests/test/merchantdemo/actions/get/merchantdemo/Mer
 Ysrc/test/java/cucumber/api/tests/scenarios/merchantdemo/merchantinfo/MerchantInfo_FT.java,c/d/cd17b1019228464164e5f62eacea080090e87e78
 ¡
 qsrc/test/java/cucumber/api/tests/test/merchantgatewayserver/actions/transactions/MerchantGatwayServerActions.java,8/5/85e8dc82094650c3377ab2d67cb008b134e290d7
-Ž
-^src/test/java/cucumber/api/tests/scenarios/merchantgatewayserver/EstabilishTransaction_FT.java,2/a/2ac3f4081a2e4858ce0b3f94492f4dae63af0d4a
 ‡
 Wsrc/test/java/cucumber/api/tests/test/paymentpanel/connectors/PaymentPanelEndpoint.java,f/e/feb771b2a56ed8046ba8249dd1f4dce3b939218e
 ™
@@ -351,8 +349,6 @@ n
 ˆsrc/test/java/cucumber/api/tests/test/merchantdemo/common/suppliers/dto/signature/UpdateMerchantCreateSignatureDTOListWithSignature.java,4/6/46dae6a76e1858e844a2e4321ceb3573d46265ae
 7
 pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
-r
-Bsrc/main/java/cucumber/api/tests/common/mappers/ObjectMappers.java,3/f/3f721ddb329f3a6c63766a6d5d9865bc8bacc116
 ¦
 vsrc/test/java/cucumber/api/tests/samplefiles/common/suppliers/merchantdemo/MerchantDemoBasicInfoDTOSampleSupplier.java,b/a/ba9ecaf2872d0cc131155b46ae7c9ae89bb88976
  
@@ -391,8 +387,6 @@ Xsrc/test/java/cucumber/api/tests/test/paymentpanel/connectors/PaymentPanelConne
 ksrc/test/java/cucumber/api/tests/test/paymentpanel/common/supplier/dto/PaymentPanelCreateSelectBankDTO.java,2/0/20cceb417c94a05d8fa91c63c2f632968dce3c32
 ‘
 asrc/test/java/cucumber/api/tests/scenarios/paymentpanel/PaymentPanelSelectBankRedirectUrl_FT.java,a/3/a3853bf171bf909bc48fbbb1e6d95ec7259c9ade
-Š
-Zsrc/test/java/cucumber/api/tests/test/admconsole/data/dto/AdmConSearchTransactionsDTO.java,e/7/e71754865dca75d933186eaa0f560ea7758a222e
 …
 Usrc/test/java/cucumber/api/tests/test/merchantdemo/data/dto/MerchantBasicInfoDTO.java,b/6/b6d474218806b8c30e2b54e4ef860aa14416d0f9
 z
@@ -411,10 +405,6 @@ Osrc/test/java/cucumber/api/tests/test/merchantdemo/data/dto/PaymentFlowDTO.java
 [src/test/java/cucumber/api/tests/test/merchantgatewayserver/data/dto/EstabilishDataDTO.java,5/d/5d175d4839dc35072a0e81174ace4d08394917bb
 p
 @src/main/java/cucumber/api/tests/common/constants/env/Ports.java,f/b/fb48622324295279e7523731c16c504f31b1ed90
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-Š
-Zsrc/test/java/cucumber/api/tests/test/paymentpanel/data/dto/PaymentPanelSelectBankDTO.java,3/8/38b3a3e0da1dd44df55d0d044fe9eec39bf21c22
 Œ
 \src/test/java/cucumber/api/tests/test/paymentpanel/data/dto/PaymentPanelCreateWidgetDTO.java,2/c/2c1d5c090d494c82e68d081748d078056276d896
 •

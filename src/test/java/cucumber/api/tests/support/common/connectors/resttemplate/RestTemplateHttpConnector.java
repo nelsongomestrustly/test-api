@@ -219,12 +219,15 @@ public class RestTemplateHttpConnector {
         HttpHeaders requestHeaders = new HttpHeaders();
         //requestHeaders.setContentType(MediaType.XX);
         //requestHeaders.set("User-Agent", "PostmanRuntime/7.28.4");
-        requestHeaders.set("content-type", "application/x-www-form-urlencoded; charset=UTF-8");
-        requestHeaders.set("accept", "application/json; app=react");
+        requestHeaders.set("content-type", MediaType.APPLICATION_FORM_URLENCODED.toString());
+        requestHeaders.set("accept", MediaType.APPLICATION_JSON.toString());
 
-        new HttpEntity<>(requestHeaders);
+        HttpEntity<Object> objectHttpEntity = new HttpEntity<>(requestHeaders);
 
         log.info("performing http post for entity request to {}", endpoint);
+
+        ResponseEntity<String> response =
+                getConnection(statefulRestTemplateInterceptorKeyEnums).exchange(endpoint, HttpMethod.POST, objectHttpEntity, String.class);
 
         ResponseEntity<String> responseEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).postForEntity(
                 endpoint, requestHeaders, String.class);

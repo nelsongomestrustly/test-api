@@ -14,7 +14,7 @@ public final class ApacheConnectionManager {
     private static final Map<String, Map<String, ApacheHttpConnector>> connections = new HashMap<>();
     private static HashMap<String, ApacheHttpConnector> requesters;
 
-    public static ApacheHttpConnector getConnection(TestParticipantEnum testParticipant, String userName) {
+    public static ApacheHttpConnector getConnection() {
 
         //String testParticipantName = testParticipant.getName();
 
@@ -24,10 +24,9 @@ public final class ApacheConnectionManager {
 
         //User user = testParticipant.getUsers().get(userName);
         ApacheHttpConnector apacheHttpConnector = new ApacheHttpConnector();
-        requesters.put(userName, apacheHttpConnector);
         //connections.put(testParticipantName, requesters);
 
-        return requesters.get(userName);
+        return apacheHttpConnector;
 
     }
 

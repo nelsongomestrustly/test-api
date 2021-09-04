@@ -19,12 +19,10 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.util.EntityUtils;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 
 import javax.net.ssl.SSLContext;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
@@ -106,9 +104,40 @@ public class ApacheHttpConnector {
         HttpResponse httpResponse = httpClient.execute(setDefaultHeaders(httpPost));
         connectionPool.add(httpPost);
 
+
         log.info("http post request status code {}", httpResponse.getStatusLine().getStatusCode());
+
         return httpResponse;
     }
+
+
+
+    public <E> String httpPostForEntityString(String endpoint) throws IOException {
+        log.info("performing http post request to {}", endpoint);
+        HttpPost httpPost = new HttpPost(endpoint);
+
+        String entityString = EntityUtils.toString(httpClient.execute(setDefaultHeaders(httpPost)).getEntity());
+
+        log.info("http post request status code ");
+
+        return entityString;
+    }
+
+    /**
+     * This method will send the text to a client verbatim. It will not use any layouts. Use it to build app.services
+     * and to support AJAX.
+     *
+     //* @param text text of response.
+     //* @return { HttpSupport . HttpBuilder}, to accept additional information.
+     */
+    //protected HttpBuilder respond(String text){
+    //    if(text == null){
+    //        text = "null";
+    //    }
+    //    DirectResponse resp = new DirectResponse(text);
+    //    RequestContext.setControllerResponse(resp);
+    //    return new HttpBuilder(resp);
+    //}
 
     public HttpResponse httpXmlPost(String endpoint, String payload) throws IOException {
         log.info("performing http xml post request to {}", endpoint);

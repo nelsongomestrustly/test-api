@@ -1,28 +1,17 @@
 package cucumber.api.tests.test.frontend.connectors;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import cucumber.api.tests.common.suppliers.GenericSuppliers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.support.common.connectors.apache.ApacheConnectionManager;
-import cucumber.api.tests.support.common.connectors.apache.ApacheHttpConnector;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
-import cucumber.api.tests.test.login.common.suppliers.LoginSuppliers;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URI;
-
-import static cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateConnectionManager.getConnection;
-import static cucumber.api.tests.support.common.connectors.utils.HttpConnectorsUtils.getHttpEntityRequest;
-import static cucumber.api.tests.test.frontend.connectors.FrontEndEndpoint.FRONT_END_ENDPOINT_SETUP2;
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 @Slf4j
 public class FrontEndConnector {
@@ -40,21 +29,20 @@ public class FrontEndConnector {
 
 
 
-    public static ResponseEntity<String> setupBankPanelInMerchantDemo(
+    public static String setupBankPanelInMerchantDemo(
             FrontEndEndpoint frontEndEndpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
+
         String url = GenericSuppliers.getStringFormatted(frontEndEndpoint.getEndpoint(), MyTestContext.getMyTestContext().tokenManager.getFirstTokenDTO().getToken());
 
-        ApacheHttpConnector apacheHttpConnector = new ApacheHttpConnector();
+        try {
+            return ApacheConnectionManager.getConnection().httpPostForEntityString(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        log.info(url);
-
-
-
-        return RestTemplateHttpConnector.httpPostWithToken(
-                url,
-                statefulRestTemplateInterceptorKeyEnums);
+        return "error";
 
     }
 
@@ -68,6 +56,7 @@ public class FrontEndConnector {
         return map;
 
     }
+
 
 
 
