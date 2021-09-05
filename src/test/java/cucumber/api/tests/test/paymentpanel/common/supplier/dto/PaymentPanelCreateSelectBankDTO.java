@@ -1,7 +1,7 @@
 package cucumber.api.tests.test.paymentpanel.common.supplier.dto;
 
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
-import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelSelectBankDTO;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
+import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelSelectBankDTO;
 
 public class PaymentPanelCreateSelectBankDTO {
 

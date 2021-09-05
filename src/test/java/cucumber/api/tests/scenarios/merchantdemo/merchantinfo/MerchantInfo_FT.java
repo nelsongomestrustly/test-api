@@ -2,9 +2,9 @@ package cucumber.api.tests.scenarios.merchantdemo.merchantinfo;
 
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.enums.MerchantTypeEnum;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
 import cucumber.api.tests.test.merchantdemo.actions.get.merchantinfo.MerchantInfoGetHttpActions;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantBasicInfoDTO;
 import cucumber.api.tests.validations.object.GenericObjectValidations;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

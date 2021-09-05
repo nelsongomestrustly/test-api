@@ -2,7 +2,7 @@ package cucumber.api.tests.test.paymentpanel.common.supplier.html;
 
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.predicates.GenericPredicates;
-import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelCreateWidgetDTO;
+import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelCreateWidgetDTO;
 
 import java.util.HashMap;
 

@@ -1,9 +1,11 @@
 package cucumber.api.tests.test.frontend.actions;
 
+import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.test.frontend.connectors.FrontEndConnector;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
 import org.springframework.http.ResponseEntity;
 
 import static cucumber.api.tests.test.frontend.connectors.FrontEndEndpoint.FRONT_END_ENDPOINT_BUILD_BANK_PANEL;
@@ -34,11 +36,11 @@ public class FrontEndHttpActions {
             Integer expectHttpStatus,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
-        ResponseEntity<String> responseEntity = FrontEndConnector.setupBankPanelInMerchantDemo(FRONT_END_ENDPOINT_SETUP, statefulRestTemplateInterceptorKeyEnums);
+        String merchantDemFrontEndSetupJson = FrontEndConnector.setupBankPanelInMerchantDemo(FRONT_END_ENDPOINT_SETUP, statefulRestTemplateInterceptorKeyEnums);
 
-        RestTemplateValidations.validateStatus(expectHttpStatus, responseEntity);
+        Assertions.assertFalse(GenericPredicates.checkIfNullOrEmpty.test(merchantDemFrontEndSetupJson));
 
-        return responseEntity.getBody();
+        return merchantDemFrontEndSetupJson;
 
     }
 

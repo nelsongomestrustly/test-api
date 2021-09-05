@@ -6,10 +6,10 @@ import cucumber.api.tests.common.enums.device.DeviceOsEnum;
 import cucumber.api.tests.common.enums.device.DeviceTypeEnum;
 import cucumber.api.tests.common.mappers.FileMappers;
 import cucumber.api.tests.common.predicates.GenericPredicates;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.samplefiles.common.enums.files.merchantgatewayserver.MerchantGatewayServerTransactionsFilesEnum;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantBasicInfoDTO;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
-import cucumber.api.tests.test.merchantgatewayserver.data.dto.EstabilishDataDTO;
+import cucumber.api.tests.data.dto.merchantgatewayserver.EstabilishDataDTO;
 
 import java.io.IOException;
 

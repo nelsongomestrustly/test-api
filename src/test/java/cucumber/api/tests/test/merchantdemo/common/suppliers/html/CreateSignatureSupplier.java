@@ -3,8 +3,8 @@ package cucumber.api.tests.test.merchantdemo.common.suppliers.html;
 import cucumber.api.tests.common.enums.PaymentProviderEnum;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.predicates.GenericPredicates;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
 
 import java.util.HashMap;
 

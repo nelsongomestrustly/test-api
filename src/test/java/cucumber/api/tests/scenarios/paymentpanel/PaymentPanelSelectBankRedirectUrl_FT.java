@@ -1,14 +1,13 @@
 package cucumber.api.tests.scenarios.paymentpanel;
 
 import cucumber.api.tests.CucumberTest;
-import cucumber.api.tests.common.enums.PaymentProviderEnum;
 import cucumber.api.tests.common.predicates.GenericPredicates;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
 import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateSignatureSupplier;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
 import cucumber.api.tests.test.paymentpanel.actions.PaymentPanelActions;
 import cucumber.api.tests.test.paymentpanel.common.supplier.dto.PaymentPanelCreateSelectBankDTO;
-import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelSelectBankDTO;
+import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelSelectBankDTO;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;

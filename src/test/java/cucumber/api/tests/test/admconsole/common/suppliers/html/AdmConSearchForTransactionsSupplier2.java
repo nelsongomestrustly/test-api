@@ -2,7 +2,7 @@ package cucumber.api.tests.test.admconsole.common.suppliers.html;
 
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.predicates.GenericPredicates;
-import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
+import cucumber.api.tests.data.dto.admconsole.AdmConSearchTransactionsDTO;
 
 import java.util.HashMap;
 

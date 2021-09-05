@@ -1,15 +1,12 @@
 package cucumber.api.tests.support.cucumber.context;
 
-import cucumber.api.tests.support.cucumber.managers.MerchantDemoManager;
-import cucumber.api.tests.support.cucumber.managers.PaymentPanelManager;
-import cucumber.api.tests.support.cucumber.managers.TokenManager;
+import cucumber.api.tests.data.manager.MerchantDemoManager;
+import cucumber.api.tests.data.manager.PaymentPanelManager;
+import cucumber.api.tests.data.manager.TokenManager;
 import lombok.extern.slf4j.Slf4j;
-import cucumber.api.tests.support.cucumber.managers.AdminConsoleTransactionsManager;
-import cucumber.api.tests.support.cucumber.managers.LoginManager;
-import cucumber.api.tests.support.cucumber.managers.TestParticipantManager;
-
-import java.util.HashMap;
-import java.util.Map;
+import cucumber.api.tests.data.manager.AdminConsoleTransactionsManager;
+import cucumber.api.tests.data.manager.LoginManager;
+import cucumber.api.tests.data.manager.TestParticipantManager;
 
 @Slf4j
 public abstract class BaseCucumberContext {

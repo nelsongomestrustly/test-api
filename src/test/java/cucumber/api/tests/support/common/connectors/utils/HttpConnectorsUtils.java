@@ -2,9 +2,9 @@ package cucumber.api.tests.support.common.connectors.utils;
 
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.predicates.GenericPredicates;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
 import cucumber.api.tests.test.merchantdemo.common.suppliers.html.MerchantBasicInfoQueryParamSupplier;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantBasicInfoDTO;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;

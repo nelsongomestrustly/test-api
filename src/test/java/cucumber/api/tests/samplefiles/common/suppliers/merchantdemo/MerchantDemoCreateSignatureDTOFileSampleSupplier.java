@@ -2,8 +2,8 @@ package cucumber.api.tests.samplefiles.common.suppliers.merchantdemo;
 
 import cucumber.api.tests.common.mappers.FileMappers;
 import cucumber.api.tests.common.suppliers.MerchantSupplier;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.samplefiles.common.enums.files.nerchantdemo.MerchantDemoSignatureSampleFilesEnum;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
 
 import java.io.IOException;
 

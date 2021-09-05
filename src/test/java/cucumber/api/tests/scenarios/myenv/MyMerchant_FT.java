@@ -1,9 +1,9 @@
 package cucumber.api.tests.scenarios.myenv;
 
 import cucumber.api.tests.CucumberTest;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
 import cucumber.api.tests.samplefiles.common.suppliers.merchantdemo.MerchantDemoBasicInfoDTOSampleSupplier;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantBasicInfoDTO;
 import cucumber.api.tests.validations.object.GenericObjectValidations;
 import io.cucumber.java.en.Then;
 

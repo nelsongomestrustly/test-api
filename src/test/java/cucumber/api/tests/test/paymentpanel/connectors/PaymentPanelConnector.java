@@ -1,19 +1,17 @@
 package cucumber.api.tests.test.paymentpanel.connectors;
 
-import cucumber.api.tests.common.enums.PaymentProviderEnum;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;
 import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateSignatureSupplier;
-import cucumber.api.tests.test.merchantdemo.data.dto.MerchantCreateSignatureDTO;
 import cucumber.api.tests.test.paymentpanel.common.supplier.html.PaymentPanelCreateWidgetQueryParamSupplier;
 import cucumber.api.tests.test.paymentpanel.common.supplier.html.PaymentPanelSelectBankQueryParamSupplier;
-import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelCreateWidgetDTO;
-import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelSelectBankDTO;
+import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelCreateWidgetDTO;
+import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelSelectBankDTO;
 import org.springframework.http.ResponseEntity;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import static cucumber.api.tests.test.paymentpanel.connectors.PaymentPanelEndpoint.PAYMENT_PANEL_SELECT_BANK_ENDPOINT;
 import static cucumber.api.tests.test.paymentpanel.connectors.PaymentPanelEndpoint.PAYMENT_PANEL_SELECT_BANK_WIDGET_ENDPOINT;

@@ -2,7 +2,7 @@ package cucumber.api.tests.samplefiles.common.suppliers.adminconsole;
 
 import cucumber.api.tests.common.mappers.FileMappers;
 import cucumber.api.tests.samplefiles.common.enums.files.adminconsole.AdmConTransactionsSampleFilesEnum;
-import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
+import cucumber.api.tests.data.dto.admconsole.AdmConSearchTransactionsDTO;
 
 import java.io.IOException;
 

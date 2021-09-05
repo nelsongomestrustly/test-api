@@ -5,7 +5,7 @@ import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.support.cucumber.context.MyTestContext;
 import cucumber.api.tests.test.paymentpanel.actions.PaymentPanelActions;
 import cucumber.api.tests.samplefiles.common.suppliers.paymentpanel.CreatePaymentWidgetDTOFileSampleSupplier;
-import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelCreateWidgetDTO;
+import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelCreateWidgetDTO;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;

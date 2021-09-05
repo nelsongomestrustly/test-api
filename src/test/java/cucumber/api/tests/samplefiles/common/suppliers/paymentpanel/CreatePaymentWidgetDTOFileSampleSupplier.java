@@ -1,10 +1,8 @@
 package cucumber.api.tests.samplefiles.common.suppliers.paymentpanel;
 
 import cucumber.api.tests.common.mappers.FileMappers;
-import cucumber.api.tests.samplefiles.common.enums.files.adminconsole.AdmConTransactionsSampleFilesEnum;
 import cucumber.api.tests.samplefiles.common.enums.files.paymentpanel.PaymentPanelWidgetSampleFilesEnum;
-import cucumber.api.tests.test.admconsole.data.dto.AdmConSearchTransactionsDTO;
-import cucumber.api.tests.test.paymentpanel.data.dto.PaymentPanelCreateWidgetDTO;
+import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelCreateWidgetDTO;
 
 import java.io.IOException;
 

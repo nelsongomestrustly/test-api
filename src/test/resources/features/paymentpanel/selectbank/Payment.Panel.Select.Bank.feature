@@ -22,8 +22,6 @@ Feature: the user logins in the application
     When The user access Payment Panel Widget Endpoint should get Widget "<widgetName>" Info information and Expect Http Status "<okStatus>"
     Then The user should have a Valid Widget Object
 
-    #Generate Token
-
     #We information above you can access Payment Panel and Get Bank Redirect Url
     Then The user opens "<bankName>" and Expect Http Status "<redirectStatus>"
     Then The user should have a Valid Token
