@@ -30,7 +30,8 @@ Feature: the user logins in the application
     Then The user access Merchant Demo Front End and Build Bank Panel and Expect Http Status <okStatus>
 
     #Setup Bank Panel
-    Then The user access Merchant Demo Front End and Setup Bank Panel and Expect Http Status <okStatus>
+    Then The user access Merchant Demo Front End Setup and Receive Transactions Information
+    Then The user should have a Valid Transaction Id and a Transaction PP Id
 
 
     Examples:

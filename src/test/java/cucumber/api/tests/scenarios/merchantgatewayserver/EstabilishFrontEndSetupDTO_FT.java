@@ -41,7 +41,7 @@ import static cucumber.api.tests.configurations.resttemplate.common.enums.Statef
  * 		return establishTransaction(request);
  *    }
  */
-public class EstabilishTransaction_FT extends CucumberTest {
+public class EstabilishFrontEndSetupDTO_FT extends CucumberTest {
 
 
     @Then("The user estabilish a new Transaction using {string} and Expect Http Status {string}")

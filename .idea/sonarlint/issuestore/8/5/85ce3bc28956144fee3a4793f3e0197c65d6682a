@@ -1,16 +1,0 @@
-
-P
-java:S1118":Add a private constructor to hide the implicit public one.(Ù¼
-Q	java:S125"<This block of commented-out lines of code should be removed.(Âñ“Ã
-Q	java:S125!"<This block of commented-out lines of code should be removed.(ã¿ú
-V	java:S125#"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ñô³·º/
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ñô³·º/
-a
-java:S22593"FA "NullPointerException" could be thrown; "getBody()" can return null.(‘Ğ‹Äûÿÿÿÿ
-h
-java:S2259-"FA "NullPointerException" could be thrown; "getBody()" can return null.(¨ºº€ùÿÿÿÿ8öô³·º/
-a
-java:S2259'"FA "NullPointerException" could be thrown; "getBody()" can return null.(€šì•üÿÿÿÿ

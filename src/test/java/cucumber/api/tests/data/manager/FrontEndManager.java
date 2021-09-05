@@ -1,7 +1,6 @@
 package cucumber.api.tests.data.manager;
 
 import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
-import cucumber.api.tests.data.dto.token.TokenDTO;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 

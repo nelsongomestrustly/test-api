@@ -46,6 +46,12 @@ public class HttpMappers {
 
     }
 
+    public static <T> T readResponse(String json, Class<T> clazz) throws JsonProcessingException {
+
+        return new ObjectMapper().readValue(json.toString(), clazz);
+
+    }
+
     public static String readResponse(ResponseEntity<?> objectResponseEntity) throws JsonProcessingException {
 
         return new ObjectMapper().readValue(objectResponseEntity.getBody().toString(), String.class);

@@ -1,11 +1,12 @@
 package cucumber.api.tests.test.frontend.actions;
 
-import cucumber.api.tests.common.predicates.GenericPredicates;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
+import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
 import cucumber.api.tests.test.frontend.connectors.FrontEndConnector;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Assertions;
 import org.springframework.http.ResponseEntity;
 
 import static cucumber.api.tests.test.frontend.connectors.FrontEndEndpoint.FRONT_END_ENDPOINT_BUILD_BANK_PANEL;
@@ -32,15 +33,12 @@ public class FrontEndHttpActions {
     }
 
 
-    public static String setupPanelInMerchantDemo(
-            Integer expectHttpStatus,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+    public static FrontEndSetupDTO setupPanelInMerchantDemo(
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws JsonProcessingException {
 
         String merchantDemFrontEndSetupJson = FrontEndConnector.setupBankPanelInMerchantDemo(FRONT_END_ENDPOINT_SETUP, statefulRestTemplateInterceptorKeyEnums);
 
-        Assertions.assertFalse(GenericPredicates.checkIfNullOrEmpty.test(merchantDemFrontEndSetupJson));
-
-        return merchantDemFrontEndSetupJson;
+        return HttpMappers.readResponse(merchantDemFrontEndSetupJson, FrontEndSetupDTO.class);
 
     }
 

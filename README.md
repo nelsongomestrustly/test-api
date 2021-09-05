@@ -32,7 +32,7 @@ ID do Banco -> paymentProviderId
 
 
 
-Eligible for transaction (True ou False, devido ao ligh pannel, ao widget)
+Eligible for frontEndSetupDTO (True ou False, devido ao ligh pannel, ao widget)
 
 
 Token 
@@ -48,11 +48,11 @@ isStandaloneFiLogin ???
 Verify Transaction ??? Cria Transaction ??? Pois vc tem essa opcao no backend e nao no front end 
 verifyIOSgrp ???
 GRP ???
-No flow da criação da transaction quem cria o transaction id, e o ppt id, e quando ?
+No flow da criação da frontEndSetupDTO quem cria o frontEndSetupDTO id, e o ppt id, e quando ?
 
 Quando  clica no bank select panel index que vem do iframe
-eu entendo que ele ja cria a transaction
-mas de onde o front end tira o ppt transaction e o transaction id ???? e o me
+eu entendo que ele ja cria a frontEndSetupDTO
+mas de onde o front end tira o ppt frontEndSetupDTO e o frontEndSetupDTO id ???? e o me
 
 
 DemoBank
