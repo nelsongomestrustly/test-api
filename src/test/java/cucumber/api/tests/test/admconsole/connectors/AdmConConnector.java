@@ -2,7 +2,7 @@ package cucumber.api.tests.test.admconsole.connectors;
 
 
 
-import cucumber.api.tests.common.suppliers.GenericSuppliers;
+import cucumber.api.tests.common.suppliers.StringSuppliers;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;
@@ -24,7 +24,7 @@ public class AdmConConnector {
         String searchForTransactionsUrl = AdmConSearchForTransactionsSupplier.getSearchForTransactionsUrl(admConSearchTransactionsDTO);
 
         //Add default URL With Search Parameters
-        String url = GenericSuppliers.getStringFormatted(ADM_CON_TRANSACTIONS_SEARCH_ENDPOINT.getEndpoint(), searchForTransactionsUrl);
+        String url = StringSuppliers.getStringFormatted(ADM_CON_TRANSACTIONS_SEARCH_ENDPOINT.getEndpoint(), searchForTransactionsUrl);
 
         return RestTemplateHttpConnector.httpGet_Return_String(url, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
 

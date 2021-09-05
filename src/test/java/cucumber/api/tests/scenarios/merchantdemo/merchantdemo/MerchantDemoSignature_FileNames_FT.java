@@ -4,7 +4,7 @@ import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantSignatureDTO;
-import cucumber.api.tests.support.cucumber.context.MyTestContext;
+import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.test.merchantdemo.actions.get.merchantdemo.MerchantDemoGetHttpActions;
 import cucumber.api.tests.samplefiles.common.suppliers.merchantdemo.MerchantDemoCreateSignatureDTOFileSampleSupplier;
 import io.cucumber.java.en.Then;

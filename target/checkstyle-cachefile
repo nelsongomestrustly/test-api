@@ -1,12 +1,12 @@
-#Sun Sep 05 11:02:31 WEST 2021
+#Sun Sep 05 11:29:57 WEST 2021
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/configurations/resttemplate/CustomRestTemplate.java=1630284054273
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/QueryParamSymbols.java=1630452261965
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/CountryEnum.java=1630623608383
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/functionalinterfaces/TriFunction.java=1630284054271
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/device/DeviceTypeEnum.java=1630657171305
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/suppliers/StringSuppliers.java=1630837780458
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/utils/Utilities.java=1630284054272
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/constants/env/Ports.java=1630570055813
-/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/suppliers/GenericSuppliers.java=1630287583006
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/configurations/resttemplate/config/RestTemplateConfig.java=1630284054273
 /Users/nelson.gomes/paywithmybank/test-api/src/test/resources/application.properties=1630670353119
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/MerchantTypeEnum.java=1630623608486
@@ -17,7 +17,7 @@
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/predicates/GenericPredicates.java=1630367889648
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/Application.java=1630284054270
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/functionalinterfaces/FourthPredicate.java=1630284054271
-/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/suppliers/QueryParamSuppliers.java=1630623608579
+/Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/suppliers/QueryParamSuppliers.java=1630837343332
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/suppliers/MerchantSupplier.java=1630657171323
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/PaymentProviderEnum.java=1630623608563
 /Users/nelson.gomes/paywithmybank/test-api/src/main/java/cucumber/api/tests/common/enums/TokenEnv.java=1630622283278

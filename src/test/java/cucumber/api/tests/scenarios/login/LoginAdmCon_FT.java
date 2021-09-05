@@ -3,7 +3,7 @@ package cucumber.api.tests.scenarios.login;
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
 import cucumber.api.tests.support.common.users.services.TestParticipantServices;
-import cucumber.api.tests.support.cucumber.context.MyTestContext;
+import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.test.login.actions.LoginHttpActions;
 import cucumber.api.tests.test.login.validations.LoginValidations;
 import io.cucumber.java.en.And;

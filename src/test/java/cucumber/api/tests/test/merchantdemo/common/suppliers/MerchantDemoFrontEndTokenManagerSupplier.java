@@ -2,7 +2,7 @@ package cucumber.api.tests.test.merchantdemo.common.suppliers;
 
 import cucumber.api.tests.common.enums.TokenEnv;
 import cucumber.api.tests.data.dto.token.TokenDTO;
-import cucumber.api.tests.common.suppliers.GenericSuppliers;
+import cucumber.api.tests.common.suppliers.StringSuppliers;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -29,11 +29,11 @@ public class MerchantDemoFrontEndTokenManagerSupplier {
      */
     public static TokenDTO getMerchantDemoFrontEndTokenManager(String html) {
 
-        String http = GenericSuppliers.getBetweenStrings(html, HTML_START, HTML_END);
+        String http = StringSuppliers.getBetweenStrings(html, HTML_START, HTML_END);
         //http.replace(HTML_START, "");
         log.info("http : " + http);
 
-        String token = GenericSuppliers.getBetweenStrings(html, TOKEN_START, TOKEN_END);
+        String token = StringSuppliers.getBetweenStrings(html, TOKEN_START, TOKEN_END);
         log.info("token : " + token);
 
         return TokenDTO.builder()

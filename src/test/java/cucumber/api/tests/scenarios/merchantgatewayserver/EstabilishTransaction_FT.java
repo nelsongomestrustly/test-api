@@ -3,7 +3,7 @@ package cucumber.api.tests.scenarios.merchantgatewayserver;
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
-import cucumber.api.tests.support.cucumber.context.MyTestContext;
+import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.test.merchantgatewayserver.actions.transactions.MerchantGatwayServerActions;
 import cucumber.api.tests.samplefiles.common.suppliers.merchantgatewayserver.MerchantGatewaySeverEstabilishTransactionsDTOFileSampleSupplier;
 import cucumber.api.tests.data.dto.merchantgatewayserver.EstabilishDataDTO;

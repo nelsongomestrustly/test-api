@@ -4,7 +4,7 @@ import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.enums.TokenEnv;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.data.dto.token.TokenDTO;
-import cucumber.api.tests.support.cucumber.context.MyTestContext;
+import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateSignatureSupplier;
 import cucumber.api.tests.test.paymentpanel.actions.PaymentPanelActions;
 import io.cucumber.java.en.Then;

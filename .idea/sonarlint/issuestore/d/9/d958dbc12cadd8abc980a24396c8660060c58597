@@ -1,11 +1,0 @@
-
-U
-java:S1118":Add a private constructor to hide the implicit public one.(“˜Ëéÿÿÿÿÿ
-v
-java:S1104"`Make getMerchantReference a static final constant or non-public and provide accessors if needed.(—ÿ‚
-x
-java:S1104"]Make getMerchantDevice a static final constant or non-public and provide accessors if needed.(ùÎ¸Áÿÿÿÿÿ
-P
-java:S1444":Make this "public static getMerchantReference" field final(—ÿ‚
-R
-java:S1444"7Make this "public static getMerchantDevice" field final(ùÎ¸Áÿÿÿÿÿ

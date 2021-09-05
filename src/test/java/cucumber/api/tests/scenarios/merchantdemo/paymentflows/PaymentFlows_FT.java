@@ -1,7 +1,7 @@
 package cucumber.api.tests.scenarios.merchantdemo.paymentflows;
 
 import cucumber.api.tests.CucumberTest;
-import cucumber.api.tests.support.cucumber.context.MyTestContext;
+import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.test.merchantdemo.actions.get.paymentflows.PaymentFlowsGetHttpActions;
 import cucumber.api.tests.data.dto.paymentflows.PaymentFlowsDTO;
 import cucumber.api.tests.validations.object.GenericObjectValidations;

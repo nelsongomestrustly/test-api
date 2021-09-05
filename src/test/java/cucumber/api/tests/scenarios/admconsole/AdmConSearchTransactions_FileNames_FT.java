@@ -1,7 +1,7 @@
 package cucumber.api.tests.scenarios.admconsole;
 
 import cucumber.api.tests.CucumberTest;
-import cucumber.api.tests.support.cucumber.context.MyTestContext;
+import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.test.admconsole.actions.AdmConHttpActions;
 import cucumber.api.tests.samplefiles.common.suppliers.adminconsole.AdmConSearchTransactionsDTOFileSampleSupplier;
 import cucumber.api.tests.data.dto.admconsole.AdmConSearchTransactionsDTO;

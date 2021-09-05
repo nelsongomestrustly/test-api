@@ -3,7 +3,7 @@ package cucumber.api.tests.scenarios.myenv;
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.configurations.resttemplate.interceptors.StatefulRestTemplateInterceptor;
-import cucumber.api.tests.support.cucumber.context.MyTestContext;
+import cucumber.api.tests.data.context.MyTestContext;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
 

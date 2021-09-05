@@ -25,18 +25,6 @@ public class QueryParamSuppliers {
     }
 
 
-    public static String removeLastCharIfNecessary(String url) {
-
-        if (url.endsWith(URL_SPLIT_SYMBOL)) {
-            return GenericFunctions.removeLastChar.apply(url);
-        }
-
-        return url;
-
-    }
-
-
-
 
 
     private static String getSearchFormatWithValue(QueryParametersEnum queryParametersEnum, String fieldValue) {

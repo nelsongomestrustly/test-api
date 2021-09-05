@@ -2,7 +2,7 @@ package cucumber.api.tests.support.cucumber.datatable;
 
 import io.cucumber.datatable.DataTable;
 import cucumber.api.tests.support.cucumber.common.DataTableEnum;
-import cucumber.api.tests.support.cucumber.context.MyTestContext;
+import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.support.cucumber.parses.AliasDataParser;
 
 import static cucumber.api.tests.support.cucumber.common.DataTableHttpStatusEnum.HTTP_EXPECT_ADM_CONSOLE_SEARCH_TRANSACTIONS_STATUS;

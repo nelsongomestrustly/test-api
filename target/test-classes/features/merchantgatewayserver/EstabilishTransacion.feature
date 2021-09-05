@@ -4,6 +4,7 @@ Feature: the user logins in the application
     Then Reset Test Context
     Then Add "Merchant_Globex_Basic_Info.json" Information to the Context
 
+     #Not Being used by front end process
   @PaymentPanel
     @PaymentPanelSelectBank
   Scenario Outline: Client Gets Bank Redirect url when access Payment Panel - Select Bank Process
@@ -19,16 +20,16 @@ Feature: the user logins in the application
     Then The user should have a Valid Signature
 
     #Generate Widget
-    When The user access Payment Panel Widget Endpoint should get Widget "<widgetName>" Info information and Expect Http Status "<okStatus>"
-    Then The user should have a Valid Widget Object
+    #When The user access Payment Panel Widget Endpoint should get Widget "<widgetName>" Info information and Expect Http Status "<okStatus>"
+    #Then The user should have a Valid Widget Object
 
     #Generate Token
 
     #Estabilish Transaction
-    Then The user estabilish a new Transaction using "<estabilishTransactionFilename>" and Expect Http Status "<okStatus>"
+    #Then The user estabilish a new Transaction using "<estabilishTransactionFilename>" and Expect Http Status "<okStatus>"
 
     #We information above you can access Payment Panel and Get Bank Redirect Url
-    Given Payment Panel up and running and We are using Merchant Signature "<merchantDemoCreateSignatureFilename>" Expect Http Status "<redirectStatus>"
+    #Given Payment Panel up and running and We are using Merchant Signature "<merchantDemoCreateSignatureFilename>" Expect Http Status "<redirectStatus>"
     #When The user access Payment Panel and Select Bank "<bankName>" - should get Bank Redirect Url and Expect Http Status "<redirectStatus>"
     #Then The user should have a Valid Bank Redirect Url
 

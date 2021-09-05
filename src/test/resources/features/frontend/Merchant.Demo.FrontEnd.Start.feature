@@ -5,6 +5,7 @@ Feature: the user access front end
     Then Add "Merchant_Globex_Basic_Info.json" Information to the Context
 
 
+    #Not Being used
   @FrontEnd
     @MerchantDemo
   Scenario Outline: Client wants to setup Merchant Demo Front End

@@ -2,7 +2,7 @@ package cucumber.api.tests.support.cucumber.parses;
 
 import cucumber.api.tests.common.utils.Utilities;
 import io.cucumber.datatable.DataTable;
-import cucumber.api.tests.support.cucumber.context.BaseCucumberContext;
+import cucumber.api.tests.data.context.BaseCucumberContext;
 
 import java.util.*;
 

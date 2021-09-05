@@ -3,7 +3,7 @@ package cucumber.api.tests.test.admconsole.common.suppliers.html;
 import cucumber.api.tests.data.dto.admconsole.AdmConSearchTransactionsDTO;
 
 import static cucumber.api.tests.common.suppliers.QueryParamSuppliers.getSearchFormatByField;
-import static cucumber.api.tests.common.suppliers.QueryParamSuppliers.removeLastCharIfNecessary;
+import static cucumber.api.tests.common.suppliers.StringSuppliers.removeLastCharIfNecessary;
 
 public class AdmConSearchForTransactionsSupplier {
 

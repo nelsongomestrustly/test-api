@@ -2,7 +2,7 @@ package cucumber.api.tests.scenarios.paymentpanel;
 
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.predicates.GenericPredicates;
-import cucumber.api.tests.support.cucumber.context.MyTestContext;
+import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.test.paymentpanel.actions.PaymentPanelActions;
 import cucumber.api.tests.samplefiles.common.suppliers.paymentpanel.CreatePaymentWidgetDTOFileSampleSupplier;
 import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelCreateWidgetDTO;
