@@ -4,6 +4,8 @@ import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.functions.GenericFunctions;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 
+import java.util.HashMap;
+
 import static cucumber.api.tests.common.constants.QueryParamSymbols.EQUAL_SYMBOL;
 import static cucumber.api.tests.common.constants.QueryParamSymbols.URL_SPLIT_SYMBOL;
 
@@ -57,6 +59,20 @@ public class QueryParamSuppliers {
 
     }
 
+
+    /**
+     *
+     */
+
+    public static HashMap<QueryParametersEnum, String> addMapEntryIfNecessary(Object object, QueryParametersEnum key, HashMap<QueryParametersEnum, String> map) {
+
+        if (GenericPredicates.checkIfNullOrEmpty.negate().test(object)) {
+            map.put(key, object.toString());
+        }
+
+        return map;
+
+    }
 
 
 }

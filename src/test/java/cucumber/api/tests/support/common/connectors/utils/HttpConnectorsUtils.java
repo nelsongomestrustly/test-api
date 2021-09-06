@@ -1,5 +1,6 @@
 package cucumber.api.tests.support.common.connectors.utils;
 
+import cucumber.api.tests.common.enums.headers.HttpHeadersEnum;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
@@ -42,22 +43,6 @@ public class HttpConnectorsUtils {
 
     }
 
-    public static HttpEntity<String> getHttpEntityRequest() {
-
-        return new HttpEntity<>(getRequestHeaders());
-
-    }
-
-
-    private static HttpHeaders getRequestHeaders() {
-
-        HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.setContentType(MediaType.APPLICATION_JSON);
-
-        return requestHeaders;
-
-    }
-
     private static HashMap<QueryParametersEnum, String> getMerchantBasicInfoHeader() {
 
         List<MerchantBasicInfoDTO> merchantBasicInfoDTOList = MyTestContext.getMyTestContext().merchantDemoManager.getMerchantBasicInfoDTOList();
@@ -65,6 +50,38 @@ public class HttpConnectorsUtils {
         return MerchantBasicInfoQueryParamSupplier.getLoginMultiValueMapForHttpRequest(merchantBasicInfoDTOList.get(0));
 
     }
+
+    /**
+     * HTTP HEADERS
+     */
+
+    public static HttpEntity<String> getHttpEntityRequest(List<HttpHeadersEnum> headersEnumList) {
+
+        return new HttpEntity<>(getRequestHeaders(headersEnumList));
+
+    }
+
+
+    private static HttpHeaders getRequestHeaders(List<HttpHeadersEnum> headersEnumList) {
+
+        HttpHeaders requestHeaders = new HttpHeaders();
+        requestHeaders.setContentType(MediaType.APPLICATION_JSON);
+
+        return addAdditionalHeaders(requestHeaders, headersEnumList);
+
+    }
+
+    private static HttpHeaders addAdditionalHeaders(HttpHeaders requestHeaders, List<HttpHeadersEnum> headersEnumList) {
+
+        if (GenericPredicates.checkIfNullOrEmpty.negate().test(headersEnumList)) {
+            headersEnumList.forEach(headersEnum -> requestHeaders.add(headersEnum.getKey(), headersEnum.getValue()));
+        }
+
+        return requestHeaders;
+
+    }
+
+
 
     /**
      * Adding Token to URL

@@ -1,5 +1,6 @@
 package cucumber.api.tests.data.context;
 
+import cucumber.api.tests.data.manager.BankManager;
 import cucumber.api.tests.data.manager.FrontEndManager;
 import cucumber.api.tests.data.manager.MerchantDemoManager;
 import cucumber.api.tests.data.manager.PaymentPanelManager;
@@ -13,6 +14,7 @@ import cucumber.api.tests.data.manager.TestParticipantManager;
 public abstract class BaseCucumberContext {
 
     public AdminConsoleTransactionsManager adminConsoleTransactionsManager;
+    public BankManager bankManager;
     public FrontEndManager frontEndManager;
     public LoginManager loginDTOManager;
     public MerchantDemoManager merchantDemoManager;
@@ -23,6 +25,7 @@ public abstract class BaseCucumberContext {
     public BaseCucumberContext(){
 
         adminConsoleTransactionsManager = new AdminConsoleTransactionsManager();
+        bankManager = new BankManager();
         loginDTOManager = new LoginManager();
         merchantDemoManager = new MerchantDemoManager();
         paymentPanelManager = new PaymentPanelManager();

@@ -4,13 +4,14 @@ package cucumber.api.tests.test.paymentpanel.actions;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.common.predicates.GenericPredicates;
+import cucumber.api.tests.data.dto.bank.BankRedirectUrlDTO;
+import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.data.dto.token.TokenDTO;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.test.merchantdemo.common.suppliers.MerchantDemoFrontEndTokenManagerSupplier;
 import cucumber.api.tests.test.paymentpanel.connectors.PaymentPanelConnector;
 import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelCreateWidgetDTO;
-import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelSelectBankDTO;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import org.springframework.http.ResponseEntity;
 
@@ -21,18 +22,19 @@ public class PaymentPanelActions {
 
 
     //PaymentPanelSelectBankSelectBank_FT
-    public static String getSelectBankRedirectUrl(
+    public static BankRedirectUrlDTO getSelectBankRedirectUrl(
             MerchantCreateSignatureDTO merchantCreateSignatureDTO,
-            PaymentPanelSelectBankDTO paymentPanelSelectBankDTO,
+            FrontEndSetupDTO frontEndSetupDTO,
+            TokenDTO tokenDTO,
             Integer expectedStatus,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException {
 
         ResponseEntity<String> responseEntity = PaymentPanelConnector.getSelectBankRedirectUrl
-                (merchantCreateSignatureDTO, paymentPanelSelectBankDTO, statefulRestTemplateInterceptorKeyEnums);
+                (merchantCreateSignatureDTO, frontEndSetupDTO, tokenDTO, statefulRestTemplateInterceptorKeyEnums);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 
-        return HttpMappers.readResponse(responseEntity, String.class);
+        return HttpMappers.readResponse(responseEntity, BankRedirectUrlDTO.class);
 
 
     }

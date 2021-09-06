@@ -46,7 +46,7 @@ public class MerchantGatewaySeverEstabilishTransactionsDTOFileSampleSupplier {
         estabilishDataDTO.setCurrency(merchantCreateSignatureDTO.getCurrency());
         estabilishDataDTO.setDescription(merchantCreateSignatureDTO.getDescription());
         estabilishDataDTO.setMerchantReference(merchantCreateSignatureDTO.getMerchantReference());
-        estabilishDataDTO.setPaymentType(merchantCreateSignatureDTO.getPaymentType());
+        //estabilishDataDTO.setPaymentType(merchantCreateSignatureDTO.getPaymentType().getValue());
         estabilishDataDTO.setReturnUrl(merchantCreateSignatureDTO.getReturnUrl());
 
         //MerchantBasicInfoDTO

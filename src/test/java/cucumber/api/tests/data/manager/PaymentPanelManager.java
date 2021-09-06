@@ -1,5 +1,6 @@
 package cucumber.api.tests.data.manager;
 
+import cucumber.api.tests.data.dto.bank.BankRedirectUrlDTO;
 import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelCreateWidgetDTO;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -11,11 +12,9 @@ import java.util.List;
 @Data
 public class PaymentPanelManager {
 
-    private String bankRedirectUrl;
     private List<PaymentPanelCreateWidgetDTO> paymentPanelCreateWidgetDTOList;
 
     public PaymentPanelManager() {
-        this.bankRedirectUrl = "";
         this.paymentPanelCreateWidgetDTOList = new ArrayList<>();
     }
 

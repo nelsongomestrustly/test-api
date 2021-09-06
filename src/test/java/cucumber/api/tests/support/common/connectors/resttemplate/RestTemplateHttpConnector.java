@@ -3,6 +3,7 @@ package cucumber.api.tests.support.common.connectors.resttemplate;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import cucumber.api.tests.common.enums.headers.HttpHeadersEnum;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.data.dto.merchantgatewayserver.EstabilishDataDTO;
@@ -161,28 +162,45 @@ public class RestTemplateHttpConnector {
 
 
     /**
-     * POST WITH QUERY PARAMETERS
+     * POST WITH QUERY PARAMETERS AND HEADERS
      */
 
 
     public static <E> ResponseEntity<String> httpPost(
             String endpoint,
             Map<QueryParametersEnum, String> queryParam,
+            List<HttpHeadersEnum> headersEnumList,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-        return httPost(endpoint, queryParam, statefulRestTemplateInterceptorKeyEnums);
+        return httPost(endpoint, queryParam, headersEnumList, statefulRestTemplateInterceptorKeyEnums);
 
     }
 
     public static <E> ResponseEntity<String> httpPost(
             String endpoint,
+            List<HttpHeadersEnum> headersEnumList,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-        return httPost(endpoint, null, statefulRestTemplateInterceptorKeyEnums);
+        return httPost(endpoint, null, headersEnumList, statefulRestTemplateInterceptorKeyEnums);
     }
+
+    public static <E> ResponseEntity<String> httpPost(
+            String endpoint,
+            Map<QueryParametersEnum, String> queryParam,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+        return httPost(endpoint, queryParam, null, statefulRestTemplateInterceptorKeyEnums);
+    }
+
+    public static <E> ResponseEntity<String> httpPost(
+            String endpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+        return httPost(endpoint, null, null, statefulRestTemplateInterceptorKeyEnums);
+    }
+
 
 
     private static <E> ResponseEntity<String> httPost(
             String endpoint,
             Map<QueryParametersEnum, String> queryParam,
+            List<HttpHeadersEnum> headersEnumList,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
         log.info("performing adding query Parameters to Endpoint {}", endpoint);
@@ -192,7 +210,7 @@ public class RestTemplateHttpConnector {
         log.info("performing http post for entity request to {}", endpoint);
 
         ResponseEntity<String> responseEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).postForEntity(
-                endpointWithQueryParam, getHttpEntityRequest(), String.class);
+                endpointWithQueryParam, getHttpEntityRequest(headersEnumList), String.class);
 
         log.info("http post for entity status code {}", responseEntity.getStatusCode());
 

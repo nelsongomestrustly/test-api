@@ -53,8 +53,8 @@ import lombok.NoArgsConstructor;
 public class FrontEndSetupDTO {
 
     /**
-     * JJson Ignore
-     * Because its not been used at this moment
+     * Json Ignore
+     * Because it´s not been used at this moment
      */
     @JsonIgnore
     private String layout;

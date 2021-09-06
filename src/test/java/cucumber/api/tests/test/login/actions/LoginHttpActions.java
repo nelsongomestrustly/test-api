@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
 import cucumber.api.tests.test.login.connectors.LoginConnector;
 import cucumber.api.tests.test.login.connectors.LoginEndpoint;
-import cucumber.api.tests.test.login.validations.LoginValidations;
+import cucumber.api.tests.validations.login.LoginValidations;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 
 import java.io.IOException;

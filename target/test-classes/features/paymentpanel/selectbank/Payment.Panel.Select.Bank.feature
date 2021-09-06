@@ -26,16 +26,26 @@ Feature: the user logins in the application
     Then The user opens "<bankName>" and Expect Http Status "<redirectStatus>"
     Then The user should have a Valid Token
 
-    #Build Bank Panel
+    #Build Bank Panel using Front End Setup Call
     Then The user access Merchant Demo Front End and Build Bank Panel and Expect Http Status <okStatus>
 
-    #Setup Bank Panel
+    #Get Transaction Information using Front End Setup Call
     Then The user access Merchant Demo Front End Setup and Receive Transactions Information
     Then The user should have a Valid Transaction Id and a Transaction PP Id
+
+    #Get Bank Redirect Url Selecting Bank in Bank Panel
+    Then The user access Payment Panel and Select Bank "<bankName>" - should get Bank Redirect Url and Expect Http Status "<okStatus>"
+    Then The user should have a Valid Bank Redirect Url
+
+    #Authorize Transaction /// Not Authorize
+
+    #Validate Creation /// Validate Not Creation
 
 
     Examples:
       | redirectStatus | okStatus | merName     | merchantDemoCreateSignatureFilename | widgetName                    | bankName  |
       | 302            | 200      | GLOBEX_DEMO | Create_Signature_Recurring.json     | Create_Widget_Recurring.json  | DEMO_BANK |
       | 302            | 200      | GLOBEX_DEMO | Create_Signature_Instant.json       | Create_Widget_Instant.json    | DEMO_BANK |
-
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Deferred.json      | Create_Widget_Instant.json    | DEMO_BANK |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Disbursement.json  | Create_Widget_Instant.json    | DEMO_BANK |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Retrieval.json     | Create_Widget_Instant.json    | DEMO_BANK |

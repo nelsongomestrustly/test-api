@@ -5,7 +5,7 @@ import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.test.admconsole.actions.AdmConHttpActions;
 import cucumber.api.tests.samplefiles.common.suppliers.adminconsole.AdmConSearchTransactionsDTOFileSampleSupplier;
 import cucumber.api.tests.data.dto.admconsole.AdmConSearchTransactionsDTO;
-import cucumber.api.tests.test.admconsole.validations.AdmConSearchTransactionsValidations;
+import cucumber.api.tests.validations.admconsole.AdmConSearchTransactionsValidations;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;

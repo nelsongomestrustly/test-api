@@ -5,7 +5,7 @@ import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
 import cucumber.api.tests.support.common.users.services.TestParticipantServices;
 import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.test.login.actions.LoginHttpActions;
-import cucumber.api.tests.test.login.validations.LoginValidations;
+import cucumber.api.tests.validations.login.LoginValidations;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

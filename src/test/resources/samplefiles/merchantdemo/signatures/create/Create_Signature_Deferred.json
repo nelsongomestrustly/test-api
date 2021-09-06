@@ -1,0 +1,35 @@
+{
+  "accessId": "A48B73F694C4C8EE6306",
+  "returnUrl": "merchant-demo/globex/?success=true",
+  "cancelUrl": "merchant-demo/globex/?cancel=true",
+  "merchantId": 110005514,
+  "description": "GlobexDemo",
+  "merchantReference": "37A73EEBC13C13C0",
+  "amount": 50.00,
+
+  "paymentType": "Deferred",
+  "currency": "USD",
+  "globex[lang]": "en_US",
+  "metadata[lang]": "en_US",
+  "paymentProviderId": "",
+  "grp": "1",
+  "globexDescription": "",
+  "metadata[skinCode]": "",
+
+  "customer[name]": "JohnSmith",
+  "customer[address][address1]": "105Alternate2Street",
+  "customer[address][address2]": "402",
+  "customer[address][city]": "BeverlyHills",
+  "customer[address][state]": "CA",
+  "customer[address][zip]": "90210",
+  "customer[address][country]": "US",
+  "customer[phone]": "1123456789",
+  "customer[email]": "jsmith@email.com",
+  "customer[taxId]": 123456790,
+  "customer[driverLicense][number]": "124ABC",
+  "customer[driverLicense][state]": "CA",
+
+  "recurrence": ""
+
+
+}

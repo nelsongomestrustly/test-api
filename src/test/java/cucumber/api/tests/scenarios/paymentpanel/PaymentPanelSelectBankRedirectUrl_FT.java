@@ -2,12 +2,15 @@ package cucumber.api.tests.scenarios.paymentpanel;
 
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.predicates.GenericPredicates;
+import cucumber.api.tests.data.dto.bank.BankRedirectUrlDTO;
+import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.data.context.MyTestContext;
+import cucumber.api.tests.data.dto.token.TokenDTO;
 import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateSignatureSupplier;
 import cucumber.api.tests.test.paymentpanel.actions.PaymentPanelActions;
 import cucumber.api.tests.test.paymentpanel.common.supplier.dto.PaymentPanelCreateSelectBankDTO;
-import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelSelectBankDTO;
+import cucumber.api.tests.validations.bank.BankRedirectUrlValidation;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
@@ -20,23 +23,42 @@ import static cucumber.api.tests.configurations.resttemplate.common.enums.Statef
 @Slf4j
 public class PaymentPanelSelectBankRedirectUrl_FT extends CucumberTest {
 
-    //SelectBankController
+    /**
+     *
+     * Payment Panel
+     * SelectBankController
+     * selectBank()
+     *
+     * Expect
+     * "ppTransactionId" -> {String[1]@8024} ["ptx-Z2KgxR0sg9S..."]
+     * "merchantId" -> {String[1]@8026} ["110005514"]
+     * "orderId" -> {String[1]@8028} [""]
+     * "showManualEntryReason" -> {String[1]@8030} [""]
+     * "lt" -> {String[1]@8032} [""]
+     * "lang" -> {String[1]@8034} ["en"]
+     * "paymentProviderId" -> {String[1]@8036} ["200005501"]
+     * "transactionId" -> {String[1]@8038} ["1001156981"]
+     *
+     *
+     */
     @When("The user access Payment Panel and Select Bank {string} - should get Bank Redirect Url and Expect Http Status {string}")
     public void theUserAccessPaymentPanelAndSelectBankShouldGetBankRedirectUrlAndExpectHttpStatus(String bankName,
                                                                                                   String expectMerchantInfoHttpStatus) throws IOException {
 
-        //Getting Objects
         MerchantCreateSignatureDTO merchantCreateSignatureDTO
-                = CreateSignatureSupplier.populateMerchantCreateSignatureDTOWithPaymentProviderId(bankName);
+                = MyTestContext.getMyTestContext().merchantDemoManager.getFirstMerchantCreateSignatureDTO();
 
-        PaymentPanelSelectBankDTO paymentPanelSelectBankDTO
-                = PaymentPanelCreateSelectBankDTO.getPaymentPanelSelectBankDTO(merchantCreateSignatureDTO);
+        FrontEndSetupDTO frontEndSetupDTO
+                = MyTestContext.getMyTestContext().frontEndManager.getFirstTokenDTO();
+
+        TokenDTO tokenDTO
+                = MyTestContext.getMyTestContext().tokenManager.getFirstTokenDTO();
 
         //Process
-        String redirectUrl = PaymentPanelActions.getSelectBankRedirectUrl
-                (merchantCreateSignatureDTO, paymentPanelSelectBankDTO, Integer.parseInt(expectMerchantInfoHttpStatus), PAYMENT_PANEL_INTERCEPTOR_MAP_KEY);
+        BankRedirectUrlDTO bankRedirectUrlDTO = PaymentPanelActions.getSelectBankRedirectUrl
+                (merchantCreateSignatureDTO, frontEndSetupDTO, tokenDTO, Integer.parseInt(expectMerchantInfoHttpStatus), PAYMENT_PANEL_INTERCEPTOR_MAP_KEY);
 
-        MyTestContext.getMyTestContext().paymentPanelManager.setBankRedirectUrl(redirectUrl);
+        MyTestContext.getMyTestContext().bankManager.addBankRedirectUrlDTO(bankRedirectUrlDTO);
 
     }
 
@@ -44,9 +66,9 @@ public class PaymentPanelSelectBankRedirectUrl_FT extends CucumberTest {
     @Then("The user should have a Valid Bank Redirect Url")
     public void theUserShouldHaveAValidBankRedirectUrl() {
 
-        String redirectUrl = MyTestContext.getMyTestContext().paymentPanelManager.getBankRedirectUrl();
+        BankRedirectUrlDTO firstBankRedirectUrlDTO = MyTestContext.getMyTestContext().bankManager.getFirstBankRedirectUrlDTO();
 
-        Assertions.assertFalse(GenericPredicates.checkIfNullOrEmpty.test(redirectUrl));
+        BankRedirectUrlValidation.validateBankRedirectUrlDTO.accept(firstBankRedirectUrlDTO);
 
     }
 

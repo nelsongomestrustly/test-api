@@ -3,6 +3,7 @@ package cucumber.api.tests.data.dto.merchantdemo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import cucumber.api.tests.common.constants.env.Ports;
+import cucumber.api.tests.common.enums.PaymentTypeEnum;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.suppliers.UrlSuppliers;
 import lombok.AllArgsConstructor;
@@ -162,4 +163,9 @@ public class MerchantCreateSignatureDTO {
       public void setReturnUrl(String returnUrl) {
             this.returnUrl = UrlSuppliers.getEnvUrl(returnUrl, MERCHANT_DEMO_PORT);
       }
+
+      //public void setPaymentType(String paymentType) {
+      //      this.paymentType = PaymentTypeEnum.fromValue(paymentType);
+      //}
+
 }
