@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 public class Ports {
 
     public static String ADMIN_CONSOLE_PORT;
+    public static String BANK_PANEL_PORT;
     public static String MERCHANT_GATEWAY_SERVER_PORT;
     public static String MERCHANT_DEMO_PORT;
     public static String PAYMENT_PANEL_PORT;
@@ -17,9 +18,14 @@ public class Ports {
         ADMIN_CONSOLE_PORT = adminConsolePort;
     }
 
-    @Value("${merchant.gateway.server.port}")
-    public void setMerchantGatewayServerPort(String merchantGatewayServerPort) {
-        MERCHANT_GATEWAY_SERVER_PORT = merchantGatewayServerPort;
+    @Value("${bank.panel.port}")
+    public void setBankPanelPort(String bankPanelPort) {
+        BANK_PANEL_PORT = bankPanelPort;
+    }
+
+    @Value("${front.end.port}")
+    public void setFrontEndPort(String frontEndPort) {
+        FRONT_END_PORT = frontEndPort;
     }
 
     @Value("${merchant.demo.port}")
@@ -27,14 +33,15 @@ public class Ports {
         MERCHANT_DEMO_PORT = merchantDemoPort;
     }
 
+    @Value("${merchant.gateway.server.port}")
+    public void setMerchantGatewayServerPort(String merchantGatewayServerPort) {
+        MERCHANT_GATEWAY_SERVER_PORT = merchantGatewayServerPort;
+    }
+
     @Value("${payment.panel.port}")
     public void setPaymentPanelPort(String paymentPanelPort) {
         PAYMENT_PANEL_PORT = paymentPanelPort;
     }
 
-    @Value("${front.end.port}")
-    public void setFrontEndPort(String frontEndPort) {
-        FRONT_END_PORT = frontEndPort;
-    }
 
 }

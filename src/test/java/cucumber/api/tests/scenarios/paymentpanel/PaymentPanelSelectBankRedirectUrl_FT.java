@@ -1,20 +1,16 @@
 package cucumber.api.tests.scenarios.paymentpanel;
 
 import cucumber.api.tests.CucumberTest;
-import cucumber.api.tests.common.predicates.GenericPredicates;
-import cucumber.api.tests.data.dto.bank.BankRedirectUrlDTO;
+import cucumber.api.tests.data.dto.bankpanel.BankPanelRedirectUrlDTO;
 import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.data.dto.token.TokenDTO;
-import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateSignatureSupplier;
 import cucumber.api.tests.test.paymentpanel.actions.PaymentPanelActions;
-import cucumber.api.tests.test.paymentpanel.common.supplier.dto.PaymentPanelCreateSelectBankDTO;
-import cucumber.api.tests.validations.bank.BankRedirectUrlValidation;
+import cucumber.api.tests.validations.bank.BankPanelValidation;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Assertions;
 
 import java.io.IOException;
 
@@ -41,9 +37,8 @@ public class PaymentPanelSelectBankRedirectUrl_FT extends CucumberTest {
      *
      *
      */
-    @When("The user access Payment Panel and Select Bank {string} - should get Bank Redirect Url and Expect Http Status {string}")
-    public void theUserAccessPaymentPanelAndSelectBankShouldGetBankRedirectUrlAndExpectHttpStatus(String bankName,
-                                                                                                  String expectMerchantInfoHttpStatus) throws IOException {
+    @Then("The user access Payment Panel should get Bank Redirect Url and Expect Http Status {string}")
+    public void theUserAccessPaymentPanelAndSelectBankShouldGetBankRedirectUrlAndExpectHttpStatus(String expectMerchantInfoHttpStatus) throws IOException {
 
         MerchantCreateSignatureDTO merchantCreateSignatureDTO
                 = MyTestContext.getMyTestContext().merchantDemoManager.getFirstMerchantCreateSignatureDTO();
@@ -55,20 +50,20 @@ public class PaymentPanelSelectBankRedirectUrl_FT extends CucumberTest {
                 = MyTestContext.getMyTestContext().tokenManager.getFirstTokenDTO();
 
         //Process
-        BankRedirectUrlDTO bankRedirectUrlDTO = PaymentPanelActions.getSelectBankRedirectUrl
+        BankPanelRedirectUrlDTO bankPanelRedirectUrlDTO = PaymentPanelActions.getSelectBankRedirectUrl
                 (merchantCreateSignatureDTO, frontEndSetupDTO, tokenDTO, Integer.parseInt(expectMerchantInfoHttpStatus), PAYMENT_PANEL_INTERCEPTOR_MAP_KEY);
 
-        MyTestContext.getMyTestContext().bankManager.addBankRedirectUrlDTO(bankRedirectUrlDTO);
+        MyTestContext.getMyTestContext().bankManager.addBankRedirectUrlDTO(bankPanelRedirectUrlDTO);
 
     }
 
 
-    @Then("The user should have a Valid Bank Redirect Url")
+    @And("The user should have a Valid Bank Redirect Url")
     public void theUserShouldHaveAValidBankRedirectUrl() {
 
-        BankRedirectUrlDTO firstBankRedirectUrlDTO = MyTestContext.getMyTestContext().bankManager.getFirstBankRedirectUrlDTO();
+        BankPanelRedirectUrlDTO firstBankPanelRedirectUrlDTO = MyTestContext.getMyTestContext().bankManager.getFirstBankRedirectUrlDTO();
 
-        BankRedirectUrlValidation.validateBankRedirectUrlDTO.accept(firstBankRedirectUrlDTO);
+        BankPanelValidation.validateBankRedirectUrlDTO.accept(firstBankPanelRedirectUrlDTO);
 
     }
 

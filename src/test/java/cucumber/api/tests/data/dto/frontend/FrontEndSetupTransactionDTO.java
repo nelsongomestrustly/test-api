@@ -58,7 +58,7 @@ public class FrontEndSetupTransactionDTO {
     private QueryParametersEnum bankIdKey = QueryParametersEnum.BANK_ID;
 
     private String institutionName;
-    private QueryParametersEnum institutionNameKey = QueryParametersEnum.INSTITUTION_NAME_KEY;
+    private QueryParametersEnum institutionNameKey = QueryParametersEnum.INSTITUTION_NAME;
 
     private String currency;
     private QueryParametersEnum currencyKey = QueryParametersEnum.CURRENCY;

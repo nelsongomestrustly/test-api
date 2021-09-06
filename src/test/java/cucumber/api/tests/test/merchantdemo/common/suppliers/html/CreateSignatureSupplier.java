@@ -56,7 +56,7 @@ public class CreateSignatureSupplier {
         map = (addMapEntryIfNecessary(merchantCreateSignatureDTO.getMerchantReference(), merchantCreateSignatureDTO.getMerchantReferenceKey(), map));
         map = (addMapEntryIfNecessary(merchantCreateSignatureDTO.getMetadataSkinCode(), merchantCreateSignatureDTO.getMetadataSkinCodeKey(), map));
         map = (addMapEntryIfNecessary(merchantCreateSignatureDTO.getPaymentProviderId(), merchantCreateSignatureDTO.getPaymentProviderIdKey(), map));
-        map = (addMapEntryIfNecessary(merchantCreateSignatureDTO.getPaymentType(), merchantCreateSignatureDTO.getPaymentTypeKey(), map));
+        map = (addMapEntryIfNecessary(merchantCreateSignatureDTO.getPaymentType().getValue(), merchantCreateSignatureDTO.getPaymentTypeKey(), map));
         map = (addMapEntryIfNecessary(merchantCreateSignatureDTO.getRecurrence(), merchantCreateSignatureDTO.getRecurrenceKey(), map));
         map = (addMapEntryIfNecessary(merchantCreateSignatureDTO.getRecurrenceAmount(), merchantCreateSignatureDTO.getRecurrenceAmountKey(), map));
         map = (addMapEntryIfNecessary(merchantCreateSignatureDTO.getRecurrenceAutomaticCapture(), merchantCreateSignatureDTO.getRecurrenceAutomaticCaptureKey(), map));

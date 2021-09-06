@@ -1,7 +1,8 @@
 package cucumber.api.tests.data.manager;
 
-import cucumber.api.tests.data.dto.bank.BankRedirectUrlDTO;
-import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelCreateWidgetDTO;
+import cucumber.api.tests.data.dto.bankpanel.BankPanelRedirectUrlDTO;
+import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginHomePageDTO;
+import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginInfoDTO;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,30 +13,76 @@ import java.util.List;
 @Data
 public class BankManager {
 
-    private List<BankRedirectUrlDTO> bankRedirectUrlDTOList;
+    private List<BankPanelRedirectUrlDTO> bankPanelRedirectUrlDTOList;
+    private List<BankPanelLoginInfoDTO> bankPanelLoginInfoDTOList;
+    private List<BankPanelLoginHomePageDTO> bankPanelLoginHomePageDTOList;
 
     public BankManager() {
-        this.bankRedirectUrlDTOList = new ArrayList<>();
+        this.bankPanelRedirectUrlDTOList = new ArrayList<>();
+        this.bankPanelLoginInfoDTOList = new ArrayList<>();
+        this.bankPanelLoginHomePageDTOList = new ArrayList<>();
     }
 
     /**
      * Bank Redirect Url DTO
      */
 
-    public void addBankRedirectUrlDTO(BankRedirectUrlDTO bankRedirectUrlDTO) {
-        bankRedirectUrlDTOList.add(bankRedirectUrlDTO);
+    public void addBankRedirectUrlDTO(BankPanelRedirectUrlDTO bankPanelRedirectUrlDTO) {
+        bankPanelRedirectUrlDTOList.add(bankPanelRedirectUrlDTO);
     }
 
-    public void addAllBankRedirectUrlDTO(List<BankRedirectUrlDTO> bankRedirectUrlDTOS) {
-        bankRedirectUrlDTOList.addAll(bankRedirectUrlDTOS);
+    public void addAllBankRedirectUrlDTO(List<BankPanelRedirectUrlDTO> bankPanelRedirectUrlDTOS) {
+        bankPanelRedirectUrlDTOList.addAll(bankPanelRedirectUrlDTOS);
     }
 
-    public BankRedirectUrlDTO getFirstBankRedirectUrlDTO() {
-        return bankRedirectUrlDTOList.get(0);
+    public BankPanelRedirectUrlDTO getFirstBankRedirectUrlDTO() {
+        return bankPanelRedirectUrlDTOList.get(0);
     }
 
-    public BankRedirectUrlDTO getLastBankRedirectUrlDTO() {
-        return bankRedirectUrlDTOList.get(bankRedirectUrlDTOList.size() -1);
+    public BankPanelRedirectUrlDTO getLastBankRedirectUrlDTO() {
+        return bankPanelRedirectUrlDTOList.get(bankPanelRedirectUrlDTOList.size() -1);
     }
+
+    /**
+     * Bank Panel Login Info DTO
+     */
+
+    public void addBankPanelLoginInfoDTO(BankPanelLoginInfoDTO bankPanelLoginInfoDTO) {
+        bankPanelLoginInfoDTOList.add(bankPanelLoginInfoDTO);
+    }
+
+    public void addAllBankPanelLoginInfoDTO(List<BankPanelLoginInfoDTO> bankPanelRedirectUrlDTOS) {
+        bankPanelLoginInfoDTOList.addAll(bankPanelRedirectUrlDTOS);
+    }
+
+    public BankPanelLoginInfoDTO getFirstBankPanelLoginInfoDTO() {
+        return bankPanelLoginInfoDTOList.get(0);
+    }
+
+    public BankPanelLoginInfoDTO getLastBankPanelLoginInfoDTO() {
+        return bankPanelLoginInfoDTOList.get(bankPanelLoginInfoDTOList.size() -1);
+    }
+
+
+    /**
+     * Bank Panel Login Home Page DTO
+     */
+
+    public void addBankPanelLoginHomePageDTO(BankPanelLoginHomePageDTO bankPanelLoginHomePageDTO) {
+        bankPanelLoginHomePageDTOList.add(bankPanelLoginHomePageDTO);
+    }
+
+    public void addAllBankPanelLoginHomePageDTO(List<BankPanelLoginHomePageDTO> bankPanelRedirectUrlDTOS) {
+        bankPanelLoginHomePageDTOList.addAll(bankPanelRedirectUrlDTOS);
+    }
+
+    public BankPanelLoginHomePageDTO getFirstBankPanelLoginHomePageDTO() {
+        return bankPanelLoginHomePageDTOList.get(0);
+    }
+
+    public BankPanelLoginHomePageDTO getLastBankPanelLoginHomePageDTO() {
+        return bankPanelLoginHomePageDTOList.get(bankPanelLoginHomePageDTOList.size() -1);
+    }
+
 
 }

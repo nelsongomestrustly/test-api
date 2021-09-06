@@ -1,6 +1,5 @@
 package cucumber.api.tests.data.manager;
 
-import cucumber.api.tests.data.dto.bank.BankRedirectUrlDTO;
 import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelCreateWidgetDTO;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;

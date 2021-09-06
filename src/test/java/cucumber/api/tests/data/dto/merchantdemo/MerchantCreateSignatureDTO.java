@@ -3,6 +3,7 @@ package cucumber.api.tests.data.dto.merchantdemo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import cucumber.api.tests.common.constants.env.Ports;
+import cucumber.api.tests.common.enums.PaymentProviderEnum;
 import cucumber.api.tests.common.enums.PaymentTypeEnum;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.suppliers.UrlSuppliers;
@@ -114,7 +115,7 @@ public class MerchantCreateSignatureDTO {
       private String paymentProviderId;
       private QueryParametersEnum paymentProviderIdKey = QueryParametersEnum.PAYMENT_PROVIDER_ID;
 
-      private String paymentType;
+      private PaymentTypeEnum paymentType;
       private QueryParametersEnum paymentTypeKey = QueryParametersEnum.PAYMENT_TYPE;
 
       private String recurrence;
@@ -164,8 +165,8 @@ public class MerchantCreateSignatureDTO {
             this.returnUrl = UrlSuppliers.getEnvUrl(returnUrl, MERCHANT_DEMO_PORT);
       }
 
-      //public void setPaymentType(String paymentType) {
-      //      this.paymentType = PaymentTypeEnum.fromValue(paymentType);
-      //}
+      public void setPaymentType(String paymentType) {
+            this.paymentType = PaymentTypeEnum.fromValue(paymentType);
+      }
 
 }

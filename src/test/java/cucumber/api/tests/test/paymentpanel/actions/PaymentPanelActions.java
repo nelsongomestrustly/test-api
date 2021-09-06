@@ -4,7 +4,7 @@ package cucumber.api.tests.test.paymentpanel.actions;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.common.predicates.GenericPredicates;
-import cucumber.api.tests.data.dto.bank.BankRedirectUrlDTO;
+import cucumber.api.tests.data.dto.bankpanel.BankPanelRedirectUrlDTO;
 import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.data.dto.token.TokenDTO;
@@ -22,7 +22,7 @@ public class PaymentPanelActions {
 
 
     //PaymentPanelSelectBankSelectBank_FT
-    public static BankRedirectUrlDTO getSelectBankRedirectUrl(
+    public static BankPanelRedirectUrlDTO getSelectBankRedirectUrl(
             MerchantCreateSignatureDTO merchantCreateSignatureDTO,
             FrontEndSetupDTO frontEndSetupDTO,
             TokenDTO tokenDTO,
@@ -34,7 +34,7 @@ public class PaymentPanelActions {
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 
-        return HttpMappers.readResponse(responseEntity, BankRedirectUrlDTO.class);
+        return HttpMappers.readResponse(responseEntity, BankPanelRedirectUrlDTO.class);
 
 
     }

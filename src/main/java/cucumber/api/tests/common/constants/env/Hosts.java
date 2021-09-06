@@ -8,6 +8,7 @@ public class Hosts {
 
     public static String MAIN_HOST;
     public static String ADMIN_CONSOLE_HOST;
+    public static String BANK_PANEL_HOST;
     public static String MERCHANT_GATEWAY_SERVER_HOST;
     public static String MERCHANT_DEMO_HOST;
     public static String PAYMENT_PANEL_HOST;
@@ -22,6 +23,16 @@ public class Hosts {
     @Value("${admin.console.host}")
     public void setAdminConsoleHost(String adminConsoleHost) {
         ADMIN_CONSOLE_HOST = adminConsoleHost;
+    }
+
+    @Value("${bank.panel.host}")
+        public void setBankPanelHost(String bankPanelHost) {
+        BANK_PANEL_HOST = bankPanelHost;
+    }
+
+    @Value("${front.end.host}")
+    public void setFrontEndHost(String frontEndHost) {
+        FRONT_END_HOST = frontEndHost;
     }
 
     @Value("${merchant.gateway.server.host}")
@@ -39,10 +50,7 @@ public class Hosts {
         PAYMENT_PANEL_HOST = paymentPanelHost;
     }
 
-    @Value("${front.end.host}")
-    public void setFrontEndHost(String frontEndHost) {
-        FRONT_END_HOST = frontEndHost;
-    }
+
 
 
 }
