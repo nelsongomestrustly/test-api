@@ -50,15 +50,16 @@ Feature: the user logins in the application
     And The user should have a Bank Accounts information
 
     #Authorize Transaction /// Not Authorize
+    Then The user shoud be able to Select Account "<selectAccount>" and Confirm Transaction and Expect Http Status "<okStatus>"
 
 
     #Validate Creation /// Validate Not Creation
 
 
     Examples:
-      | redirectStatus | okStatus | merName     | merchantDemoCreateSignatureFilename | widgetName                    | bankName  |
-      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Recurring.json     | Create_Widget_Recurring.json  | DEMO_BANK |
-      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Instant.json       | Create_Widget_Instant.json    | DEMO_BANK |
-      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Deferred.json      | Create_Widget_Instant.json    | DEMO_BANK |
-      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Disbursement.json  | Create_Widget_Instant.json    | DEMO_BANK |
-      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Retrieval.json     | Create_Widget_Instant.json    | DEMO_BANK |
+      | redirectStatus | okStatus | merName     | merchantDemoCreateSignatureFilename | widgetName                    | bankName  | selectAccount |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Recurring.json     | Create_Widget_Recurring.json  | DEMO_BANK | 0             |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Instant.json       | Create_Widget_Instant.json    | DEMO_BANK | 0             |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Deferred.json      | Create_Widget_Instant.json    | DEMO_BANK | 0             |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Disbursement.json  | Create_Widget_Instant.json    | DEMO_BANK | 0             |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Retrieval.json     | Create_Widget_Instant.json    | DEMO_BANK | 0             |

@@ -425,13 +425,7 @@ ssrc/test/java/cucumber/api/tests/scenarios/bankpanel/BankPanelAuthenticateLogin
 Qsrc/test/java/cucumber/api/tests/test/bankpanel/connectors/BankPanelEndpoint.java,5/0/50b037b2ddf26536ec8d16cc4f682161353e7af9
 î
 dsrc/test/java/cucumber/api/tests/test/bankpanel/common/suppliers/BankPanelLoginAccountsSupplier.java,8/7/87e629941e1b423a39da9575d085306705aa4b4f
-Å
-Qsrc/test/java/cucumber/api/tests/test/bankpanel/actions/BankPanelHttpActions.java,a/1/a125791e65489bb4153ffcadeeee07daa4d63a42
 ã
 [src/test/java/cucumber/api/tests/data/dto/bankpanel/accounts/BankPanelAccountSelectDTO.java,5/a/5ad8a6bb8fd7de9b1b620d890b01e1a509b99165
 ä
 Zsrc/test/java/cucumber/api/tests/data/dto/bankpanel/accounts/BankPanelAccountLoginDTO.java,1/9/198c207d6d60a6f9259d40dbecc3a662839b79a9
-ï
-esrc/test/java/cucumber/api/tests/test/bankpanel/common/suppliers/BankPanelSelectAccountsSupplier.java,5/1/51387b26ca9be55a78a342344180701bbccfebc8
-Ç
-Rsrc/test/java/cucumber/api/tests/test/bankpanel/connectors/BankPanelConnector.java,8/a/8ab8b6ed63bb04f767c67924747c7d706fd3c721
