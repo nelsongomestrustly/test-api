@@ -1,7 +1,9 @@
 package cucumber.api.tests.validations.bank;
 
+import cucumber.api.tests.common.functionalinterfaces.FourthConsumer;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.data.dto.bankpanel.BankPanelRedirectUrlDTO;
+import cucumber.api.tests.data.dto.bankpanel.accounts.BankPanelAccountLoginDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginHomePageDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginInfoDTO;
 import org.junit.jupiter.api.Assertions;
@@ -46,6 +48,14 @@ public class BankPanelValidation {
     };
 
 
+    public static Consumer<BankPanelAccountLoginDTO> validateBankAccountLoginDTO = (bankPanelAccountLoginDTO) -> {
+
+        Assertions.assertFalse(GenericPredicates.checkIfNullOrEmpty.test(bankPanelAccountLoginDTO));
+        Assertions.assertFalse(GenericPredicates.checkIfNullOrEmpty.test(bankPanelAccountLoginDTO.getAccountFields()));
+        Assertions.assertFalse(GenericPredicates.checkIfNullOrEmpty.test(bankPanelAccountLoginDTO.getSelectedAccount()));
+        Assertions.assertFalse(GenericPredicates.checkIfNullOrEmpty.test(bankPanelAccountLoginDTO.getSelectedAccount().getIndex()));
+
+    };
 
 
 

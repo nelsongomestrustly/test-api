@@ -30,7 +30,7 @@ Feature: the user logins in the application
     Then The user access Merchant Demo Front End and Build Bank Panel and Expect Http Status <okStatus>
 
     #Get Transaction Information using Front End Setup Call
-    Then The user access Merchant Demo Front End Setup and Receive Transactions Information
+    Then The user access Merchant Demo Front End Setup and Receive Transactions Information <okStatus>
     Then The user should have a Valid Transaction Id and a Transaction PP Id
 
     #Get Bank Redirect Url Selecting Bank in Bank Panel
@@ -45,7 +45,12 @@ Feature: the user logins in the application
     Then The user should be able to open Bank Authorization Screen and Get Login Information and Expect Http Status "<okStatus>"
     And The user should have a Valid Bank Panel Login information
 
+    #Authenticate in the Bank Get Bank Account Available Info
+    Then The user should be able to Authenticate in the Bank and Get Available Accounts and Expect Http Status "<okStatus>"
+    And The user should have a Bank Accounts information
+
     #Authorize Transaction /// Not Authorize
+
 
     #Validate Creation /// Validate Not Creation
 

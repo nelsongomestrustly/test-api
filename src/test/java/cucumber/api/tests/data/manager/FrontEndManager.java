@@ -22,19 +22,19 @@ public class FrontEndManager {
      * Payment Panel Create Widget DTO
      */
 
-    public void addTokenDTO(FrontEndSetupDTO frontEndSetupDTO) {
+    public void addFrontEndSetupDTO(FrontEndSetupDTO frontEndSetupDTO) {
         frontEndSetupDTOList.add(frontEndSetupDTO);
     }
 
-    public void addAllTokenDTO(List<FrontEndSetupDTO> frontEndSetupDTOS) {
+    public void addAllFrontEndSetupDTO(List<FrontEndSetupDTO> frontEndSetupDTOS) {
         frontEndSetupDTOList.addAll(frontEndSetupDTOS);
     }
 
-    public FrontEndSetupDTO getFirstTokenDTO() {
+    public FrontEndSetupDTO getFirstFrontEndSetupDTO() {
         return frontEndSetupDTOList.get(0);
     }
 
-    public FrontEndSetupDTO getLastTokenDTO() {
+    public FrontEndSetupDTO getLastFrontEndSetupDTO() {
         return frontEndSetupDTOList.get(frontEndSetupDTOList.size() -1);
     }
 

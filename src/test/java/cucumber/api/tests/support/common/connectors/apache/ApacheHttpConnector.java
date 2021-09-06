@@ -2,11 +2,15 @@ package cucumber.api.tests.support.common.connectors.apache;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import cucumber.api.tests.common.enums.headers.HttpHeadersEnum;
+import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
+import cucumber.api.tests.common.predicates.GenericPredicates;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.*;
+import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.config.RegistryBuilder;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
@@ -23,11 +27,15 @@ import org.apache.http.util.EntityUtils;
 import javax.net.ssl.SSLContext;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.security.KeyManagementException;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertEquals;
@@ -116,12 +124,34 @@ public class ApacheHttpConnector {
         log.info("performing http post request to {}", endpoint);
         HttpPost httpPost = new HttpPost(endpoint);
 
+        httpPost = setDefaultReactHeaders(httpPost);
+
         String entityString = EntityUtils.toString(httpClient.execute(setDefaultHeaders(httpPost)).getEntity());
 
         log.info("http post request status code ");
 
         return entityString;
     }
+
+
+    public <E> String httpPostForEntityString(String endpoint, HashMap<QueryParametersEnum, String> loginMultiValueMapForHttpRequest, List<HttpHeadersEnum> headersEnumList) throws IOException, URISyntaxException {
+
+        URIBuilder builder = new URIBuilder(endpoint);
+        for (Map.Entry<QueryParametersEnum, String> entry : loginMultiValueMapForHttpRequest.entrySet()) {
+            builder.setParameter(entry.getKey().getKeyName(), entry.getValue());
+        }
+
+        //builder.setParameter("parts", "all").setParameter("action", "finish");
+        HttpPost httpPost = new HttpPost(builder.build());
+
+        String entityString = EntityUtils.toString(httpClient.execute(setDefaultHeaders(httpPost, headersEnumList)).getEntity());
+
+        log.info("http post request status code ");
+
+        return entityString;
+
+    }
+
 
     /**
      * This method will send the text to a client verbatim. It will not use any layouts. Use it to build app.services
@@ -187,11 +217,39 @@ public class ApacheHttpConnector {
     }
 
 
+    /**
+     * HEADERS
+     */
+
     private <E extends HttpRequestBase> E setDefaultHeaders(E requestBase) {
         requestBase.setHeader("Accept", ContentType.APPLICATION_JSON.toString());
         return requestBase;
     }
 
+    private <E extends HttpRequestBase> E setDefaultReactHeaders(E requestBase) {
+        requestBase.setHeader(HttpHeadersEnum.ACCEPT_APPLICATION_JSON_APP_REACT.getKey(), HttpHeadersEnum.ACCEPT_APPLICATION_JSON_APP_REACT.getValue());
+        return requestBase;
+    }
+
+    private <E extends HttpRequestBase> E setDefaultHeaders(E requestBase, List<HttpHeadersEnum> headersEnumList) {
+        requestBase.setHeader("Accept", ContentType.APPLICATION_JSON.toString());
+        return addAdditionalHeaders(requestBase, headersEnumList);
+    }
+
+    private <E extends HttpRequestBase> E addAdditionalHeaders(E requestBase, List<HttpHeadersEnum> headersEnumList) {
+
+        if (GenericPredicates.checkIfNullOrEmpty.negate().test(headersEnumList)) {
+            headersEnumList.forEach(headersEnum -> requestBase.addHeader(headersEnum.getKey(), headersEnum.getValue()));
+        }
+
+        return requestBase;
+
+    }
+
+
+    /**
+     * Connection Pool
+     */
 
     private static class ConnectionPool {
         private final Deque<HttpRequestBase> responsePool = new LinkedList<>();

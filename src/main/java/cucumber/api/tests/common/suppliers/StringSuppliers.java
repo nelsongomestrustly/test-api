@@ -4,6 +4,7 @@ import cucumber.api.tests.common.functions.GenericFunctions;
 
 import java.text.MessageFormat;
 
+import static cucumber.api.tests.common.constants.QueryParamSymbols.URL_QUERY_START_SYMBOL;
 import static cucumber.api.tests.common.constants.QueryParamSymbols.URL_SPLIT_SYMBOL;
 
 public class StringSuppliers {
@@ -30,7 +31,7 @@ public class StringSuppliers {
 
     public static String removeLastCharIfNecessary(String url) {
 
-        if (url.endsWith(URL_SPLIT_SYMBOL)) {
+        if (url.endsWith(URL_SPLIT_SYMBOL) || url.endsWith(URL_QUERY_START_SYMBOL)) {
             return GenericFunctions.removeLastChar.apply(url);
         }
 

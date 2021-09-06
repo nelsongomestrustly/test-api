@@ -44,7 +44,7 @@ public class PaymentPanelSelectBankRedirectUrl_FT extends CucumberTest {
                 = MyTestContext.getMyTestContext().merchantDemoManager.getFirstMerchantCreateSignatureDTO();
 
         FrontEndSetupDTO frontEndSetupDTO
-                = MyTestContext.getMyTestContext().frontEndManager.getFirstTokenDTO();
+                = MyTestContext.getMyTestContext().frontEndManager.getFirstFrontEndSetupDTO();
 
         TokenDTO tokenDTO
                 = MyTestContext.getMyTestContext().tokenManager.getFirstTokenDTO();

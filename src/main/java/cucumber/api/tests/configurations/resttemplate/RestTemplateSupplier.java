@@ -26,7 +26,11 @@ public class RestTemplateSupplier implements InitializingBean {
         staticRestTemplate = this.getRestTemplate();
     }
 
-    public static Supplier<RestTemplate> getRestTemplate = RestTemplate::new;
+    public static void resetRestTemplate() {
+        staticRestTemplate = new RestTemplate();
+    }
+
+    public static Supplier<RestTemplate> getRestTemplate = () -> staticRestTemplate;
 
     public static RestTemplate get() {
         return staticRestTemplate;

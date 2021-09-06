@@ -8,6 +8,8 @@ import cucumber.api.tests.data.context.MyTestContext;
 
 import java.util.HashMap;
 
+import static cucumber.api.tests.common.suppliers.QueryParamSuppliers.addMapEntryIfNecessary;
+
 public class CreateSignatureSupplier {
 
 
@@ -69,16 +71,6 @@ public class CreateSignatureSupplier {
 
         if (GenericPredicates.checkIfNullOrEmpty.negate().test(merchantCreateSignatureDTO.getSignature())) {
             map = (addMapEntryIfNecessary(merchantCreateSignatureDTO.getSignature(), merchantCreateSignatureDTO.getRequestSignatureKey(), map));
-        }
-
-        return map;
-
-    }
-
-    private static HashMap<QueryParametersEnum, String> addMapEntryIfNecessary(Object object, QueryParametersEnum key, HashMap<QueryParametersEnum, String> map) {
-
-        if (GenericPredicates.checkIfNullOrEmpty.negate().test(object)) {
-            map.put(key, object.toString());
         }
 
         return map;

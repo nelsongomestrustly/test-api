@@ -3,14 +3,18 @@ package cucumber.api.tests.test.bankpanel.actions;
 import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.data.dto.bankpanel.BankPanelRedirectUrlDTO;
+import cucumber.api.tests.data.dto.bankpanel.accounts.BankPanelAccountLoginDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginHomePageDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginInfoDTO;
+import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.test.bankpanel.connectors.BankPanelConnector;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 
 @Slf4j
@@ -51,6 +55,32 @@ public class BankPanelHttpActions {
                 .builder()
                 .bankPanelLoginHomePage(responseEntity.getBody())
                 .build();
+
+    }
+
+
+    /**
+     * Login Info - Bank Panel
+     */
+
+    public static BankPanelAccountLoginDTO getBankPanelAccountLoginDTO(
+            String username,
+            String password,
+            BankPanelLoginInfoDTO bankPanelLoginInfoDTO,
+            FrontEndSetupDTO frontEndSetupDTO,
+            Integer expectHttpStatus,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException, URISyntaxException {
+
+        ResponseEntity<String> responseEntity = BankPanelConnector.getBankPanelAccountLoginDTO(
+                username,
+                password,
+                bankPanelLoginInfoDTO,
+                frontEndSetupDTO,
+                statefulRestTemplateInterceptorKeyEnums);
+
+        RestTemplateValidations.validateStatus(expectHttpStatus, responseEntity);
+
+        return HttpMappers.readResponse(responseEntity, BankPanelAccountLoginDTO.class);
 
     }
 

@@ -5,11 +5,27 @@ import cucumber.api.tests.common.functions.GenericFunctions;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import static cucumber.api.tests.common.constants.QueryParamSymbols.EQUAL_SYMBOL;
 import static cucumber.api.tests.common.constants.QueryParamSymbols.URL_SPLIT_SYMBOL;
 
 public class QueryParamSuppliers {
+
+
+    public static String getSearchFormatByField(Map.Entry<QueryParametersEnum, String> mapEntry) {
+
+        StringBuilder sb = new StringBuilder();
+
+        if (GenericPredicates.checkIfNullOrEmpty.negate().test(mapEntry.getValue())) {
+            sb.append(getSearchFormatWithValue(mapEntry.getKey(), mapEntry.getValue()));
+        } else {
+            sb.append(getSearchFormatWithoutValue(mapEntry.getKey()));
+        }
+
+        return sb.toString();
+
+    }
 
 
     public static String getSearchFormatByField(Object object, QueryParametersEnum queryParametersEnum) {

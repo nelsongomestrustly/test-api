@@ -7,6 +7,7 @@ import cucumber.api.tests.common.enums.headers.HttpHeadersEnum;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.data.dto.merchantgatewayserver.EstabilishDataDTO;
+import cucumber.api.tests.support.common.connectors.utils.RestTemplateHttpConnectorsUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -21,8 +22,6 @@ import java.util.List;
 import java.util.Map;
 
 import static cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateConnectionManager.getConnection;
-import static cucumber.api.tests.support.common.connectors.utils.HttpConnectorsUtils.getEndpointWithQueryParam;
-import static cucumber.api.tests.support.common.connectors.utils.HttpConnectorsUtils.getHttpEntityRequest;
 
 @Slf4j
 public class RestTemplateHttpConnector {
@@ -53,7 +52,7 @@ public class RestTemplateHttpConnector {
 
         log.info("performing http get (String) request to {}", endpoint);
 
-        String endpointWithQueryParam = getEndpointWithQueryParam(endpoint, queryParam);
+        String endpointWithQueryParam = ""; //RestTemplateHttpConnectorsbakUtils.getEndpointWithQueryParamAndHeaders(null, null);
 
         ResponseEntity<String> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).getForEntity(endpointWithQueryParam, String.class);
 
@@ -205,12 +204,12 @@ public class RestTemplateHttpConnector {
 
         log.info("performing adding query Parameters to Endpoint {}", endpoint);
 
-        String endpointWithQueryParam = getEndpointWithQueryParam(endpoint, queryParam);
+        HttpEntity<MultiValueMap<String, String>> httpEntity = RestTemplateHttpConnectorsUtils.getEndpointWithQueryParamAndHeaders(headersEnumList, queryParam);
 
         log.info("performing http post for entity request to {}", endpoint);
 
         ResponseEntity<String> responseEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).postForEntity(
-                endpointWithQueryParam, getHttpEntityRequest(headersEnumList), String.class);
+                endpoint, httpEntity, String.class);
 
         log.info("http post for entity status code {}", responseEntity.getStatusCode());
 
@@ -218,8 +217,13 @@ public class RestTemplateHttpConnector {
 
     }
 
+
     /**
-     * POST WITH TOKEN
+     * BACKUP
+     * @param endpoint
+     * @param statefulRestTemplateInterceptorKeyEnums
+     * @param <E>
+     * @return
      */
 
     public static <E> ResponseEntity<String> httpPostWithToken(

@@ -10,6 +10,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.IOException;
+
 import static cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums.FRONT_END_INTERCEPTOR_MAP_KEY;
 
 @Slf4j
@@ -17,12 +19,12 @@ public class MerchantDemoFrontEndSetup_FT extends CucumberTest {
 
     //Need a Token
     //http://192.168.1.49:10000/frontend/setup
-    @When("The user access Merchant Demo Front End Setup and Receive Transactions Information")
-    public void theUserAccessMerchantDemoFrontEndAndBuildInformation() throws JsonProcessingException {
+    @When("The user access Merchant Demo Front End Setup and Receive Transactions Information (\\d+)$")
+    public void theUserAccessMerchantDemoFrontEndAndBuildInformation(Integer expectHttpStatus) throws IOException {
 
-        FrontEndSetupDTO frontEndSetupDTO = FrontEndHttpActions.setupPanelInMerchantDemo(FRONT_END_INTERCEPTOR_MAP_KEY);
+        FrontEndSetupDTO frontEndSetupDTO = FrontEndHttpActions.setupPanelInMerchantDemo(expectHttpStatus);
 
-        MyTestContext.getMyTestContext().frontEndManager.addTokenDTO(frontEndSetupDTO);
+        MyTestContext.getMyTestContext().frontEndManager.addFrontEndSetupDTO(frontEndSetupDTO);
 
     }
 
@@ -30,7 +32,7 @@ public class MerchantDemoFrontEndSetup_FT extends CucumberTest {
     @Then("The user should have a Valid Transaction Id and a Transaction PP Id")
     public void theUserShouldHaveAValidTransactionIdAndATransactionPPId() {
 
-        FrontEndSetupDTO firstTokenDTO = MyTestContext.getMyTestContext().frontEndManager.getFirstTokenDTO();
+        FrontEndSetupDTO firstTokenDTO = MyTestContext.getMyTestContext().frontEndManager.getFirstFrontEndSetupDTO();
 
         FrontEndValidations.validateFrontEndSetupDTO.accept(firstTokenDTO);
 

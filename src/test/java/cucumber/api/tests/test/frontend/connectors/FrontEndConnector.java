@@ -7,10 +7,10 @@ import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHtt
 import cucumber.api.tests.data.context.MyTestContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 
 import java.io.IOException;
+
+import static cucumber.api.tests.test.frontend.connectors.FrontEndEndpoint.FRONT_END_ENDPOINT_SETUP;
 
 @Slf4j
 public class FrontEndConnector {
@@ -28,33 +28,13 @@ public class FrontEndConnector {
 
 
 
-    public static String setupBankPanelInMerchantDemo(
-            FrontEndEndpoint frontEndEndpoint,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+    public static String setupBankPanelInMerchantDemo() throws IOException {
 
-
-        String url = StringSuppliers.getStringFormatted(frontEndEndpoint.getEndpoint(), MyTestContext.getMyTestContext().tokenManager.getFirstTokenDTO().getToken());
-
-        try {
-            return ApacheConnectionManager.getConnection().httpPostForEntityString(url);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return "error";
+        String url = StringSuppliers.getStringFormatted(FRONT_END_ENDPOINT_SETUP.getEndpoint(), MyTestContext.getMyTestContext().tokenManager.getFirstTokenDTO().getToken());
+        return ApacheConnectionManager.getConnection().httpPostForEntityString(url);
 
     }
 
-    private static MultiValueMap<String, String> teste() {
-
-        MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
-        map.add("token", MyTestContext.getMyTestContext().tokenManager.getFirstTokenDTO().getToken());
-        map.add("cancelUrl", "");
-        map.add("lt", "");
-
-        return map;
-
-    }
 
 
 

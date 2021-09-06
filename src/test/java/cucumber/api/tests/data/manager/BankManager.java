@@ -1,6 +1,7 @@
 package cucumber.api.tests.data.manager;
 
 import cucumber.api.tests.data.dto.bankpanel.BankPanelRedirectUrlDTO;
+import cucumber.api.tests.data.dto.bankpanel.accounts.BankPanelAccountLoginDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginHomePageDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginInfoDTO;
 import lombok.Data;
@@ -16,11 +17,13 @@ public class BankManager {
     private List<BankPanelRedirectUrlDTO> bankPanelRedirectUrlDTOList;
     private List<BankPanelLoginInfoDTO> bankPanelLoginInfoDTOList;
     private List<BankPanelLoginHomePageDTO> bankPanelLoginHomePageDTOList;
+    private List<BankPanelAccountLoginDTO> bankPanelAccountLoginDTOList;
 
     public BankManager() {
         this.bankPanelRedirectUrlDTOList = new ArrayList<>();
         this.bankPanelLoginInfoDTOList = new ArrayList<>();
         this.bankPanelLoginHomePageDTOList = new ArrayList<>();
+        this.bankPanelAccountLoginDTOList = new ArrayList<>();
     }
 
     /**
@@ -82,6 +85,26 @@ public class BankManager {
 
     public BankPanelLoginHomePageDTO getLastBankPanelLoginHomePageDTO() {
         return bankPanelLoginHomePageDTOList.get(bankPanelLoginHomePageDTOList.size() -1);
+    }
+
+    /**
+     * Bank Panel Account Login DTO
+     */
+
+    public void addBankPanelAccountLoginDTO(BankPanelAccountLoginDTO bankPanelLoginInfoDTO) {
+        bankPanelAccountLoginDTOList.add(bankPanelLoginInfoDTO);
+    }
+
+    public void addAllBankPanelAccountLoginDTO(List<BankPanelAccountLoginDTO> bankPanelRedirectUrlDTOS) {
+        bankPanelAccountLoginDTOList.addAll(bankPanelRedirectUrlDTOS);
+    }
+
+    public BankPanelAccountLoginDTO getFirstBankPanelAccountLoginDTO() {
+        return bankPanelAccountLoginDTOList.get(0);
+    }
+
+    public BankPanelAccountLoginDTO getLastBankPanelAccountLoginDTO() {
+        return bankPanelAccountLoginDTOList.get(bankPanelAccountLoginDTOList.size() -1);
     }
 
 

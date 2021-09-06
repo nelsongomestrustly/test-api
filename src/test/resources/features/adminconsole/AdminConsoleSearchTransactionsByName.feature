@@ -2,7 +2,7 @@ Feature: the user logins in the application
 
   Background: Then Reset Test Context Before Start Test and Log in Admin Console
 
-    Then Reset Test Context
+    Then Reset Test Context With Cookies
     Then Add "Merchant_Globex_Basic_Info.json" Information to the Context
     Then the user logs in Admin Console with "admin_console_admin_user" , Login Html Body "Login - Admin Console" , and Http Status "200" , "302" , "200"
 

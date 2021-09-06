@@ -3,44 +3,78 @@ package cucumber.api.tests.support.common.connectors.utils;
 import cucumber.api.tests.common.enums.headers.HttpHeadersEnum;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.predicates.GenericPredicates;
-import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
+import cucumber.api.tests.common.suppliers.StringSuppliers;
 import cucumber.api.tests.data.context.MyTestContext;
+import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
 import cucumber.api.tests.test.merchantdemo.common.suppliers.html.MerchantBasicInfoQueryParamSupplier;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class HttpConnectorsUtils {
+import static cucumber.api.tests.common.suppliers.QueryParamSuppliers.getSearchFormatByField;
+
+public class RestTemplateHttpConnectorsUtils {
 
     /**
-     * HTTP ENTITY , AND HTTP HEADERS
+     * HTTP QUERY AND HEADERS PARAMETERS
      */
 
-    public static String getEndpointWithQueryParam(String endpoint, Map<QueryParametersEnum, String> queryParam) {
+    public static HttpEntity<MultiValueMap<String, String>> getEndpointWithQueryParamAndHeaders(
+            List<HttpHeadersEnum> headersEnumList,
+            Map<QueryParametersEnum, String> queryParam) {
 
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(endpoint);
+        HttpHeaders headers = getHttpHeaders(headersEnumList);
+
+        MultiValueMap<String, String> map = getStringStringMultiValueMap(queryParam);
+
+        return new HttpEntity<MultiValueMap<String, String>>(map, headers);
+
+
+    }
+
+    /**
+     * QUERY
+     */
+
+    private static MultiValueMap<String, String> getStringStringMultiValueMap(Map<QueryParametersEnum, String> queryParam) {
+        MultiValueMap<String, String> map= new LinkedMultiValueMap<String, String>();
 
         //Received Query Params
         if (GenericPredicates.checkIfNullOrEmpty.negate().test(queryParam)) {
-
             for (Map.Entry<QueryParametersEnum, String> entry : queryParam.entrySet()) {
-                builder.queryParam(entry.getKey().getKeyName(), entry.getValue());
+                map.add(entry.getKey().getKeyName(), entry.getValue());
             }
-
         }
 
         //Merchant Basic Info Query Params from Context
         for (Map.Entry<QueryParametersEnum, String> entry : getMerchantBasicInfoHeader().entrySet()) {
-            builder.queryParam(entry.getKey().getKeyName(), entry.getValue());
+            map.add(entry.getKey().getKeyName(), entry.getValue());
         }
+        return map;
+    }
 
-        return builder.toUriString();
 
+    /**
+     * HEADERS
+     */
+
+    private static HttpHeaders getHttpHeaders(List<HttpHeadersEnum> headersEnumList) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+
+        if (GenericPredicates.checkIfNullOrEmpty.negate().test(headersEnumList)) {
+            headersEnumList.forEach(
+                    x -> headers.add(x.getKey(), x.getValue()));
+        } else {
+            headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        }
+        return headers;
     }
 
     private static HashMap<QueryParametersEnum, String> getMerchantBasicInfoHeader() {
@@ -52,7 +86,8 @@ public class HttpConnectorsUtils {
     }
 
     /**
-     * HTTP HEADERS
+     * BACKUP
+     * TODO REMOVE
      */
 
     public static HttpEntity<String> getHttpEntityRequest(List<HttpHeadersEnum> headersEnumList) {
@@ -66,6 +101,7 @@ public class HttpConnectorsUtils {
 
         HttpHeaders requestHeaders = new HttpHeaders();
         requestHeaders.setContentType(MediaType.APPLICATION_JSON);
+        requestHeaders.add("Transfer-Encoding", "chunked");
 
         return addAdditionalHeaders(requestHeaders, headersEnumList);
 
@@ -83,22 +119,5 @@ public class HttpConnectorsUtils {
 
 
 
-    /**
-     * Adding Token to URL
-     */
 
-    public static String getEndpointWithTokenQueryParam(String token, String url) {
-
-        token = "O2z4XFIEfj35QNJXMpra56gPuNJ9vRLKdsIK4CJSnD0iDsoLm392av6x6VbmJbiNUWYVbTXEajJit6b83oJhIzg4oF9zR4SoZIODRVwGlaEV5PVMzUD1ejACj0WkfH9KvEBUK%2B91u3F%2FOiKsFJ6%2BTV%2FDCguGkSEROjAQreH5QEeG3WxmHB7ehMWpHbKMgIhF%2Bib%2F8wosy7JNX0dD9mEL7ixNiK9vYJaN4OVj%2B5S3xf3PilVfrkuORmzUXMFHXJj%2FRG0ewxBkUfBinhKOMvTuxlCww2cpVkMsmqWgNiQw8%2BCa0iDiR4WgV0qhOhQi1bhYdjO4BM3JTA%2FmqhTs2PkRAt1QBdX1pqvWsraCGHWzj84WRfXKAv5nLJn4tIP2PN0QrExsHkwUcxPfEwkkKvPJ9d0dDKvmdL%2BzKsRGjpZsxfC2hz8V%2Blf3yZILegsx6ViA";
-
-        StringBuilder sb = new StringBuilder();
-        sb.append(url);
-        sb.append("?");
-        sb.append(QueryParametersEnum.TOKEN.getKeyName());
-        sb.append("=");
-        sb.append(token);
-
-        return sb.toString();
-
-    }
 }

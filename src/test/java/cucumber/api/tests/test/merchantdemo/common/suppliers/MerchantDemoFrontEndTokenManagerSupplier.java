@@ -1,6 +1,7 @@
 package cucumber.api.tests.test.merchantdemo.common.suppliers;
 
 import cucumber.api.tests.common.enums.TokenEnv;
+import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.data.dto.token.TokenDTO;
 import cucumber.api.tests.common.suppliers.StringSuppliers;
 import lombok.extern.slf4j.Slf4j;
@@ -39,6 +40,7 @@ public class MerchantDemoFrontEndTokenManagerSupplier {
         return TokenDTO.builder()
                 .tokenEnv(TokenEnv.MERCHANT_DEMO_FRONT_END_SETUP)
                 .token(token)
+                .tokenKey(QueryParametersEnum.TOKEN)
                 .http(html)
                 .build();
 

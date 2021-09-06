@@ -9,6 +9,8 @@ import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 
+import java.io.IOException;
+
 import static cucumber.api.tests.test.frontend.connectors.FrontEndEndpoint.FRONT_END_ENDPOINT_BUILD_BANK_PANEL;
 import static cucumber.api.tests.test.frontend.connectors.FrontEndEndpoint.FRONT_END_ENDPOINT_SETUP;
 
@@ -33,12 +35,11 @@ public class FrontEndHttpActions {
     }
 
 
-    public static FrontEndSetupDTO setupPanelInMerchantDemo(
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws JsonProcessingException {
+    public static FrontEndSetupDTO setupPanelInMerchantDemo(Integer expectHttpStatus) throws IOException {
 
-        String merchantDemFrontEndSetupJson = FrontEndConnector.setupBankPanelInMerchantDemo(FRONT_END_ENDPOINT_SETUP, statefulRestTemplateInterceptorKeyEnums);
+        String htmlBody = FrontEndConnector.setupBankPanelInMerchantDemo();
 
-        return HttpMappers.readResponse(merchantDemFrontEndSetupJson, FrontEndSetupDTO.class);
+        return HttpMappers.readResponse(htmlBody, FrontEndSetupDTO.class);
 
     }
 

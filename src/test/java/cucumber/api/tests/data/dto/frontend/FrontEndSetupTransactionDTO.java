@@ -76,8 +76,9 @@ public class FrontEndSetupTransactionDTO {
     private String paymentFlow;
     private QueryParametersEnum paymentFlowKey = QueryParametersEnum.PAYMENT_FLOW;
 
-    @JsonIgnore
-    private String supportedLanguages;
+    private FrontEndSetupTransactionSupportedLanguagesDTO supportedLanguages;
+    private QueryParametersEnum supportedLanguagesKey = QueryParametersEnum.SUPPORTED_LANGUAGES;
+
     @JsonIgnore
     private String permissions;
     @JsonIgnore
