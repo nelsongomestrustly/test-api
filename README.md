@@ -1,27 +1,18 @@
 # test-api
 
-Acesso
-Access ID eh a chave de acesso do Merchant na nossa API
 
+------
 Dto information
+------
 https://paywithmybank.atlassian.net/wiki/spaces/Engineering/pages/3014931/API+call+code+samples+-+Java
 
-Logs
-O lt = loadingTime que é usado para logs.
-
-Organization
-TrustlyAB = Trustly Europe
-
-Merchant Into
-Merchant ID é o ID do merchant no nosso sistema
-
-Payment Panel
-Endpoint Principal Select Bank, volta um link para a LightBox, nesse link tem Token
-O que é esse token ????????
+------
+FDP
+------
+FPD = Flow Progress Data, também é opcional, serve pra track de conversão -> Conversão de UI mesmo, saber se é usuário recorrente, essas coisas
 
 ------
 Id´s :
-
 ------
 ID no PTWB -> Transaction ID
 ID do merchante , que  -> Merchant Reference
@@ -29,6 +20,38 @@ ID no FIGTW -> ppTTransactionId.
 orderId é usado para transações que fazem integração com a TrustlyAB e usam conectores PSD2.
 Contextualizando: o eBay precisa validar contas bancárias de França, Itália e França (isso que chamamos de integração com TrustlyAB).
 ID do Banco -> paymentProviderId
+ID do merchant de Acesso, tipo a chave de Acesso -> AccessID
+
+------
+GRP ->
+------
+Eh um numero referente aos Payment Flows,
+Existem Payment Flows de 0 a 100
+Se o GRP for 40, somente vai executar os Flows abaixo ou acima ??
+
+------
+Logs
+------
+O lt = loadingTime que é usado para logs.
+
+------
+Organization
+------
+TrustlyAB = Trustly Europe
+
+------
+Merchant Into
+------
+Merchant ID é o ID do merchant no nosso sistema
+
+------
+Payment Panel
+------
+Endpoint Principal Select Bank, volta um link para a LightBox, nesse link tem Token
+O que é esse token ????????
+
+
+
 
 
 

@@ -235,8 +235,6 @@ qsrc/test/java/cucumber/api/tests/samplefiles/common/constants/adminconsole/AdmC
 Ösrc/test/java/cucumber/api/tests/samplefiles/common/enums/files/merchantgatewayserver/MerchantGatewayServerTransactionsFilesEnum.java,0/3/03edd8806a5ac2c583dadff34c928b4858d0f7b0
 £
 ssrc/test/java/cucumber/api/tests/samplefiles/common/enums/files/adminconsole/AdmConTransactionsSampleFilesEnum.java,b/6/b6bec45d6f4e4760ef164dc2b030c3bff2276e76
-ê
-`src/test/java/cucumber/api/tests/scenarios/admconsole/AdmConSearchTransactions_FileNames_FT.java,8/6/8624857beb59dd0c12e41419dec80fa33bb8aff9
 n
 >src/main/java/cucumber/api/tests/common/constants/env/Ips.java,1/f/1fb4d5f28a548b55ffaa91f3cb305579a2bde496
 y
@@ -265,8 +263,6 @@ xsrc/test/java/cucumber/api/tests/samplefiles/common/suppliers/paymentpanel/Crea
 ^src/test/java/cucumber/api/tests/support/common/connectors/apache/ApacheConnectionManager.java,8/d/8d45b094465599baf48fb13255337cc880aa3796
 r
 Bsrc/main/java/cucumber/api/tests/common/mappers/ObjectMappers.java,3/f/3f721ddb329f3a6c63766a6d5d9865bc8bacc116
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 Ö
 Usrc/test/java/cucumber/api/tests/data/dto/admconsole/AdmConSearchTransactionsDTO.java,1/f/1f4b7f6099a0994737c1797ac18ec264567be2a2
 Ü
@@ -295,8 +291,6 @@ p
 @src/main/java/cucumber/api/tests/common/security/TokenUtils.java,8/4/84a6cc1a12113b2853ce67f2667f09651986a43d
 o
 ?src/test/java/cucumber/api/tests/data/manager/LoginManager.java,3/4/34e27881e611ed2f6bb8bb729a7eea99f53e3d89
-Ç
-Rsrc/test/java/cucumber/api/tests/data/manager/AdminConsoleTransactionsManager.java,4/f/4fe797d5cdbe367863364749272c20e43665ef0b
 y
 Isrc/test/java/cucumber/api/tests/data/manager/TestParticipantManager.java,1/8/18caefe5710db64cb698101cd3fea94e94783373
 f
@@ -307,8 +301,6 @@ u
 Esrc/test/java/cucumber/api/tests/validations/logs/LogValidations.java,d/5/d5b78ad4caff99a3b8ae8465870af89159ab2cc9
 °
 qsrc/test/java/cucumber/api/tests/test/merchantgatewayserver/actions/transactions/MerchantGatwayServerActions.java,8/5/85e8dc82094650c3377ab2d67cb008b134e290d7
-
-Osrc/test/java/cucumber/api/tests/test/admconsole/actions/AdmConHttpActions.java,b/1/b186ebac470308a6383e234301fd7030ef388050
 ì
 csrc/test/java/cucumber/api/tests/scenarios/merchantgatewayserver/EstabilishFrontEndSetupDTO_FT.java,0/8/083f796302d244fcb5c3cd38b03e641801ab4c45
 x
@@ -317,8 +309,6 @@ q
 Asrc/test/java/cucumber/api/tests/test/login/utils/LoginUtils.java,7/3/73ac453e95b92f1a4d085bdf0bf2904b34f8218d
 Ä
 Psrc/test/java/cucumber/api/tests/test/login/common/suppliers/LoginSuppliers.java,5/9/5931062b66666cd6a97877cc9eb3c69bc06a6bfb
-ê
-`src/test/java/cucumber/api/tests/validations/admconsole/AdmConSearchTransactionsValidations.java,b/4/b4a79c17b4c653977b0420e9b86b1df8a41d7c0c
 k
 ;src/main/java/cucumber/api/tests/common/enums/TokenEnv.java,d/6/d6d4f85fa316671894d1841bdb319692c7a589e0
 s
@@ -347,12 +337,6 @@ r
 Bsrc/main/java/cucumber/api/tests/common/enums/PaymentTypeEnum.java,6/0/606752733f50143603eecdb839b085165a9bf50b
 ë
 asrc/test/java/cucumber/api/tests/scenarios/paymentpanel/PaymentPanelSelectBankRedirectUrl_FT.java,a/3/a3853bf171bf909bc48fbbb1e6d95ec7259c9ade
-é
-^src/test/java/cucumber/api/tests/scenarios/frontend/merchant/MerchantDemoFrontEndBuild_FT.java,2/d/2df77275c54ec56ba7094c6d1e26512273947bae
-ü
-osrc/test/java/cucumber/api/tests/test/admconsole/common/suppliers/html/AdmConSearchForTransactionsSupplier.java,4/5/45a8b42b25f9af0b467414ac720df038c932cc73
-Ä
-Psrc/test/java/cucumber/api/tests/test/admconsole/connectors/AdmConConnector.java,c/8/c848793245c40723fda0b6fd6db828632593151c
 z
 Jsrc/main/java/cucumber/api/tests/common/suppliers/QueryParamSuppliers.java,f/e/fed25e0ef17c72d92e8fbb3fe641c46b62c0b97e
 â
@@ -387,5 +371,3 @@ p
 Tsrc/test/java/cucumber/api/tests/data/dto/bankpanel/login/BankPanelLoginInfoDTO.java,b/c/bcea6a18487b0e6df1220af1fa2ded8271e054a2
 ã
 [src/test/java/cucumber/api/tests/data/dto/bankpanel/accounts/BankPanelAccountFieldsDTO.java,0/c/0ce519568c8503d0a12fd79a5c977b3abc33cf03
-ã
-[src/test/java/cucumber/api/tests/data/dto/bankpanel/accounts/BankPanelAccountSelectDTO.java,5/a/5ad8a6bb8fd7de9b1b620d890b01e1a509b99165

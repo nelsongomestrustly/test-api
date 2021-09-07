@@ -13,7 +13,23 @@ import java.io.IOException;
 public class AdmConHttpActions {
 
     /**
-     * CREATE DATA
+     * SEARCH ALL
+     */
+
+    public static String getAdminConsoleAllTransactions(
+            Integer expectHttpStatus) throws IOException {
+
+        ResponseEntity<String> responseEntity = AdmConConnector.searchAllTransactionsInAdminConsole();
+
+        RestTemplateValidations.validateStatus(expectHttpStatus, responseEntity);
+
+        return responseEntity.getBody();
+
+    }
+
+
+    /**
+     * SEARCH BY NAME
      */
 
     public static String getAdminConsoleTransactionsByName(

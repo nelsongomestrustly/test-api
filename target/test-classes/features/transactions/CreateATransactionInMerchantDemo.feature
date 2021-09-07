@@ -1,13 +1,12 @@
 Feature: the user logins in the application
 
   Background: Then Reset Test Context
-    Then Reset Test Context
+    Then Reset Test Context With Cookies
     Then Add "Merchant_Globex_Basic_Info.json" Information to the Context
 
   @PaymentPanel
     @PaymentPanelSelectBank
   Scenario Outline: Client Gets Bank Redirect url when access Payment Panel - Select Bank Process
-
 
     #To Access Payment Panel you need Merchant Access Id
     Given Merchant Demo up and running and Expect Http Status <okStatus>
@@ -53,12 +52,16 @@ Feature: the user logins in the application
     Then The user shoud be able to Select Account "<selectAccount>" and Confirm Transaction and Expect Http Status "<okStatus>"
 
     #Validate Creation /// Validate Not Creation
+        #Check how many Transactions are in Admin Console
+    Then the user logs in Admin Console with "admin_console_admin_user" , Login Html Body "Login - Admin Console" , and Http Status "200" , "302" , "200"
+    Then Search for All Customer Name Transactions in Admin Console and Expect Http Status <okStatus>
+    Then Validate if the Transaction has really been created and is visible in AdminConsole
 
 
     Examples:
       | redirectStatus | okStatus | merName     | merchantDemoCreateSignatureFilename | widgetName                    | bankName  | selectAccount |
       | 302            | 200      | GLOBEX_DEMO | Create_Signature_Recurring.json     | Create_Widget_Recurring.json  | DEMO_BANK | 0             |
-      #| 302            | 200      | GLOBEX_DEMO | Create_Signature_Instant.json       | Create_Widget_Instant.json    | DEMO_BANK | 0             |
-      #| 302            | 200      | GLOBEX_DEMO | Create_Signature_Deferred.json      | Create_Widget_Instant.json    | DEMO_BANK | 0             |
-      #| 302            | 200      | GLOBEX_DEMO | Create_Signature_Disbursement.json  | Create_Widget_Instant.json    | DEMO_BANK | 0             |
-      #| 302            | 200      | GLOBEX_DEMO | Create_Signature_Retrieval.json     | Create_Widget_Instant.json    | DEMO_BANK | 0             |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Instant.json       | Create_Widget_Instant.json    | DEMO_BANK | 0             |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Deferred.json      | Create_Widget_Instant.json    | DEMO_BANK | 0             |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Disbursement.json  | Create_Widget_Instant.json    | DEMO_BANK | 0             |
+      | 302            | 200      | GLOBEX_DEMO | Create_Signature_Retrieval.json     | Create_Widget_Instant.json    | DEMO_BANK | 0             |

@@ -12,10 +12,19 @@ import cucumber.api.tests.data.dto.admconsole.AdmConSearchTransactionsDTO;
 import java.io.IOException;
 
 import static cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums.ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY;
+import static cucumber.api.tests.test.admconsole.connectors.AdmConEndpoint.ADM_CON_TRANSACTIONS_ENDPOINT;
 import static cucumber.api.tests.test.admconsole.connectors.AdmConEndpoint.ADM_CON_TRANSACTIONS_SEARCH_ENDPOINT;
 
 @Slf4j
 public class AdmConConnector {
+
+
+    public static ResponseEntity<String> searchAllTransactionsInAdminConsole() throws IOException {
+
+        return RestTemplateHttpConnector.httpGet_Return_String(ADM_CON_TRANSACTIONS_ENDPOINT.getEndpoint(), ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
+
+    }
+
 
     public static ResponseEntity<String> searchTransactionsInAdminConsole(
             AdmConSearchTransactionsDTO admConSearchTransactionsDTO) throws IOException {

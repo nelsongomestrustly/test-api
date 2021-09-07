@@ -23,4 +23,13 @@ public class AdmConSearchTransactionsValidations {
         Assertions.assertTrue(Integer.parseInt(numSearchResults) >= Integer.parseInt(numberOfExpectSearchResults));
 
     }
+
+    public static String getNumberOfResults(String resultHTMLBody) {
+
+        return StringSuppliers.getBetweenStrings(resultHTMLBody, ADM_CON_SEARCH_TRANSACTIONS_START_HTML_SEARCH_RESULT, ADM_CON_SEARCH_TRANSACTIONS_END_HTML_SEARCH_RESULT);
+
+    }
+
+
+
 }

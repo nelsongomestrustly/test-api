@@ -18,6 +18,7 @@ public class AdminConsoleTransactionsManager {
 
     //Admin Console Html Search Result Body
     private String adminConsoleHtmlSearchResultsBodyTransactions;
+    private Integer numberOfResults;
 
     //Object to Store the Results of the Search
     private List<AdmConSearchTransactionsDTO> adminConsoleSearchResultsTransactionsDTOList;
