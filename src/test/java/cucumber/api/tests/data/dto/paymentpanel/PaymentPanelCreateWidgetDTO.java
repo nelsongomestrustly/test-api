@@ -70,7 +70,9 @@ public class PaymentPanelCreateWidgetDTO {
     private QueryParametersEnum merchantReferenceKey = QueryParametersEnum.MERCHANT_REFERENCE;
 
     private String cid;
-    private QueryParametersEnum cidKey = QueryParametersEnum.DEVICE_TYPE;
+    private QueryParametersEnum cidKey = QueryParametersEnum.CID;
+    private QueryParametersEnum cidMetaDataKey = QueryParametersEnum.METADATA_LANG_CID;
+
 
 
 }

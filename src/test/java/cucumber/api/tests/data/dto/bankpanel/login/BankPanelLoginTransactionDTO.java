@@ -62,4 +62,8 @@ public class BankPanelLoginTransactionDTO {
     private String teleCheck;
     private QueryParametersEnum teleCheckKey = QueryParametersEnum.TELE_CHECK;
 
+
+    public void setState(String state) {
+        this.state = state.replace(" ", "");
+    }
 }

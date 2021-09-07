@@ -6,14 +6,12 @@ import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.suppliers.StringSuppliers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.data.dto.bankpanel.BankPanelRedirectUrlDTO;
+import cucumber.api.tests.data.dto.bankpanel.accounts.BankPanelAccountLoginDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginInfoDTO;
 import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
-import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
-import cucumber.api.tests.support.common.connectors.apache.ApacheConnectionManager;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;
 import cucumber.api.tests.test.bankpanel.common.suppliers.BankPanelLoginAccountsSupplier;
 import cucumber.api.tests.test.bankpanel.common.suppliers.BankPanelSelectAccountsSupplier;
-import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateSignatureSupplier;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 
@@ -78,13 +76,15 @@ public class BankPanelConnector {
     public static ResponseEntity<String> selectAnAccountAndConfirmTransaction(
             Integer selectedAccount,
             BankPanelLoginInfoDTO bankPanelLoginInfoDTO,
+            BankPanelAccountLoginDTO bankPanelAccountLoginDTO,
             FrontEndSetupDTO frontEndSetupDTO,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException, URISyntaxException {
 
         HashMap<QueryParametersEnum, String> loginMultiValueMapForHttpRequest =
-                BankPanelSelectAccountsSupplier.getLoginMultiValueMapForHttpRequest(
+                BankPanelSelectAccountsSupplier.getMultiValueMapForHttpRequest(
                         selectedAccount,
                         bankPanelLoginInfoDTO,
+                        bankPanelAccountLoginDTO,
                         frontEndSetupDTO);
 
         return RestTemplateHttpConnector.httpPost(

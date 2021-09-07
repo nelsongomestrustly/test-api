@@ -54,7 +54,12 @@ public class RestTemplateHttpConnectorsUtils {
 
         //Merchant Basic Info Query Params from Context
         for (Map.Entry<QueryParametersEnum, String> entry : getMerchantBasicInfoHeader().entrySet()) {
-            map.add(entry.getKey().getKeyName(), entry.getValue());
+
+            //Adding Basic if its null
+            if (GenericPredicates.checkIfNullOrEmpty.test(map.get(entry.getKey().getKeyName()))) {
+                map.add(entry.getKey().getKeyName(), entry.getValue());
+            }
+
         }
         return map;
     }
@@ -84,39 +89,6 @@ public class RestTemplateHttpConnectorsUtils {
         return MerchantBasicInfoQueryParamSupplier.getLoginMultiValueMapForHttpRequest(merchantBasicInfoDTOList.get(0));
 
     }
-
-    /**
-     * BACKUP
-     * TODO REMOVE
-     */
-
-    public static HttpEntity<String> getHttpEntityRequest(List<HttpHeadersEnum> headersEnumList) {
-
-        return new HttpEntity<>(getRequestHeaders(headersEnumList));
-
-    }
-
-
-    private static HttpHeaders getRequestHeaders(List<HttpHeadersEnum> headersEnumList) {
-
-        HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.setContentType(MediaType.APPLICATION_JSON);
-        requestHeaders.add("Transfer-Encoding", "chunked");
-
-        return addAdditionalHeaders(requestHeaders, headersEnumList);
-
-    }
-
-    private static HttpHeaders addAdditionalHeaders(HttpHeaders requestHeaders, List<HttpHeadersEnum> headersEnumList) {
-
-        if (GenericPredicates.checkIfNullOrEmpty.negate().test(headersEnumList)) {
-            headersEnumList.forEach(headersEnum -> requestHeaders.add(headersEnum.getKey(), headersEnum.getValue()));
-        }
-
-        return requestHeaders;
-
-    }
-
 
 
 

@@ -23,20 +23,19 @@ public class BankPanelAuthenticateLoginSelectAccountTransaction_FT extends Cucum
 
 
     @Then("The user shoud be able to Select Account {string} and Confirm Transaction and Expect Http Status {string}")
-    public void theUserShoudBeAbleToSelectAccountAndConfirmTransactionAndExpectHttpStatus(String selectAccount, String expectMerchantInfoHttpStatus) {
+    public void theUserShoudBeAbleToSelectAccountAndConfirmTransactionAndExpectHttpStatus(String selectAccount, String expectMerchantInfoHttpStatus) throws IOException, URISyntaxException {
 
         FrontEndSetupDTO firstFrontEndSetupDTO = MyTestContext.getMyTestContext().frontEndManager.getFirstFrontEndSetupDTO();
         BankPanelLoginInfoDTO firstBankPanelLoginInfoDTO = MyTestContext.getMyTestContext().bankManager.getFirstBankPanelLoginInfoDTO();
+        BankPanelAccountLoginDTO firstBankPanelAccountLoginDTO = MyTestContext.getMyTestContext().bankManager.getFirstBankPanelAccountLoginDTO();
 
-        BankPanelAccountLoginDTO bankPanelAccountLoginDTO = BankPanelHttpActions.selectAnAccountAndConfirmTransaction(
-                selectAccount,
+        BankPanelHttpActions.selectAnAccountAndConfirmTransaction(
+                Integer.parseInt(selectAccount),
                 firstBankPanelLoginInfoDTO,
+                firstBankPanelAccountLoginDTO,
                 firstFrontEndSetupDTO,
                 Integer.parseInt(expectMerchantInfoHttpStatus),
                 BANK_PANEL_INTERCEPTOR_MAP_KEY);
-
-        MyTestContext.getMyTestContext().bankManager.addBankPanelAccountLoginDTO(bankPanelAccountLoginDTO);
-
 
     }
 

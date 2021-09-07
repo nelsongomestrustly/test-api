@@ -152,10 +152,27 @@ public class MerchantCreateSignatureDTO {
       private String returnUrl;
       private QueryParametersEnum returnUrlKey = QueryParametersEnum.RETURN_URL;
 
-      //"Received after create process
+
+      /**
+       * Received during creation
+       */
+
       @JsonIgnore
       private String signature;
       private QueryParametersEnum requestSignatureKey = QueryParametersEnum.REQUEST_SIGNATURE;
+
+      /**
+       * From Merchant Basic Info
+       */
+
+      //From Basic Info
+      private String widgetId;
+      private QueryParametersEnum widgetIdKey = QueryParametersEnum.WIDGET_ID;
+
+
+      /**
+       * SETS
+       */
 
       public void setCancelUrl(String cancelUrl) {
             this.cancelUrl = UrlSuppliers.getEnvUrl(cancelUrl, MERCHANT_DEMO_PORT);

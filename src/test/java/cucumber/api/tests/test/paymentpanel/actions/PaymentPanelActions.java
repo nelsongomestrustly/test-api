@@ -48,6 +48,7 @@ public class PaymentPanelActions {
                 paymentPanelCreateWidgetDTO,
                 statefulRestTemplateInterceptorKeyEnums);
 
+        //If need you can get FDP from responseEntity html page
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 
         return (GenericPredicates.checkIfNullOrEmpty.test(responseEntity.getBody())) ? null : paymentPanelCreateWidgetDTO;
@@ -57,11 +58,13 @@ public class PaymentPanelActions {
 
     public static TokenDTO getMerchantTransactionToken(
             MerchantCreateSignatureDTO merchantCreateSignatureDTO,
+            PaymentPanelCreateWidgetDTO firstPaymentPanelCreateWidgetDTO,
             int expectedStatus,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
         ResponseEntity<String> responseEntity = PaymentPanelConnector.getPaymentPanel(
                 merchantCreateSignatureDTO,
+                firstPaymentPanelCreateWidgetDTO,
                 statefulRestTemplateInterceptorKeyEnums);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);

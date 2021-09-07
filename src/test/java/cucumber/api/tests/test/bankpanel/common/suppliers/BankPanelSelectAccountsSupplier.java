@@ -1,6 +1,7 @@
 package cucumber.api.tests.test.bankpanel.common.suppliers;
 
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
+import cucumber.api.tests.data.dto.bankpanel.accounts.BankPanelAccountLoginDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginInfoDTO;
 import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
 import io.cucumber.java.sl.In;
@@ -12,9 +13,10 @@ import static cucumber.api.tests.common.suppliers.QueryParamSuppliers.addMapEntr
 public class BankPanelSelectAccountsSupplier {
 
     //Accept: application/json; app=react
-    public static HashMap<QueryParametersEnum, String> getLoginMultiValueMapForHttpRequest(
+    public static HashMap<QueryParametersEnum, String> getMultiValueMapForHttpRequest(
             Integer selectedAccount,
             BankPanelLoginInfoDTO bankPanelLoginInfoDTO,
+            BankPanelAccountLoginDTO bankPanelAccountLoginDTO,
             FrontEndSetupDTO frontEndSetupDTO) {
 
         HashMap<QueryParametersEnum, String> map = new HashMap<>();
@@ -22,21 +24,25 @@ public class BankPanelSelectAccountsSupplier {
         //From FrontEndSetupTransactionDTO
         map = (addMapEntryIfNecessary(frontEndSetupDTO.getTransaction().getSupportedLanguages().getEn(), frontEndSetupDTO.getTransaction().getSupportedLanguages().getEnKey(), map));
         map = (addMapEntryIfNecessary(frontEndSetupDTO.getTransaction().getPpId(), frontEndSetupDTO.getTransaction().getPpIdKey(), map));
-        map = (addMapEntryIfNecessary(frontEndSetupDTO.getTransaction().getBankId(), QueryParametersEnum.FI_CODE, map));
         map = (addMapEntryIfNecessary(frontEndSetupDTO.getTransaction().getToken(), QueryParametersEnum.LT, map));
+        map = (addMapEntryIfNecessary(frontEndSetupDTO.getTransaction().getBankId(), QueryParametersEnum.FI_CODE, map));
         map = (addMapEntryIfNecessary(frontEndSetupDTO.getTransaction().getPaymentType().getValue(), frontEndSetupDTO.getTransaction().getPaymentTypeKey(), map));
 
+        //From BankPanelAccountLoginDTO
+        map = (addMapEntryIfNecessary(bankPanelAccountLoginDTO.getTransaction().getPrincipalName(), QueryParametersEnum.PRINCIPAL_NAME, map));
+        map = (addMapEntryIfNecessary(bankPanelAccountLoginDTO.getTransaction().getPrincipalSignature(), QueryParametersEnum.PRINCIPAL_SIGNATURE, map));
+        map = (addMapEntryIfNecessary(bankPanelAccountLoginDTO.getTransaction().getAuthorizationTimestamp(), QueryParametersEnum.AUTHORIZATION_TIME_STAMP, map));
+
         //FROM Bank BankPanelLoginInfoDTO
-        map = (addMapEntryIfNecessary(bankPanelLoginInfoDTO.getTransaction().getState().replace(" ", ""), bankPanelLoginInfoDTO.getTransaction().getStateKey(), map));
+        map = (addMapEntryIfNecessary(bankPanelLoginInfoDTO.getTransaction().getState(), bankPanelLoginInfoDTO.getTransaction().getStateKey(), map));
 
         //ACCESS Details
+        map = (addMapEntryIfNecessary(selectedAccount, QueryParametersEnum.SELECTED_ACCOUNT, map));
 
-        //Defaults TODO CHANGE IN THE FUTURE
-        map = (addMapEntryIfNecessary("0", QueryParametersEnum.LOGIN_ERROR_COUNT, map));
-        map = (addMapEntryIfNecessary("false", QueryParametersEnum.FORGOT_MY_PASSWORD_CUSTOM_ERROR, map));
-        map = (addMapEntryIfNecessary("0", QueryParametersEnum.GR, map));
+        //Default Details
         map = (addMapEntryIfNecessary("WEST", QueryParametersEnum.TIMEZONE_ABBR, map));
         map = (addMapEntryIfNecessary("60", QueryParametersEnum.TIMEZONE_OFFSET, map));
+        map = (addMapEntryIfNecessary("accountProfile", QueryParametersEnum.ACCOUNT_PROFILE, map));
 
         return map;
 
@@ -45,21 +51,31 @@ public class BankPanelSelectAccountsSupplier {
 
     /**
      *
+     * Missing
+     *
+     * authorizationTimestamp: 1630968049808
+     * principalSignature: Cs7Ofqz4u4XyTF8syrOuZ675xnU=
+     *
+     *
+     *
+     * principalName: signed:200005501:111
+     *
      *
      * lang: en
      * ppTransactionId: ptx-fuERsM96pmSsMrmy7dXigpF0-NAG
      * state: ydyVpbwWOyIfIiwYr/Ql2b/TJf5sfM+XL2dNnxGQr+KPmHRkVNwuXcoiePTJpkcIYHSNisjpQzw/iXGDXWrTy4FRpPmIAye9c/5IbVBr23leo4StAeJAwKFhYMYZeBpS0EgG9qHrDOpfQKdmDz/3AlBKGztR4JM2Sf3smbuO0AOgj/RyOOKcg2T+rZ4ssL82Csl1PMc2mQVAgvNeluJ7uCZzI4wTWZjXC48tWcPead+0/dJzqwvDPRcR+Q82PQpCl6QAzeSmIYihZnpCpmycH95ElD4/60QWo9Hl6TW8aO02JtAYDgaPTi0mkKHlxeg0YCJ595HzUnrX8Dq8YLmWS0rvdpOZf1e8XWZ/6a5XDAgj5RIJEp6j0mNNhS270Z6BdaRVELQ/faqsPANkol8GFK1WVRW/MT25zk0/y8suXllyXgXZpxW9tXB2MwNIc5BhjnCRG/P1p0LfdA+qLfGjwbxOSjGFtStjb4q1ine+B8/pwtNVNqjhn9RLdiddWbeS9OoDoGjsErWAz4y6+xDoWclkMnlpuHhdwUCGLHTlykYpo2bBgve+OibKp3MxmkcmCG3X/fTx3jyeUU2eGSKwGa5SHTHTuShBp9eN5fPiunVfJWjZrc/fjw6tjj4uWziylANijeNNj/DYskLH6OtA4Lc+Cqc0PE61K5yCCjoyqFfTqVxaJdbrbBbnrCA8lzR/IGEe/sGjGfYsP1sjnWwZ55tMG5feqo1LoWVQGks4Pkox6RXaaHgdtba4Xf9P/SkHqsFiz030bePbPKUcTSjVSwhsETPfe25U1U5G6hM6gASqkrGuaNYworrl3c6fYuoYoftQBDIceoDPfXJz0x2g5cUVav9SEoTg/NyiPjxVcVDBNHdvM2cr+hG/lA3ZP4giD2o2/7Wg82WKuH2YyYGFHOdR/qG192/hDZTra51Jd5Kq7e3OyMDXSEm4Fr4GJKMg
-     * accountProfile: Personal
-     * selectedAccount: 0
-     * principalName: signed:200005501:111
-     * principalSignature: Cs7Ofqz4u4XyTF8syrOuZ675xnU=
-     * authorizationTimestamp: 1630968049808
-     * timezoneAbbr: WEST
-     * timezoneOffset: 60
      * lt: U493LIT9ADXTy58bGKxT5w==:login:/authenticate:1630968038716:1630968049955:200005501
      *
      *
+     * selectedAccount: 0
      *
+     *
+     * timezoneAbbr: WEST
+     * timezoneOffset: 60
+     * accountProfile: Personal
+     *
+     *
+     * --------------------------
      *
      * lang: en
      * ppTransactionId: ptx-DZSXelhipU4E3_Y3lNs5T-U2-NAG

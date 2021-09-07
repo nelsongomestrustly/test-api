@@ -11,6 +11,7 @@ public enum QueryParametersEnum {
     ACCESS_ID("accessId"),
     ACCOUNT_FIELDS("accountFields"),
     ACCOUNT_NUMBER("accountNumber"),
+    ACCOUNT_PROFILE("accountProfile"),
     ACCOUNT_TYPE_REQUIRE_MAC("accountTypeRequiredMec"),
     ACTIVE("active"),
     ALLOW_RESET_PASSWORD_BUTTON("allowResetPasswordButton"),
@@ -20,6 +21,7 @@ public enum QueryParametersEnum {
     AUTH_FIELDS("authFields"),
     AUTH_TOKEN("authToken"),
     AUTHORIZATION_TEST_TOKEN("authorizationTextToken"),
+    AUTHORIZATION_TIME_STAMP("authorizationTimestamp"),
     BANK_DICTIONARY("bankDictionary"),
     BANK_ID("bankId"),
     BLOCK_MEC_EXISTING_FIC("blockMecExistingFic"),
@@ -107,6 +109,7 @@ public enum QueryParametersEnum {
     MCT_CUSTOMER_NAME("mctCustomerName"),
     MERCHANT_ID("merchantId"),
     MERCHANT_REFERENCE("merchantReference"),
+    METADATA_LANG_CID("metadata.cid"),
     METADATA_LANG_PARAM("metadata.lang"),
     METADATA_SKIN_CODE_PARAM("metadata.skinCode"),
     MIN_AMOUNT("minAmount"),
@@ -133,6 +136,8 @@ public enum QueryParametersEnum {
     PP_ID("ppId"),
     PP_TRANSACTION_ID("ppTransactionId"),
     PP_TRX_STATUS_CODE("ppTrxStatusCode"),
+    PRINCIPAL_NAME("principalName"),
+    PRINCIPAL_SIGNATURE("principalSignature"),
     RECURRENCE("recurrence"),
     RECURRENCE_AUTOMATIC_CAPTURE_PARAM("recurrence.automaticCapture"),
     RECURRENCE_END_DATE_PARAM("recurrence.endDate"),
@@ -161,6 +166,7 @@ public enum QueryParametersEnum {
     SUPPORTED_LANGUAGES("supportedLanguages"),
     TAX_ID("taxId"),
     TELE_CHECK("teleCheck"),
+    TIMESTAMP("timestamp"),
     TIMEZONE_ABBR("timezoneAbbr"),
     TIMEZONE_OFFSET("timezoneOffset"),
     TOKEN("token"),
@@ -180,6 +186,7 @@ public enum QueryParametersEnum {
     VERIFIED("verified"),
     WIDGET_ENABLED("widgetEnabled"),
     WIDGET_ID("widgetId"),
+    WIDGET_LOADED("widgetLoaded"),
     WIDGET_IMPRESSIONS("widgetImpressions");
 
     private final String keyName;

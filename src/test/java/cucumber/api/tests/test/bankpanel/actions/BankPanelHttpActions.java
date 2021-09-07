@@ -101,6 +101,7 @@ public class BankPanelHttpActions {
     public static void selectAnAccountAndConfirmTransaction(
             Integer selectedAccount,
             BankPanelLoginInfoDTO bankPanelLoginInfoDTO,
+            BankPanelAccountLoginDTO firstBankPanelAccountLoginDTO,
             FrontEndSetupDTO frontEndSetupDTO,
             Integer expectHttpStatus,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException, URISyntaxException {
@@ -108,6 +109,7 @@ public class BankPanelHttpActions {
         ResponseEntity<String> responseEntity = BankPanelConnector.selectAnAccountAndConfirmTransaction(
                 selectedAccount,
                 bankPanelLoginInfoDTO,
+                firstBankPanelAccountLoginDTO,
                 frontEndSetupDTO,
                 statefulRestTemplateInterceptorKeyEnums);
 

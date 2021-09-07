@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 import static cucumber.api.tests.common.suppliers.QueryParamSuppliers.addMapEntryIfNecessary;
 
-public class PaymentPanelSelectBankQueryParamSupplier {
+public class PaymentPanelSelectSelectBankQueryParamSupplier {
 
 
     /**
