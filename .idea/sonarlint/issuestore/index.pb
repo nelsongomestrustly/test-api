@@ -175,8 +175,6 @@ Psrc/test/java/cucumber/api/tests/support/cucumber/parses/SupportedAliasEnum.jav
 Rsrc/test/java/cucumber/api/tests/support/common/users/data/TestParticipantDTO.java,7/c/7ca4e2b53d1f40c341637df69df90c1349b65c77
 b
 2src/test/java/cucumber/api/tests/CucumberTest.java,8/4/846daf6ef679ccfde126df58e727da8e0c6333ba
-˜
-hsrc/test/java/cucumber/api/tests/test/admconsole/common/constants/AdmConSearchTransactionsConstants.java,e/a/ea7451dc48d0c86d5b6aabd3ed1253c4e32e91e0
 ‹
 [src/main/java/cucumber/api/tests/configurations/resttemplate/config/RestTemplateConfig.java,8/3/83b36497b61fd880ae379f7237b107abd6d2cb8a
 ‹
@@ -247,10 +245,6 @@ s
 Csrc/main/java/cucumber/api/tests/common/enums/CustomerNameEnum.java,3/8/38716ccbcb2c30d53702cffadf899cae2a7bff3a
 n
 >src/main/java/cucumber/api/tests/common/enums/CountryEnum.java,2/c/2cb72a37df1e1f4d3c6dc720aec6a1d1271996f4
-­
-}src/test/java/cucumber/api/tests/samplefiles/common/suppliers/adminconsole/AdmConSearchTransactionsDTOFileSampleSupplier.java,d/9/d977bef6b0efe997688e34a68934f1ebb574ae43
- 
-psrc/test/java/cucumber/api/tests/test/admconsole/common/suppliers/html/AdmConSearchForTransactionsSupplier2.java,1/4/14cdd1f2dc36b9db13ecfe36c9ff84dea1876e75
 |
 Lsrc/main/java/cucumber/api/tests/common/enums/device/DeviceCategoryEnum.java,f/7/f7b0ed26f79cb952d4cd6f8777b68c3e852ad37e
 x
@@ -307,14 +301,10 @@ x
 Hsrc/test/java/cucumber/api/tests/validations/login/LoginValidations.java,d/0/d094cb141462839393c6c3f9adea0d3164942cde
 q
 Asrc/test/java/cucumber/api/tests/test/login/utils/LoginUtils.java,7/3/73ac453e95b92f1a4d085bdf0bf2904b34f8218d
-€
-Psrc/test/java/cucumber/api/tests/test/login/common/suppliers/LoginSuppliers.java,5/9/5931062b66666cd6a97877cc9eb3c69bc06a6bfb
 k
 ;src/main/java/cucumber/api/tests/common/enums/TokenEnv.java,d/6/d6d4f85fa316671894d1841bdb319692c7a589e0
 s
 Csrc/main/java/cucumber/api/tests/common/enums/MerchantTypeEnum.java,d/a/da354c72cb40ac13a0917a0a6fdd0d18dfe3d0d7
-š
-jsrc/test/java/cucumber/api/tests/test/merchantgatewayserver/connectors/MerchantGatewayServerConnector.java,e/3/e38b4d233b324aba23a7d8a3c9932cbe924616a0
 v
 Fsrc/main/java/cucumber/api/tests/common/enums/device/DeviceOsEnum.java,8/5/857f3d4c5701212822722c75a0fa5871da2f9aa8
 v

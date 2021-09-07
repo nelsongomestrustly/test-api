@@ -7,7 +7,8 @@ import cucumber.api.tests.common.enums.headers.HttpHeadersEnum;
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.data.dto.merchantgatewayserver.EstabilishDataDTO;
-import cucumber.api.tests.support.common.connectors.utils.RestTemplateHttpConnectorsUtils;
+import cucumber.api.tests.support.common.connectors.utils.RestTemplateMultiValueMapUtils;
+import cucumber.api.tests.support.common.connectors.utils.RestTemplateUriComponentsBuilderUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -16,6 +17,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
 import java.util.List;
@@ -45,16 +47,24 @@ public class RestTemplateHttpConnector {
 
     }
 
+
     public static ResponseEntity<String> httpGet_Return_String(
             String endpoint,
             Map<QueryParametersEnum, String> queryParam,
+            List<HttpHeadersEnum> headersEnumList,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
         log.info("performing http get (String) request to {}", endpoint);
 
-        String endpointWithQueryParam = ""; //RestTemplateHttpConnectorsbakUtils.getEndpointWithQueryParamAndHeaders(null, null);
+        UriComponentsBuilder uriComponentsBuilder = RestTemplateUriComponentsBuilderUtils.getEndpointWithQueryParamAndHeaders(endpoint, true, queryParam);
 
-        ResponseEntity<String> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).getForEntity(endpointWithQueryParam, String.class);
+        HttpEntity entity = RestTemplateUriComponentsBuilderUtils.getHttpEntityWithHeadersHttpHeader(headersEnumList);
+
+        ResponseEntity<String> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).exchange(
+                uriComponentsBuilder.toUriString(),
+                HttpMethod.GET,
+                entity,
+                String.class);
 
         log.info("http get (String) request status code {}", forEntity.getStatusCode());
 
@@ -64,65 +74,6 @@ public class RestTemplateHttpConnector {
 
 
 
-    public static ResponseEntity<Object> httpGet_Return_Object(
-            String endpoint,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-
-        log.info("performing http get (Object) request to {}", endpoint);
-
-        ResponseEntity<Object> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).getForEntity(endpoint, Object.class);
-
-        log.info("http get (Object) request status code {}", forEntity.getStatusCode());
-
-        return forEntity;
-
-    }
-
-    public static ResponseEntity<Object[]> httpGet_Return_ObjectList(
-            String endpoint,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-
-        log.info("performing http get (Object) request to {}", endpoint);
-
-        ResponseEntity<Object[]> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).getForEntity(endpoint, Object[].class);
-
-
-        log.info("http get (Object) request status code {}", forEntity.getStatusCode());
-
-        return forEntity;
-
-    }
-
-
-    //https://www.baeldung.com/spring-resttemplate-json-list
-    public static ResponseEntity<List<?>> httpGet_Return_ObjectList2(
-            String endpoint,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-
-        log.info("performing http get (Object) request to {}", endpoint);
-
-        ResponseEntity<List<?>> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).exchange(
-                endpoint,
-                HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<>() {
-                }
-        );
-
-        log.info("http get (Object) request status code {}", forEntity.getStatusCode());
-
-        return forEntity;
-
-    }
-
-
-
-    /**
-     *
-     * HTTP POST
-     * //remember=true&originalUrl=&username=admin&password=superadmin&timezone=Europe%2FLondon&X-CSRFKey=
-     *
-     */
 
 
     /**
@@ -204,7 +155,7 @@ public class RestTemplateHttpConnector {
 
         log.info("performing adding query Parameters to Endpoint {}", endpoint);
 
-        HttpEntity<MultiValueMap<String, String>> httpEntity = RestTemplateHttpConnectorsUtils.getEndpointWithQueryParamAndHeaders(headersEnumList, queryParam);
+        HttpEntity<MultiValueMap<String, String>> httpEntity = RestTemplateMultiValueMapUtils.getEndpointWithQueryParamAndHeaders(headersEnumList, queryParam);
 
         log.info("performing http post for entity request to {}", endpoint);
 
@@ -214,6 +165,125 @@ public class RestTemplateHttpConnector {
         log.info("http post for entity status code {}", responseEntity.getStatusCode());
 
         return responseEntity;
+
+    }
+
+
+
+    /**
+     * POST WITH OBJECT
+     */
+
+    public static void testeForObject(String endpoint,
+                             EstabilishDataDTO estabilishDataDTO,
+                             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("CONTENT_TYPE", "application/x-protostuff");
+        headers.add("CONTENT_LENGTH", String.valueOf(estabilishDataDTO.toString().length()));
+        headers.add("headerAuth", "Basic QTQ4QjczRjY5NEM0QzhFRTYzMDY6");
+
+
+        HttpEntity<String> request =
+                new HttpEntity<String>(estabilishDataDTO.toString(), headers);
+
+        String personResultAsJsonStr =
+                getConnection(statefulRestTemplateInterceptorKeyEnums).postForObject(endpoint, request, String.class);
+        try {
+            JsonNode root = new ObjectMapper().readTree(personResultAsJsonStr);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+
+    /**
+     * BACKUP
+     */
+
+    public static ResponseEntity<Object> httpGet_Return_Object(
+            String endpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        log.info("performing http get (Object) request to {}", endpoint);
+
+        ResponseEntity<Object> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).getForEntity(endpoint, Object.class);
+
+        log.info("http get (Object) request status code {}", forEntity.getStatusCode());
+
+        return forEntity;
+
+    }
+
+    public static ResponseEntity<Object[]> httpGet_Return_ObjectList(
+            String endpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        log.info("performing http get (Object) request to {}", endpoint);
+
+        ResponseEntity<Object[]> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).getForEntity(endpoint, Object[].class);
+
+
+        log.info("http get (Object) request status code {}", forEntity.getStatusCode());
+
+        return forEntity;
+
+    }
+
+
+    //https://www.baeldung.com/spring-resttemplate-json-list
+    public static ResponseEntity<List<?>> httpGet_Return_ObjectList2(
+            String endpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        log.info("performing http get (Object) request to {}", endpoint);
+
+        ResponseEntity<List<?>> forEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).exchange(
+                endpoint,
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<>() {
+                }
+        );
+
+        log.info("http get (Object) request status code {}", forEntity.getStatusCode());
+
+        return forEntity;
+
+    }
+
+
+
+
+    public static <E> ResponseEntity<E> httPostBackUp(
+            String endpoint,
+            E e,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+        return null;
+        //return httPostBackUp(endpoint, MAPPER_SIMPLE, e, statefulRestTemplateInterceptorKeyEnums);
+    }
+
+    public static ResponseEntity<Object> httpPostWithLogin(
+            String endpoint,
+            ObjectMapper objectMapper,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException {
+        return httpPostWithLogin(endpoint, objectMapper, statefulRestTemplateInterceptorKeyEnums);
+    }
+
+
+    public static <E> ResponseEntity<Object> httpPostWithLogin(
+            String endpoint,
+            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
+
+        log.info("performing http post (endpoint) request to {}", endpoint);
+
+        ResponseEntity<Object> objectResponseEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).postForEntity(endpoint, null, null);
+
+        log.info("http post request status code {}", objectResponseEntity.getStatusCode());
+
+        return objectResponseEntity;
 
     }
 
@@ -260,69 +330,6 @@ public class RestTemplateHttpConnector {
 
     }
 
-
-    /**
-     * POST WITH OBJECT
-     */
-
-    public static void testeForObject(String endpoint,
-                             EstabilishDataDTO estabilishDataDTO,
-                             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("CONTENT_TYPE", "application/x-protostuff");
-        headers.add("CONTENT_LENGTH", String.valueOf(estabilishDataDTO.toString().length()));
-        headers.add("headerAuth", "Basic QTQ4QjczRjY5NEM0QzhFRTYzMDY6");
-
-
-        HttpEntity<String> request =
-                new HttpEntity<String>(estabilishDataDTO.toString(), headers);
-
-        String personResultAsJsonStr =
-                getConnection(statefulRestTemplateInterceptorKeyEnums).postForObject(endpoint, request, String.class);
-        try {
-            JsonNode root = new ObjectMapper().readTree(personResultAsJsonStr);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-
-
-    /**
-     * BACKUP
-     */
-
-    public static <E> ResponseEntity<E> httPostBackUp(
-            String endpoint,
-            E e,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-        return null;
-        //return httPostBackUp(endpoint, MAPPER_SIMPLE, e, statefulRestTemplateInterceptorKeyEnums);
-    }
-
-    public static ResponseEntity<Object> httpPostWithLogin(
-            String endpoint,
-            ObjectMapper objectMapper,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException {
-        return httpPostWithLogin(endpoint, objectMapper, statefulRestTemplateInterceptorKeyEnums);
-    }
-
-
-    public static <E> ResponseEntity<Object> httpPostWithLogin(
-            String endpoint,
-            StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
-
-        log.info("performing http post (endpoint) request to {}", endpoint);
-
-        ResponseEntity<Object> objectResponseEntity = getConnection(statefulRestTemplateInterceptorKeyEnums).postForEntity(endpoint, null, null);
-
-        log.info("http post request status code {}", objectResponseEntity.getStatusCode());
-
-        return objectResponseEntity;
-
-    }
 
 
 }

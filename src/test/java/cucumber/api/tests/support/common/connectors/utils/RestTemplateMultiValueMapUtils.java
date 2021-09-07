@@ -19,7 +19,7 @@ import java.util.Map;
 
 import static cucumber.api.tests.common.suppliers.QueryParamSuppliers.getSearchFormatByField;
 
-public class RestTemplateHttpConnectorsUtils {
+public class RestTemplateMultiValueMapUtils {
 
     /**
      * HTTP QUERY AND HEADERS PARAMETERS
@@ -61,7 +61,9 @@ public class RestTemplateHttpConnectorsUtils {
             }
 
         }
+
         return map;
+
     }
 
 

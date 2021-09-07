@@ -3,19 +3,26 @@ package cucumber.api.tests.configurations.resttemplate;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.PostConstruct;
 import java.util.function.Supplier;
 
 @Service
 @Getter
 public class RestTemplateSupplier implements InitializingBean {
 
-    private final RestTemplate restTemplate;
+    private RestTemplate restTemplate;
 
-    public RestTemplateSupplier(RestTemplateBuilder restTemplateBuilder) {
+    @Autowired
+    private RestTemplateBuilder restTemplateBuilder;
+
+    @PostConstruct
+    public void RestTemplateSupplier() {
         this.restTemplate = restTemplateBuilder.build();
     }
 
@@ -26,7 +33,8 @@ public class RestTemplateSupplier implements InitializingBean {
         staticRestTemplate = this.getRestTemplate();
     }
 
-    public static void resetRestTemplate() {
+    public void resetRestTemplate() {
+        this.restTemplate = restTemplateBuilder.build();
         staticRestTemplate = new RestTemplate();
     }
 

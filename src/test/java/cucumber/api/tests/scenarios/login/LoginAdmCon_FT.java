@@ -64,13 +64,16 @@ public class LoginAdmCon_FT extends CucumberTest {
     @Then("The user should be able to Login in Admin Console and receive Http Status (\\d+)$")
     public void theUserShouldBeAbleToLoginInAdmConAndReceiveHttpStatus(int httpStatusLogin) throws IOException {
 
+        LoginHttpActions.logIn(MyTestContext.getMyTestContext().testParticipantDTOManagers.getFirst(), httpStatusLogin, ADMIN_CONSOLE_LOGIN_ENDPOINT, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
+
+
         //Need to Log if the User is Not Logged or Don´t have a Cookie
-        if (!MyTestContext.getMyTestContext().loginDTOManager.isLoggedAdminConsole()) {
+//        if (!MyTestContext.getMyTestContext().loginDTOManager.isLoggedAdminConsole()) {
 
             //Login In
-            LoginHttpActions.logIn(MyTestContext.getMyTestContext().testParticipantDTOManagers.getFirst(), httpStatusLogin, ADMIN_CONSOLE_LOGIN_ENDPOINT, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
+  //          LoginHttpActions.logIn(MyTestContext.getMyTestContext().testParticipantDTOManagers.getFirst(), httpStatusLogin, ADMIN_CONSOLE_LOGIN_ENDPOINT, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
 
-        }
+        //}
 
     }
 
