@@ -2,7 +2,7 @@ package cucumber.api.tests.test.admconsole.actions;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import cucumber.api.tests.test.admconsole.connectors.AdmConConnector;
+import cucumber.api.tests.conectors.admconsole.AdmConConnector;
 import cucumber.api.tests.data.dto.admconsole.AdmConSearchTransactionsDTO;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 

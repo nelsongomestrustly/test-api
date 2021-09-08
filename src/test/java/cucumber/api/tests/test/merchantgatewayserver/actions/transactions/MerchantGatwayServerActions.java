@@ -3,7 +3,7 @@ package cucumber.api.tests.test.merchantgatewayserver.actions.transactions;
 
 import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
-import cucumber.api.tests.test.merchantgatewayserver.connectors.MerchantGatewayServerConnector;
+import cucumber.api.tests.conectors.merchantgatewayserver.MerchantGatewayServerConnector;
 import cucumber.api.tests.data.dto.merchantgatewayserver.EstabilishDataDTO;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import org.springframework.http.ResponseEntity;

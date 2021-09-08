@@ -1,18 +1,16 @@
 package cucumber.api.tests.test.frontend.actions;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
-import cucumber.api.tests.test.frontend.connectors.FrontEndConnector;
+import cucumber.api.tests.conectors.frontend.FrontEndConnector;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 
 import java.io.IOException;
 
-import static cucumber.api.tests.test.frontend.connectors.FrontEndEndpoint.FRONT_END_ENDPOINT_BUILD_BANK_PANEL;
-import static cucumber.api.tests.test.frontend.connectors.FrontEndEndpoint.FRONT_END_ENDPOINT_SETUP;
+import static cucumber.api.tests.conectors.frontend.FrontEndEndpoint.FRONT_END_ENDPOINT_BUILD_BANK_PANEL;
 
 
 @Slf4j

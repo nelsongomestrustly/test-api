@@ -13,7 +13,7 @@ public class MerchantSupplier {
     public static Supplier<String> getMerchantReference = () -> UUID.randomUUID().toString();
 
 
-    public static Supplier<String> getMerchantDevice = () -> DeviceCategoryEnum.DESKTOP.getName() + ":" + DeviceOsEnum.MAC_INTEL + ":" + DeviceTypeEnum.WEB.getName();
+    public static Supplier<String> getMerchantDeviceType = () -> DeviceCategoryEnum.DESKTOP.getName() + ":" + DeviceOsEnum.MAC_INTEL + ":" + DeviceTypeEnum.WEB.getName();
 
 
 }

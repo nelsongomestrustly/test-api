@@ -6,7 +6,7 @@ import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantSignatureDTO;
-import cucumber.api.tests.test.merchantdemo.connectors.merchantdemo.MerchantDemoConnector;
+import cucumber.api.tests.conectors.merchantdemo.merchantdemo.MerchantDemoConnector;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import org.springframework.http.ResponseEntity;
 

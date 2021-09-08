@@ -1,29 +1,19 @@
 package cucumber.api.tests.test.bankpanel.actions;
 
-import cucumber.api.tests.common.enums.headers.HttpHeadersEnum;
-import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.mappers.HttpMappers;
-import cucumber.api.tests.common.suppliers.StringSuppliers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.data.dto.bankpanel.BankPanelRedirectUrlDTO;
 import cucumber.api.tests.data.dto.bankpanel.accounts.BankPanelAccountLoginDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginHomePageDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginInfoDTO;
 import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
-import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
-import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;
-import cucumber.api.tests.test.bankpanel.common.suppliers.BankPanelSelectAccountsSupplier;
-import cucumber.api.tests.test.bankpanel.connectors.BankPanelConnector;
+import cucumber.api.tests.conectors.bankpanel.BankPanelConnector;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.HashMap;
-import java.util.List;
-
-import static cucumber.api.tests.test.bankpanel.connectors.BankPanelEndpoint.BANK_PANEL_ENDPOINT_ACCOUNT_AUTHORIZE;
 
 
 @Slf4j

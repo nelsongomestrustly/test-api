@@ -6,7 +6,7 @@ import cucumber.api.tests.common.enums.MerchantTypeEnum;
 import cucumber.api.tests.common.mappers.HttpMappers;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
-import cucumber.api.tests.test.merchantdemo.connectors.merchantinfo.MerchantInfoConnector;
+import cucumber.api.tests.conectors.merchantdemo.merchantinfo.MerchantInfoConnector;
 import cucumber.api.tests.validations.resttemplate.RestTemplateValidations;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
