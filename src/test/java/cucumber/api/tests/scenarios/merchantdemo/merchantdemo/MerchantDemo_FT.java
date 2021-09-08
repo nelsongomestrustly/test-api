@@ -1,7 +1,7 @@
 package cucumber.api.tests.scenarios.merchantdemo.merchantdemo;
 
 import cucumber.api.tests.CucumberTest;
-import cucumber.api.tests.test.merchantdemo.actions.get.merchantdemo.MerchantDemoGetHttpActions;
+import cucumber.api.tests.conectors.merchantdemo.merchantdemo.MerchantDemoGetHttpActions;
 import io.cucumber.java.en.Given;
 import lombok.extern.slf4j.Slf4j;
 

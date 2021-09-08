@@ -22,7 +22,7 @@ public class RestTemplateSupplier implements InitializingBean {
     private RestTemplateBuilder restTemplateBuilder;
 
     @PostConstruct
-    public void RestTemplateSupplier() {
+    public void restTemplateSupplier() {
         this.restTemplate = restTemplateBuilder.build();
     }
 

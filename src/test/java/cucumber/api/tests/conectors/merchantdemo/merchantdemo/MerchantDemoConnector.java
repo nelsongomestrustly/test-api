@@ -14,7 +14,7 @@ import static cucumber.api.tests.conectors.merchantdemo.MerchantDemoEndpoint.MER
 
 public class MerchantDemoConnector {
 
-    public static ResponseEntity<String> getMerchantDemo(
+    protected static ResponseEntity<String> getMerchantDemo(
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
         return RestTemplateHttpConnector.httpGet_Return_String(
@@ -24,7 +24,7 @@ public class MerchantDemoConnector {
     }
 
 
-    public static ResponseEntity<String> getMerchantDemoSignature(
+    protected static ResponseEntity<String> getMerchantDemoSignature(
             MerchantCreateSignatureDTO merchantCreateSignatureDTO,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 

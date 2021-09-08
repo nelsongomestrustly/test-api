@@ -2,7 +2,7 @@ package cucumber.api.tests.scenarios.frontend.merchantdemo;
 
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.predicates.GenericPredicates;
-import cucumber.api.tests.test.frontend.actions.FrontEndHttpActions;
+import cucumber.api.tests.conectors.frontend.FrontEndHttpActions;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Assertions;

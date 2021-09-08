@@ -4,7 +4,7 @@ import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.enums.MerchantTypeEnum;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
 import cucumber.api.tests.data.context.MyTestContext;
-import cucumber.api.tests.test.merchantdemo.actions.get.merchantinfo.MerchantInfoGetHttpActions;
+import cucumber.api.tests.conectors.merchantdemo.merchantinfo.MerchantInfoGetHttpActions;
 import cucumber.api.tests.validations.object.GenericObjectValidations;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

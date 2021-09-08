@@ -19,14 +19,14 @@ import static cucumber.api.tests.conectors.admconsole.AdmConEndpoint.ADM_CON_TRA
 public class AdmConConnector {
 
 
-    public static ResponseEntity<String> searchAllTransactionsInAdminConsole() throws IOException {
+    protected static ResponseEntity<String> searchAllTransactionsInAdminConsole() throws IOException {
 
         return RestTemplateHttpConnector.httpGet_Return_String(ADM_CON_TRANSACTIONS_ENDPOINT.getEndpoint(), ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
 
     }
 
 
-    public static ResponseEntity<String> searchTransactionsInAdminConsole(
+    protected static ResponseEntity<String> searchTransactionsInAdminConsole(
             AdmConSearchTransactionsDTO admConSearchTransactionsDTO) throws IOException {
 
         HashMap<QueryParametersEnum, String> searchForTransactionsUrl1 = AdmConSearchForTransactionsSupplier2.getSearchForTransactionsUrl(admConSearchTransactionsDTO);

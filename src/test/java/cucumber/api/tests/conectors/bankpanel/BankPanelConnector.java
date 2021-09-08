@@ -26,7 +26,7 @@ import static cucumber.api.tests.conectors.bankpanel.BankPanelEndpoint.BANK_PANE
 @Slf4j
 public class BankPanelConnector {
 
-    public static ResponseEntity<String> getBankPanelLoginInfoDTO(
+    protected static ResponseEntity<String> getBankPanelLoginInfoDTO(
             BankPanelRedirectUrlDTO bankRedirectUrlDT,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
@@ -37,7 +37,7 @@ public class BankPanelConnector {
 
     }
 
-    public static ResponseEntity<String> getBankPanelLoginHomePageDTO(
+    protected static ResponseEntity<String> getBankPanelLoginHomePageDTO(
             BankPanelRedirectUrlDTO bankRedirectUrlDT,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
@@ -49,7 +49,7 @@ public class BankPanelConnector {
 
 
     //In this step you are going to login and them get Bank Accounts
-    public static ResponseEntity<String> getBankPanelAccountLoginDTO(
+    protected static ResponseEntity<String> getBankPanelAccountLoginDTO(
             String username,
             String password,
             BankPanelLoginInfoDTO bankPanelLoginInfoDTO,
@@ -73,7 +73,7 @@ public class BankPanelConnector {
 
 
     //In this step you are going to select an account and finaly finish the transaction
-    public static ResponseEntity<String> selectAnAccountAndConfirmTransaction(
+    protected static ResponseEntity<String> selectAnAccountAndConfirmTransaction(
             Integer selectedAccount,
             BankPanelLoginInfoDTO bankPanelLoginInfoDTO,
             BankPanelAccountLoginDTO bankPanelAccountLoginDTO,

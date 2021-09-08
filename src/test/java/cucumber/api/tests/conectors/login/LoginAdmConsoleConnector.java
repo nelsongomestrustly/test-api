@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class LoginAdmConsoleConnector {
 
-    public static ResponseEntity<String> login(
+    protected static ResponseEntity<String> login(
             LoginAdmConsoleEndpoint loginAdmConsoleEndpoint,
             TestParticipantDTO testParticipantDTO,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) throws IOException {
@@ -22,7 +22,7 @@ public class LoginAdmConsoleConnector {
     }
 
 
-    public static ResponseEntity<String> logout(
+    protected static ResponseEntity<String> logout(
             LoginAdmConsoleEndpoint loginAdmConsoleEndpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
@@ -32,7 +32,7 @@ public class LoginAdmConsoleConnector {
     }
 
 
-    public static ResponseEntity<String> isTheUserSessionExpired(
+    protected static ResponseEntity<String> isTheUserSessionExpired(
             LoginAdmConsoleEndpoint loginAdmConsoleEndpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
@@ -42,7 +42,7 @@ public class LoginAdmConsoleConnector {
     }
 
 
-    public static ResponseEntity<String> canAccess(
+    protected static ResponseEntity<String> canAccess(
             AdmConEndpoint adminConsoleEndpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 

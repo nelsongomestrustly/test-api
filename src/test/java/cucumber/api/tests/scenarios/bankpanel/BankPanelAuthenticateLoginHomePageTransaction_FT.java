@@ -4,7 +4,7 @@ import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.data.dto.bankpanel.BankPanelRedirectUrlDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginHomePageDTO;
-import cucumber.api.tests.test.bankpanel.actions.BankPanelHttpActions;
+import cucumber.api.tests.conectors.bankpanel.BankPanelHttpActions;
 import cucumber.api.tests.validations.bank.BankPanelValidation;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;

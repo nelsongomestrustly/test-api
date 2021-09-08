@@ -9,7 +9,7 @@ import static cucumber.api.tests.conectors.merchantdemo.MerchantDemoEndpoint.MER
 public class MerchantPaymentFlowsConnector {
 
 
-    public static ResponseEntity<String> getMerchantPaymentFlows(
+    protected static ResponseEntity<String> getMerchantPaymentFlows(
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
         return RestTemplateHttpConnector.httpPost(

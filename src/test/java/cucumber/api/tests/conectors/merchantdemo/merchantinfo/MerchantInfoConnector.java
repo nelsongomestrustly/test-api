@@ -11,7 +11,7 @@ import static cucumber.api.tests.conectors.merchantdemo.MerchantDemoEndpoint.MER
 
 public class MerchantInfoConnector {
 
-    public static ResponseEntity<String> getMerchantsInfo(
+    protected static ResponseEntity<String> getMerchantsInfo(
             MerchantTypeEnum merchantTypeEnum,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 

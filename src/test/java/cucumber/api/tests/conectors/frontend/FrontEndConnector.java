@@ -16,7 +16,7 @@ import static cucumber.api.tests.conectors.frontend.FrontEndEndpoint.FRONT_END_E
 public class FrontEndConnector {
 
     //Adding Front End Info Object
-    public static ResponseEntity<String> buildBankPanelInMerchantDemo(
+    protected static ResponseEntity<String> buildBankPanelInMerchantDemo(
             FrontEndEndpoint frontEndEndpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
@@ -28,7 +28,7 @@ public class FrontEndConnector {
 
 
 
-    public static String setupBankPanelInMerchantDemo() throws IOException {
+    protected static String setupBankPanelInMerchantDemo() throws IOException {
 
         String url = StringSuppliers.getStringFormatted(FRONT_END_ENDPOINT_SETUP.getEndpoint(), MyTestContext.getMyTestContext().tokenManager.getFirstTokenDTO().getToken());
         return ApacheConnectionManager.getConnection().httpPostForEntityString(url);

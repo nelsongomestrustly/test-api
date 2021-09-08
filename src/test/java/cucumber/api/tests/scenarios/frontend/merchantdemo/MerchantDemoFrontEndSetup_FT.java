@@ -3,7 +3,7 @@ package cucumber.api.tests.scenarios.frontend.merchantdemo;
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
-import cucumber.api.tests.test.frontend.actions.FrontEndHttpActions;
+import cucumber.api.tests.conectors.frontend.FrontEndHttpActions;
 import cucumber.api.tests.validations.frontend.FrontEndValidations;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

@@ -6,9 +6,7 @@ import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.data.dto.bankpanel.accounts.BankPanelAccountLoginDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginInfoDTO;
 import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
-import cucumber.api.tests.test.bankpanel.actions.BankPanelHttpActions;
-import cucumber.api.tests.validations.bank.BankPanelValidation;
-import io.cucumber.java.en.And;
+import cucumber.api.tests.conectors.bankpanel.BankPanelHttpActions;
 import io.cucumber.java.en.Then;
 import lombok.extern.slf4j.Slf4j;
 

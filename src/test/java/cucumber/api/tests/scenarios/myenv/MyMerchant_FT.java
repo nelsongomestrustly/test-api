@@ -3,7 +3,7 @@ package cucumber.api.tests.scenarios.myenv;
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
 import cucumber.api.tests.data.context.MyTestContext;
-import cucumber.api.tests.samplefiles.common.suppliers.merchantdemo.MerchantDemoBasicInfoDTOSampleSupplier;
+import cucumber.api.tests.samplefiles.merchantdemo.suppliers.MerchantDemoBasicInfoDTOSampleSupplier;
 import cucumber.api.tests.validations.object.GenericObjectValidations;
 import io.cucumber.java.en.Then;
 

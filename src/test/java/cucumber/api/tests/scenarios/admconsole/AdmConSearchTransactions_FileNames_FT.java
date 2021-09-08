@@ -2,8 +2,8 @@ package cucumber.api.tests.scenarios.admconsole;
 
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.data.context.MyTestContext;
-import cucumber.api.tests.test.admconsole.actions.AdmConHttpActions;
-import cucumber.api.tests.samplefiles.common.suppliers.adminconsole.AdmConSearchTransactionsDTOFileSampleSupplier;
+import cucumber.api.tests.conectors.admconsole.AdmConHttpActions;
+import cucumber.api.tests.samplefiles.admconsole.suppliers.AdmConSearchTransactionsDTOFileSampleSupplier;
 import cucumber.api.tests.data.dto.admconsole.AdmConSearchTransactionsDTO;
 import cucumber.api.tests.validations.admconsole.AdmConSearchTransactionsValidations;
 import io.cucumber.java.en.Then;

@@ -6,7 +6,7 @@ import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.data.dto.token.TokenDTO;
-import cucumber.api.tests.test.paymentpanel.actions.PaymentPanelActions;
+import cucumber.api.tests.conectors.paymentpanel.PaymentPanelActions;
 import cucumber.api.tests.validations.bank.BankPanelValidation;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;

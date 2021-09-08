@@ -11,7 +11,7 @@ import static cucumber.api.tests.conectors.merchantgatewayserver.MerchantGateway
 public class MerchantGatewayServerConnector {
 
 
-    public static ResponseEntity<String> estabilishTransactions(
+    protected static ResponseEntity<String> estabilishTransactions(
             EstabilishDataDTO estabilishDataDTO,
             boolean createTransaction,
             Integer grp,

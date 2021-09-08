@@ -2,16 +2,13 @@ package cucumber.api.tests.scenarios.bankpanel;
 
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.data.context.MyTestContext;
-import cucumber.api.tests.data.dto.bankpanel.BankPanelRedirectUrlDTO;
 import cucumber.api.tests.data.dto.bankpanel.accounts.BankPanelAccountLoginDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginInfoDTO;
 import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
-import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
-import cucumber.api.tests.test.bankpanel.actions.BankPanelHttpActions;
+import cucumber.api.tests.conectors.bankpanel.BankPanelHttpActions;
 import cucumber.api.tests.validations.bank.BankPanelValidation;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
