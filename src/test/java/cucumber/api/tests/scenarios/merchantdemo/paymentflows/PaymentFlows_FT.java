@@ -2,7 +2,7 @@ package cucumber.api.tests.scenarios.merchantdemo.paymentflows;
 
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.data.context.MyTestContext;
-import cucumber.api.tests.conectors.merchantdemo.paymentflows.PaymentFlowsGetHttpActions;
+import cucumber.api.tests.conectors.merchantdemo.paymentflows.MerchantDemoPaymentFlowsGetHttpActions;
 import cucumber.api.tests.data.dto.paymentflows.PaymentFlowsDTO;
 import cucumber.api.tests.validations.object.GenericObjectValidations;
 import io.cucumber.java.en.Then;
@@ -21,7 +21,7 @@ public class PaymentFlows_FT extends CucumberTest {
     @When("The user access Merchant Demo should get Payment Flows information and Expect Http Status (\\d+)$")
     public void theUserAccessMerchantDemoShouldGetPaymentFlowsInformationAndExpectHttpStatusExpectPaymentFlowHttpStatus(int expectPaymentFlowsHttpStatus) throws IOException {
 
-        List<PaymentFlowsDTO> merchantPaymentFlows = PaymentFlowsGetHttpActions.getMerchantPaymentFlows(expectPaymentFlowsHttpStatus, MERCHANT_DEMO_INTERCEPTOR_MAP_KEY);
+        List<PaymentFlowsDTO> merchantPaymentFlows = MerchantDemoPaymentFlowsGetHttpActions.getMerchantPaymentFlows(expectPaymentFlowsHttpStatus, MERCHANT_DEMO_INTERCEPTOR_MAP_KEY);
 
         MyTestContext.getMyTestContext().merchantDemoManager.addAllPaymentFlowsDTO(merchantPaymentFlows);
 

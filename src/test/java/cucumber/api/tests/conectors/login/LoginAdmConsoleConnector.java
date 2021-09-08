@@ -1,7 +1,7 @@
 package cucumber.api.tests.conectors.login;
 
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
-import cucumber.api.tests.conectors.admconsole.AdmConEndpoint;
+import cucumber.api.tests.conectors.admconsole.endpoints.AdmConEndpoint;
 import cucumber.api.tests.common.login.suppliers.LoginSuppliers;
 import org.springframework.http.ResponseEntity;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;

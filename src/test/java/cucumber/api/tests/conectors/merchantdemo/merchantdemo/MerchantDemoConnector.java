@@ -9,8 +9,8 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.HashMap;
 
-import static cucumber.api.tests.conectors.merchantdemo.MerchantDemoEndpoint.MERCHANT_DEMO_GET_SIGNATURE_ENDPOINT;
-import static cucumber.api.tests.conectors.merchantdemo.MerchantDemoEndpoint.MERCHANT_DEMO_GLOBEX_ENDPOINT;
+import static cucumber.api.tests.conectors.merchantdemo.endpoints.MerchantDemoGlobexEndpoint.MERCHANT_DEMO_GET_SIGNATURE_ENDPOINT;
+import static cucumber.api.tests.conectors.merchantdemo.endpoints.MerchantDemoGlobexEndpoint.MERCHANT_DEMO_GLOBEX_ENDPOINT;
 
 public class MerchantDemoConnector {
 

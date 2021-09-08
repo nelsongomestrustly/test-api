@@ -1,7 +1,7 @@
 package cucumber.api.tests.scenarios.merchantdemo.merchantdemo;
 
 import cucumber.api.tests.CucumberTest;
-import cucumber.api.tests.conectors.merchantdemo.merchantdemo.MerchantDemoGetHttpActions;
+import cucumber.api.tests.conectors.merchantdemo.merchantdemo.MerchantDemoHttpActions;
 import io.cucumber.java.en.Given;
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,7 +19,7 @@ public class MerchantDemo_FT extends CucumberTest {
 
         //MerchantGlobexStartDTO merchantGlobexStartDTO = MerchantDemoBasicInfoDTOSampleSupplier.getSampleMerchantBasicInfoDTO(MERCHANT_GLOBEX_START);
 
-        MerchantDemoGetHttpActions.getMerchantDemo(
+        MerchantDemoHttpActions.getMerchantDemo(
                 expectMerchantDemoHttpStatus,
                 MERCHANT_DEMO_INTERCEPTOR_MAP_KEY);
 

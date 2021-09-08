@@ -20,8 +20,8 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
 
-import static cucumber.api.tests.conectors.bankpanel.BankPanelEndpoint.BANK_PANEL_ENDPOINT_ACCOUNT_AUTHORIZE;
-import static cucumber.api.tests.conectors.bankpanel.BankPanelEndpoint.BANK_PANEL_ENDPOINT_AUTHENTICATION_AUTHENTICATION;
+import static cucumber.api.tests.conectors.bankpanel.endpoints.BankPanelAccountEndpoint.BANK_PANEL_ENDPOINT_ACCOUNT_AUTHORIZE;
+import static cucumber.api.tests.conectors.bankpanel.endpoints.BankPanelAuthenticationEndpoint.BANK_PANEL_ENDPOINT_AUTHENTICATION_AUTHENTICATION;
 
 @Slf4j
 public class BankPanelConnector {

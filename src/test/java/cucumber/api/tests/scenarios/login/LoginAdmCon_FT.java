@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Assertions;
 import java.io.IOException;
 
 import static cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums.ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY;
-import static cucumber.api.tests.conectors.admconsole.AdmConEndpoint.ADM_CON_TRANSACTIONS_ENDPOINT;
+import static cucumber.api.tests.conectors.admconsole.endpoints.AdmConEndpoint.ADM_CON_TRANSACTIONS_ENDPOINT;
 import static cucumber.api.tests.conectors.login.LoginAdmConsoleEndpoint.ADMIN_CONSOLE_LOGIN_ENDPOINT;
 import static cucumber.api.tests.conectors.login.LoginAdmConsoleEndpoint.ADMIN_CONSOLE_LOGOUT_ENDPOINT;
 

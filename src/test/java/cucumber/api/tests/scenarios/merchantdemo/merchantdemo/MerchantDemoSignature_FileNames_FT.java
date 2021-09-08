@@ -5,7 +5,7 @@ import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantSignatureDTO;
 import cucumber.api.tests.data.context.MyTestContext;
-import cucumber.api.tests.conectors.merchantdemo.merchantdemo.MerchantDemoGetHttpActions;
+import cucumber.api.tests.conectors.merchantdemo.merchantdemo.MerchantDemoHttpActions;
 import cucumber.api.tests.samplefiles.merchantdemo.suppliers.MerchantDemoCreateSignatureDTOFileSampleSupplier;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,7 +32,7 @@ public class MerchantDemoSignature_FileNames_FT extends CucumberTest {
                 = MerchantDemoCreateSignatureDTOFileSampleSupplier.getSampleMerchantCreateSignatureDTO(fileName);
 
         //Get Merchant Signature from Server
-        MerchantSignatureDTO merchantDemoSignature = MerchantDemoGetHttpActions.getMerchantDemoSignature(
+        MerchantSignatureDTO merchantDemoSignature = MerchantDemoHttpActions.getMerchantDemoSignature(
                 merchantCreateSignatureDTO,
                 Integer.parseInt(expectMerchantDemoCreateSignatureHttpStatus),
                 MERCHANT_DEMO_INTERCEPTOR_MAP_KEY);

@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import static cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums.ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY;
-import static cucumber.api.tests.conectors.admconsole.AdmConEndpoint.ADM_CON_TRANSACTIONS_ENDPOINT;
+import static cucumber.api.tests.conectors.admconsole.endpoints.AdmConEndpoint.ADM_CON_TRANSACTIONS_ENDPOINT;
 
 @Slf4j
 public class AdmConConnector {

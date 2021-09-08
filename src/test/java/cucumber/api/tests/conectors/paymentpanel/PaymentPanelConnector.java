@@ -17,9 +17,9 @@ import org.springframework.http.ResponseEntity;
 import java.util.HashMap;
 import java.util.List;
 
-import static cucumber.api.tests.conectors.paymentpanel.PaymentPanelEndpoint.PAYMENT_PANEL_SELECT_BANK_ENDPOINT;
-import static cucumber.api.tests.conectors.paymentpanel.PaymentPanelEndpoint.PAYMENT_PANEL_SELECT_BANK_SELECT_BANK_ENDPOINT;
-import static cucumber.api.tests.conectors.paymentpanel.PaymentPanelEndpoint.PAYMENT_PANEL_SELECT_BANK_WIDGET_ENDPOINT;
+import static cucumber.api.tests.conectors.paymentpanel.endpoints.PaymentPanelSelectBankEndpoint.PAYMENT_PANEL_SELECT_BANK_ENDPOINT;
+import static cucumber.api.tests.conectors.paymentpanel.endpoints.PaymentPanelSelectBankEndpoint.PAYMENT_PANEL_SELECT_BANK_SELECT_BANK_ENDPOINT;
+import static cucumber.api.tests.conectors.paymentpanel.endpoints.PaymentPanelSelectBankEndpoint.PAYMENT_PANEL_SELECT_BANK_WIDGET_ENDPOINT;
 
 @Slf4j
 public class PaymentPanelConnector {

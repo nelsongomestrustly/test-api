@@ -4,7 +4,7 @@ import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.common.enums.MerchantTypeEnum;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
 import cucumber.api.tests.data.context.MyTestContext;
-import cucumber.api.tests.conectors.merchantdemo.merchantinfo.MerchantInfoGetHttpActions;
+import cucumber.api.tests.conectors.merchantdemo.merchantinfo.MerchantDemoInfoHttpActions;
 import cucumber.api.tests.validations.object.GenericObjectValidations;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,7 +24,7 @@ public class MerchantInfo_FT extends CucumberTest {
 
         MerchantTypeEnum merchantTypeEnum = MerchantTypeEnum.valueOf(merchantName);
 
-        List<MerchantBasicInfoDTO> merchantBasicInfoDTOList = MerchantInfoGetHttpActions.getMerchantsInfo(merchantTypeEnum, Integer.parseInt(expectMerchantInfoHttpStatus), MERCHANT_DEMO_INTERCEPTOR_MAP_KEY);
+        List<MerchantBasicInfoDTO> merchantBasicInfoDTOList = MerchantDemoInfoHttpActions.getMerchantsInfo(merchantTypeEnum, Integer.parseInt(expectMerchantInfoHttpStatus), MERCHANT_DEMO_INTERCEPTOR_MAP_KEY);
 
         //MyTestContext.getMyTestContext().merchantDemoManager.addAllMerchantInfoDTO(merchantBasicInfoDTOList);
 
