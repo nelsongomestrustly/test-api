@@ -6,7 +6,7 @@ import lombok.Getter;
 import static cucumber.api.tests.conectors.admconsole.endpoints.AdmConEndpoint.ADM_CON_ADM_CON_ENDPOINT;
 
 //admin-console
-//MerchantBillingTermsController
+//MerchantsController
 @AllArgsConstructor
 @Getter
 public enum AdmConMerchantsEndpoint {

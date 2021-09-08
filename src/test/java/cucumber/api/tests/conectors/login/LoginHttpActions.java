@@ -37,10 +37,9 @@ public class LoginHttpActions {
     public static boolean isTheUserLogged(
             Integer expectedStatus,
             String notLoggedInAdminConsoleHtmlBody,
-            AdmConEndpoint adminConsoleEndpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
-        ResponseEntity<String> responseEntity = LoginAdmConsoleConnector.canAccess(adminConsoleEndpoint, statefulRestTemplateInterceptorKeyEnums);
+        ResponseEntity<String> responseEntity = LoginAdmConsoleConnector.canAccess(statefulRestTemplateInterceptorKeyEnums);
 
         RestTemplateValidations.validateStatus(expectedStatus, responseEntity);
 

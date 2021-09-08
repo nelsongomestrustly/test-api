@@ -15,8 +15,8 @@ import org.junit.jupiter.api.Assertions;
 
 import java.io.IOException;
 
+import static cucumber.api.tests.conectors.admconsole.endpoints.AdmConTransactionsEndpoint.ADM_CON_TRANSACTIONS_ENDPOINT;
 import static cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums.ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY;
-import static cucumber.api.tests.conectors.admconsole.endpoints.AdmConEndpoint.ADM_CON_TRANSACTIONS_ENDPOINT;
 import static cucumber.api.tests.conectors.login.LoginAdmConsoleEndpoint.ADMIN_CONSOLE_LOGIN_ENDPOINT;
 import static cucumber.api.tests.conectors.login.LoginAdmConsoleEndpoint.ADMIN_CONSOLE_LOGOUT_ENDPOINT;
 
@@ -53,7 +53,7 @@ public class LoginAdmCon_FT extends CucumberTest {
     public void theUserIsNotLoggedInAdmConShouldReceiveInHtmlBodyAndHttpStatus(String notLoggedInAdminConsoleHtmlBody, String httpStatusNotLogged) throws IOException {
 
         //Get Values From DataTable
-        boolean theUserLoggedInAdminConsole = LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusNotLogged), notLoggedInAdminConsoleHtmlBody, ADM_CON_TRANSACTIONS_ENDPOINT, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
+        boolean theUserLoggedInAdminConsole = LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusNotLogged), notLoggedInAdminConsoleHtmlBody, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY);
 
         //For the used considered logged, he needs to have a cookie, and the session should not be Expired
         MyTestContext.getMyTestContext().loginDTOManager.setLoggedAdminConsole(theUserLoggedInAdminConsole);
@@ -80,7 +80,7 @@ public class LoginAdmCon_FT extends CucumberTest {
     @And("The user should be able to access Admin Console Home Page and not receive in HtmlBody {string} and Http Status {string}")
     public void theUserShouldBeAbleToAccessAdmConHomePageAndNotReceiveInHtmlBodyAndHttpStatus(String notLoggedInAdminConsoleHtmlBody, String httpStatusLogged) throws IOException {
 
-        Assertions.assertTrue(LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusLogged), notLoggedInAdminConsoleHtmlBody, ADM_CON_TRANSACTIONS_ENDPOINT, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY));
+        Assertions.assertTrue(LoginHttpActions.isTheUserLogged(Integer.parseInt(httpStatusLogged), notLoggedInAdminConsoleHtmlBody, ADMIN_CONSOLE_INTERCEPTOR_MAP_KEY));
 
     }
 

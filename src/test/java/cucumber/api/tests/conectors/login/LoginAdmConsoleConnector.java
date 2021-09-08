@@ -9,6 +9,8 @@ import cucumber.api.tests.support.common.users.data.TestParticipantDTO;
 
 import java.io.IOException;
 
+import static cucumber.api.tests.conectors.admconsole.endpoints.AdmConTransactionsEndpoint.ADM_CON_TRANSACTIONS_ENDPOINT;
+
 public class LoginAdmConsoleConnector {
 
     protected static ResponseEntity<String> login(
@@ -43,10 +45,9 @@ public class LoginAdmConsoleConnector {
 
 
     protected static ResponseEntity<String> canAccess(
-            AdmConEndpoint adminConsoleEndpoint,
             StatefulRestTemplateInterceptorKeyEnums statefulRestTemplateInterceptorKeyEnums) {
 
-        String url = adminConsoleEndpoint.getEndpoint();
+        String url = ADM_CON_TRANSACTIONS_ENDPOINT.getEndpoint();
         return RestTemplateHttpConnector.httpGet_Return_String(url, statefulRestTemplateInterceptorKeyEnums);
 
     }

@@ -9,11 +9,7 @@ import lombok.Getter;
 @Getter
 public enum AdmConEndpoint {
 
-    ADM_CON_ADM_CON_ENDPOINT(MainEndpoints.ADM_CON_ENDPOINT + "/admin-console"),
-
-    ADM_CON_TRANSACTIONS_ENDPOINT(ADM_CON_ADM_CON_ENDPOINT.getEndpoint() + "/transactions"),
-
-    ADM_CON_TRANSACTIONS_SEARCH_ENDPOINT(ADM_CON_TRANSACTIONS_ENDPOINT.getEndpoint() + "?{0}");
+    ADM_CON_ADM_CON_ENDPOINT(MainEndpoints.ADM_CON_ENDPOINT + "/admin-console");
 
     private final String endpoint;
 
