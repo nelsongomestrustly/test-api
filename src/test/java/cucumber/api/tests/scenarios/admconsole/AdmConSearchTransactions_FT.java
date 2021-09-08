@@ -3,7 +3,7 @@ package cucumber.api.tests.scenarios.admconsole;
 import cucumber.api.tests.CucumberTest;
 import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.conectors.admconsole.AdmConHttpActions;
-import cucumber.api.tests.test.admconsole.common.suppliers.dto.AdmConSearchTransactionsSuppliers;
+import cucumber.api.tests.common.admconsole.suppliers.dto.AdmConSearchTransactionsSuppliers;
 import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
 

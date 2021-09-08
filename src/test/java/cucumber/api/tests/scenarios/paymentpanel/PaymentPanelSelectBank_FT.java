@@ -6,7 +6,7 @@ import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.data.dto.paymentpanel.PaymentPanelCreateWidgetDTO;
 import cucumber.api.tests.data.dto.token.TokenDTO;
 import cucumber.api.tests.data.context.MyTestContext;
-import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateSignatureSupplier;
+import cucumber.api.tests.common.merchantdemo.suppliers.html.CreateSignatureSupplier;
 import cucumber.api.tests.conectors.paymentpanel.PaymentPanelActions;
 import io.cucumber.java.en.Then;
 import lombok.extern.slf4j.Slf4j;

@@ -5,7 +5,7 @@ import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.common.predicates.GenericPredicates;
 import cucumber.api.tests.data.context.MyTestContext;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantBasicInfoDTO;
-import cucumber.api.tests.test.merchantdemo.common.suppliers.html.MerchantBasicInfoQueryParamSupplier;
+import cucumber.api.tests.common.merchantdemo.suppliers.html.MerchantBasicInfoQueryParamSupplier;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;

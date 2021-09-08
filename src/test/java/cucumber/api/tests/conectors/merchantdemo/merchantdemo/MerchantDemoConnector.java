@@ -4,7 +4,7 @@ import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
 import cucumber.api.tests.configurations.resttemplate.common.enums.StatefulRestTemplateInterceptorKeyEnums;
 import cucumber.api.tests.data.dto.merchantdemo.MerchantCreateSignatureDTO;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;
-import cucumber.api.tests.test.merchantdemo.common.suppliers.html.CreateSignatureSupplier;
+import cucumber.api.tests.common.merchantdemo.suppliers.html.CreateSignatureSupplier;
 import org.springframework.http.ResponseEntity;
 
 import java.util.HashMap;

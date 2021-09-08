@@ -3,7 +3,7 @@ package cucumber.api.tests.conectors.admconsole;
 
 
 import cucumber.api.tests.common.enums.queries.QueryParametersEnum;
-import cucumber.api.tests.test.admconsole.common.suppliers.html.AdmConSearchForTransactionsSupplier2;
+import cucumber.api.tests.common.admconsole.suppliers.html.AdmConSearchForTransactionsSupplier2;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;

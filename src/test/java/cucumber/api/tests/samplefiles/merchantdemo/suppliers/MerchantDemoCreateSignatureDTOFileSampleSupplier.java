@@ -9,17 +9,18 @@ import java.io.IOException;
 
 public class MerchantDemoCreateSignatureDTOFileSampleSupplier {
 
-    public static MerchantCreateSignatureDTO getSampleMerchantCreateSignatureDTO(String fileName) throws IOException {
+    public static MerchantCreateSignatureDTO getSampleMerchantCreateSignatureDTO(
+            String fileName) throws IOException {
 
         MerchantDemoSignatureSampleFilesEnum merchantDemoSignatureSampleFilesEnum = MerchantDemoSignatureSampleFilesEnum.fromFileName(fileName);
 
-        MerchantCreateSignatureDTO fileMappers = FileMappers.getFileMappers(
+        MerchantCreateSignatureDTO merchantCreateSignatureDTO = FileMappers.getFileMappers(
                 merchantDemoSignatureSampleFilesEnum.getDirectory(), merchantDemoSignatureSampleFilesEnum.getFileName(), MerchantCreateSignatureDTO.class);
 
         //How Mechant identify transaction
-        fileMappers.setMerchantReference(MerchantSupplier.getMerchantReference.get());
+        merchantCreateSignatureDTO.setMerchantReference(MerchantSupplier.getMerchantReference.get());
 
-        return fileMappers;
+        return merchantCreateSignatureDTO;
 
     }
 

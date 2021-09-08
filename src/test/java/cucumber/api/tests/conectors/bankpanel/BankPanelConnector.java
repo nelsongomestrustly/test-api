@@ -10,8 +10,8 @@ import cucumber.api.tests.data.dto.bankpanel.accounts.BankPanelAccountLoginDTO;
 import cucumber.api.tests.data.dto.bankpanel.login.BankPanelLoginInfoDTO;
 import cucumber.api.tests.data.dto.frontend.FrontEndSetupDTO;
 import cucumber.api.tests.support.common.connectors.resttemplate.RestTemplateHttpConnector;
-import cucumber.api.tests.test.bankpanel.common.suppliers.BankPanelLoginAccountsSupplier;
-import cucumber.api.tests.test.bankpanel.common.suppliers.BankPanelSelectAccountsSupplier;
+import cucumber.api.tests.common.bankpanel.suppliers.BankPanelLoginAccountsSupplier;
+import cucumber.api.tests.common.bankpanel.suppliers.BankPanelSelectAccountsSupplier;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 

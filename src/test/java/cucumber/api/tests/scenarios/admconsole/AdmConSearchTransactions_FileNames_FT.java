@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Assertions;
 
 import java.io.IOException;
 
-import static cucumber.api.tests.test.admconsole.common.constants.AdmConSearchTransactionsConstants.ADM_CON_SEARCH_TRANSACTIONS_NO_RESULTS_FOUND;
+import static cucumber.api.tests.common.admconsole.constants.AdmConSearchTransactionsConstants.ADM_CON_SEARCH_TRANSACTIONS_NO_RESULTS_FOUND;
 
 @Slf4j
 public class AdmConSearchTransactions_FileNames_FT extends CucumberTest {
