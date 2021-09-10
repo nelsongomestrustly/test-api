@@ -23,6 +23,19 @@ ID do Banco -> paymentProviderId
 ID do merchant de Acesso, tipo a chave de Acesso -> AccessID
 
 ------
+Id´s Chave Primária:
+------
+TransId -> Existem FIGTW e PWMB ambos sao chaves primárias de suas tabelas.
+ppTTransactionId -> Chave que liga ambas as tabelas FIGTW <--> PWMB
+
+
+------
+Jira Integration x Application:
+------
+Existe um controller AdmConFicErrorLogEndpoint onde conseguimos atumaticamente atualizar o Jira com logs , o endpoint é o updateJiraIssue 
+
+
+------
 GRP ->
 ------
 Eh um numero referente aos Payment Flows,
@@ -51,6 +64,66 @@ Endpoint Principal Select Bank, volta um link para a LightBox, nesse link tem To
 O que é esse token ????????
 
 
+------
+Transactions Types
+------
+
+Authorize
+Capture
+Pay
+
+------
+Payment Types, contém varias Transactions
+------
+
+1) Deferred :
+
+    Primeiro momento uma transação de Authorize
+    Depois você pode várias transações de Capture, até o montante.
+
+    Crio uma sacola de dinheiro - Exemplo : Dinheiro virtual em um site de aposta e o merchant pode pegar aos poucos, varios capture
+    conforme vai apostando o merchant executa um CAPTURES do dinheiro aos poucos
+    Pode ser um Deferred de Zero , para ser ilimitado,
+    ai tem o impacto no processo de garantia pois o merchant ajuda a Trustly a pegar o dinheiro de volta caso nao receba
+    Somente deffered nao existe pagamento no momento zero
+
+2) Disbursement : ******* , pq passamos ??????
+
+    ********
+
+3) Instant :
+
+    Faz uma transação de PAY e Termina
+    Paga na Hora ---> claro que tem o delay do process
+
+4) Onfile :
+
+    Como raiz eu faço um PAY ou um Authorize, e eu posso pagar mais do que o meu saco de dinheiro
+
+    Posso fazer uma transação inicial ou não
+
+    Se tu fiz transação incial de PAY e depois continuar a fazer captures (Instant + Deferred)
+    Se tu fiz transação incial de Authorize e depois continuar a fazer captures (Deferred)
+
+   
+5) Recurring :
+
+   Pagamento em Prestações, assinature
+   Ele funciona como um defered com uma autorizacao durante o periodo 
+   Authroize, e depois varios Captures recorrentes
+
+6) Retrieval ******* , pq passamos dinheiro ??????
+
+    https://paywithmybank.atlassian.net/wiki/spaces/PD/pages/63012917/Retrieval+Flow
+    O Merchant quer informações do user, mas nao entendi, como você cria uma transacao com isso.
+
+
+
+
+
+------
+Tipos de Pagamentos
+------
 
 
 
